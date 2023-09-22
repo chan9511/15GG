@@ -62,7 +62,7 @@ const Search = () => {
       // setPlayerData((prev) => {
 
       // })
-console.log(asdsad)
+
       console.log(playerData);
 
       // // setPlayerData(result.data);
