@@ -1,13 +1,21 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useLocation } from "react-router-dom";
 
 const Search = () => {
-  const [searchText, setSearchText] = useState("");
   const [playerData, setPlayerData] = useState({});
   const API_KEY = "RGAPI-d9d920d1-34c1-4fee-ae05-f7d31572d99b";
+  const location = useLocation();
+  // console.log(location);
+  
+  
 
-  const searchForPlayer = async () => {
+  useEffect(() => {
+    searchForPlayer(location.state.searchText);
+  }, [location.state.searchText]);
+  
+
+  const searchForPlayer = async (searchText) => {
     try {
       const modifiedSearchText =
         searchText.length === 2
@@ -35,8 +43,7 @@ const Search = () => {
         (entry) => entry.queueType === "RANKED_FLEX_SR"
       );
 
-      console.log(soloRankData);
-      console.log(flexRankData);
+      
 
       setPlayerData({
         id: result.data.id,
@@ -44,90 +51,40 @@ const Search = () => {
         name: result.data.name,
         profileIconId: result.data.profileIconId,
         puuid: result.data.puuid,
-        soloRankTier: soloRankData.tier,
-        soloRankPoint: soloRankData.leaguePoints,
-        flexRankTier: flexRankData.tier,
-        flexRankPoint: flexRankData.leaguePoints,
+        
       });
 
-      // setPlayerData({
-      //   id,
-      //   summonerLevel,
-      //   name,
-      //   profileIconId,
-      //   puuid,
-      //   soloRankData,
-      //   soloRankData,
-      // });
-      // setPlayerData((prev) => {
+    
+      
+      
 
-      // })
+      console.log(soloRankData)
+      console.log(flexRankData.tier)
 
-      console.log(playerData);
 
-      // // setPlayerData(result.data);
-      // console.log("API로 받은데이터", result);
-      // console.log("소환사 레벨:", summonerLevel);
-      // console.log("소환사 닉네임:", name);
-      // console.log("소환사 아이콘코드:", profileIconId);
-      // console.log("searchText의 puuid:", puuid);
-      // console.log("searchText의 id:", id);
-      // console.log(result2);
     } catch (error) {
       console.log(error);
+      alert(`${searchText}는 존재하지 않는 소환사 입니다.`);
 
-      alert("존재하지 않는 계정입니다.");
-      setPlayerData(null);
-      // 화면으로 표현 해보기.
+      
     }
   };
-
   return (
     <>
-      <div className="App">
-        <form
-          class="form-control me-2 d-flex "
-          role="search"
-          style={{ marginRight: "100px" }}
-        >
-          <input
-            className="form-control me-2"
-            type="search"
-            value={searchText}
-            onChange={(e) => setSearchText(e.target.value)}
-            placeholder="소환사명 검색"
-            aria-label="Search"
-          />
-          <Link to="/Search">
-            <button
-              class="btn btn-outline-success me-2"
-              type="text"
-              onClick={searchForPlayer}
-              // searchForPlayer 함수 활용 (summoners-v4/{summonerName})
-              // 얻을 수 있는 정보 (puuid,profileIconId(프로필이미지),summonerLevel)
-              // puuid로 얻을 수 있는 정보
-              //
-            >
-              click
-            </button>
-          </Link>
-        </form>
-      </div>
-
       <div>
         {playerData ? (
           <>
             <div>
-              <p>소환사레벨:{playerData.summonerLevel}</p>
-              <p>소환사이름:{playerData.name}</p>
-              <p>프로필코드:{playerData.profileIconId}</p>
-              <p>랭크티어{playerData.soloRankTier}{playerData.soloRankPoint}</p>
-              <p>자유랭크티어{playerData.flexRankTier}{playerData.flexRankPoint}</p>
+              <p>소환사레벨: {playerData.summonerLevel}</p>
+              <p>소환사이름: {playerData.name}</p>
+              <p>프로필코드: {playerData.profileIconId}</p>
               {/* 소환사명: {playerData.toString()} */}
             </div>
+            
+            
           </>
         ) : (
-          "False 부분"
+          <p>"정보가 없습니다"</p>
         )}
       </div>
     </>

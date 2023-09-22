@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div>
       
-      <h1>응애 나 홈페이지</h1>
+      <h1>ㅎㅇ</h1>
     </div>
   );
 };
