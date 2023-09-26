@@ -6,7 +6,7 @@ const Nav = () => {
       <nav class="nav nav-tabs">
         <li class="nav-item">
           <a class="nav-link" href="/">
-            웹페이지이름(미정)
+            15GG
           </a>
         </li>
         <li class="nav-item">

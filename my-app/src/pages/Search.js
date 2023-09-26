@@ -11,6 +11,7 @@ const Search = () => {
   // console.log(location);
 
   const rankImages = {
+    UNRANKED: "https://z.fow.kr/img/emblem/unranked.png",
     IRON: "https://z.fow.kr/img/emblem/iron.png",
     BRONZE: "https://z.fow.kr/img/emblem/bronze.png",
     SILVER: "https://z.fow.kr/img/emblem/sliver.png",
@@ -135,54 +136,89 @@ const Search = () => {
         >
           {soloRankData ? (
             <>
-              <div>
-                <div
-                  style={{ top: "10px", left: "20px", position: "absolute" }}
-                >
-                  <br></br>
-
-                  <p>솔로랭크</p>
-                  <p>
-                    등급: {soloRankData.tier} {soloRankData.rank}
-                  </p>
-                  <p>리그 포인트: {soloRankData.leaguePoints}</p>
-                  <p>
-                    {soloRankData.wins + soloRankData.losses}전{" "}
-                    {soloRankData.wins}승 {soloRankData.losses}패 (
-                    {(
-                      (soloRankData.wins /
-                        (soloRankData.wins + soloRankData.losses)) *
-                      100
-                    ).toFixed(2)}
-                    %)
-                  </p>
-                  {/* 이미지를 동적으로 설정 */}
-                  {rankImages[soloRankData.tier] && (
-                    <img
-                      src={rankImages[soloRankData.tier]}
-                      alt={`등급: ${soloRankData.tier}`}
-                      width="90"
-                      style={{ border: "0px" }}
-                    />
-                  )}
-                </div>
-              </div>
-            </>
+            <div style={{ top: "40px", left: "60px", position: "absolute" }}>
+              <img
+                src={rankImages[soloRankData.tier]}
+                alt={`등급: ${soloRankData.tier}`}
+                width="120" // 이미지의 너비를 100픽셀로 변경
+                height="120" // 이미지의 높이를 100픽셀로 변경
+                style={{ border: "0px" }} // 이미지의 테두리 스타일을 설정 (선택 사항)
+              />
+            </div>
+            <br></br>
+        
+            <div style={{ marginLeft: "250px" }}>
+              <p>솔로랭크</p>
+              <p>
+                등급: {soloRankData.tier} {soloRankData.rank}
+              </p>
+              <p>리그 포인트: {soloRankData.leaguePoints}</p>
+              <p>
+                {soloRankData.wins + soloRankData.losses}전{" "}
+                {soloRankData.wins}승 {soloRankData.losses}패 (
+                {(
+                  (soloRankData.wins /
+                    (soloRankData.wins + soloRankData.losses)) *
+                  100
+                ).toFixed(2)}
+                %)
+              </p>
+            </div>
+          </>
           ) : (
             <>
-              <p>솔로랭크</p>
-              <p>등급: 배치</p>
-              <p></p>
+              {/* 랭크가 없는 경우 */}
+              <div style={{ top: "80px", left: "20px", position: "absolute" }}>
+                <img
+                  src={rankImages.UNRANKED}
+                  alt="기본 이미지"
+                  width="90"
+                  style={{ border: "0px" }}
+                />
+              </div>
+              <div style={{ marginLeft: "250px" }}>
+                <p>솔로랭크</p>
+                <p>등급: 배치</p>
+              </div>
             </>
           )}
         </div>
       </div>
-      <div className="App">
-        <div className="container mt-3">
-          <br></br>
+      <div className="table_summary">
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            width: "480px",
+            border: "1px solid silver",
+            height: "200px",
+            position: "relative",
+            backgroundColor: "white",
+            float: "left",
+          }}
+        >
           {flexRankData ? (
             <>
-              <div>
+              <div style={{ top: "40px", left: "60px", position: "absolute" }}>
+                <img
+                  src={rankImages[flexRankData.tier]}
+                  alt={`등급: ${flexRankData.tier}`}
+                  width="120" // 이미지의 너비를 100픽셀로 변경
+                  height="120" // 이미지의 높이를 100픽셀로 변경
+                  style={{ border: "0px" }} // 이미지의 테두리 스타일을 설정 (선택 사항)
+                />
+              </div>
+              <div style={{ marginLeft: "250px" }}>
                 <p>자유랭크</p>
                 <p>
                   등급: {flexRankData.tier} {flexRankData.rank}
@@ -202,8 +238,19 @@ const Search = () => {
             </>
           ) : (
             <>
-              <p>자유랭크</p>
-              <p>등급: 배치</p>
+              {/* 랭크가 없는 경우 */}
+              <div style={{ top: "80px", left: "20px", position: "absolute" }}>
+                <img
+                  src={rankImages.UNRANKED}
+                  alt="기본 이미지"
+                  width="90"
+                  style={{ border: "0px" }}
+                />
+              </div>
+              <div style={{ marginLeft: "250px" }}>
+                <p>자유랭크</p>
+                <p>등급: 배치</p>
+              </div>
             </>
           )}
         </div>

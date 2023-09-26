@@ -36,7 +36,7 @@ const Searchbar = () => {
             state={{ searchText: searchText }}
           >
             {" "}
-            검색
+            click
           </Link>
         </form>
       </div>
