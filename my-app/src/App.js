@@ -15,9 +15,9 @@ const App = () => {
   return (
     <div>
       {/* 상단 네비게이션바 불러오기 */}
-      <Nav />
+      <Nav /> <Searchbar />
       {/* 검색기 불러오기 */}
-      <Searchbar />
+      
       {/* 경로 설정 */}
       <Routes>
         <Route path="/" element={<Home />} />
