@@ -10,6 +10,19 @@ const Search = () => {
   const location = useLocation();
   // console.log(location);
 
+  const rankImages = {
+    IRON: "https://z.fow.kr/img/emblem/iron.png",
+    BRONZE: "https://z.fow.kr/img/emblem/bronze.png",
+    SILVER: "https://z.fow.kr/img/emblem/sliver.png",
+    GOLD: "https://z.fow.kr/img/emblem/gold.png",
+    PLATINUM: "https://z.fow.kr/img/emblem/platinum.png",
+    EMERALD: "https://z.fow.kr/img/emblem/emerald.png",
+    DIAMOND: "https://z.fow.kr/img/emblem/diamond.png",
+    MASTER: "https://z.fow.kr/img/emblem/master.png",
+    GRANDMASTER: "https://z.fow.kr/img/emblem/grandmaster.png",
+    CHALLENGER: "https://z.fow.kr/img/emblem/challenger.png",
+    // 다른 등급 이미지도 추가할 수 있습니다.
+  };
   useEffect(() => {
     searchForPlayer(location.state.searchText);
   }, [location.state.searchText]);
@@ -42,100 +55,158 @@ const Search = () => {
       const flexRankData = result2.data.find(
         (entry) => entry.queueType === "RANKED_FLEX_SR"
       ); // 자유랭크만 뽑기.
-console.log(result.data.id)
-      
-        setPlayerData({
-          id: result.data.id,
-          summonerLevel: result.data.summonerLevel,
-          name: result.data.name,
-          profileIconId: result.data.profileIconId,
-          puuid: result.data.puuid,
-        });
+      console.log(result.data.id);
 
-        setSoloRankData(soloRankData);
-        setFlexRankData(flexRankData);
+      setPlayerData({
+        id: result.data.id,
+        summonerLevel: result.data.summonerLevel,
+        name: result.data.name,
+        profileIconId: result.data.profileIconId,
+        puuid: result.data.puuid,
+      });
 
-        console.log(soloRankData);
-        console.log(
-          soloRankData.tier,
-          soloRankData.rank,
-          soloRankData.leaguePoints
-        );
-        console.log(soloRankData.wins, soloRankData.losses);
-        console.log(
-          flexRankData.tier,
-          flexRankData.rank,
-          flexRankData.leaguePoints
-        );
-        console.log(flexRankData.wins, flexRankData.losses);
-      }
-     catch (error) {
+      setSoloRankData(soloRankData);
+      setFlexRankData(flexRankData);
+
+      console.log(
+        soloRankData.tier,
+        soloRankData.rank,
+        soloRankData.leaguePoints
+      );
+      console.log(soloRankData.wins, soloRankData.losses);
+      console.log(
+        flexRankData.tier,
+        flexRankData.rank,
+        flexRankData.leaguePoints
+      );
+      console.log(flexRankData.wins, flexRankData.losses);
+    } catch (error) {
       console.log(error);
     }
   };
   return (
     <>
-      <div>
-        {playerData ? (
-          <>
-            <div>
-              <p>소환사레벨: {playerData.summonerLevel}</p>
-              <p>소환사이름: {playerData.name}</p>
-              <p>프로필코드: {playerData.profileIconId}</p>
-              {/* 소환사명: {playerData.toString()} */}
-            </div>
-          </>
-        ) : (
-          <p>"정보가 없습니다"</p>
-        )}
+      <div className="table_summary">
+        <br></br>
+        <div
+          style={{
+            width: "480px",
+            border: "1px solid silver",
+            height: "125px",
+            position: "relative",
+            backgroundColor: "white",
+            float: "left",
+          }}
+        >
+          {playerData.id ? (
+            <>
+              <div>
+                <div
+                  style={{ top: "10px", left: "20px", position: "absolute" }}
+                >
+                  <p>프로필코드: {playerData.profileIconId}</p>
+                  <p>소환사레벨: {playerData.summonerLevel}</p>
+                  <p>소환사이름: {playerData.name}</p>
+                </div>
+              </div>
+            </>
+          ) : (
+            <p>"정보가 없습니다"</p>
+          )}
+        </div>
       </div>
-      <div>
-        {soloRankData ? (
-          <>
-            <div>
-              <p>
-                소환사랭크: {soloRankData.tier} {soloRankData.rank}
-              </p>
-              <p>리그 포인트: {soloRankData.leaguePoints}</p>
-              <p>
-                {soloRankData.wins + soloRankData.wins}전 {soloRankData.wins}승{" "}
-                {soloRankData.losses}패 (
-                {(
-                  (soloRankData.wins /
-                    (soloRankData.wins + soloRankData.losses)) *
-                  100
-                ).toFixed(2)}
-                %)
-              </p>
-            </div>
-          </>
-        ) : (
-          <p>"언랭크"</p>
-        )}
+
+      <div className="table_summary">
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <div
+          style={{
+            width: "480px",
+            border: "1px solid silver",
+            height: "200px",
+            position: "relative",
+            backgroundColor: "white",
+            float: "left",
+          }}
+        >
+          {soloRankData ? (
+            <>
+              <div>
+                <div
+                  style={{ top: "10px", left: "20px", position: "absolute" }}
+                >
+                  <br></br>
+
+                  <p>솔로랭크</p>
+                  <p>
+                    등급: {soloRankData.tier} {soloRankData.rank}
+                  </p>
+                  <p>리그 포인트: {soloRankData.leaguePoints}</p>
+                  <p>
+                    {soloRankData.wins + soloRankData.losses}전{" "}
+                    {soloRankData.wins}승 {soloRankData.losses}패 (
+                    {(
+                      (soloRankData.wins /
+                        (soloRankData.wins + soloRankData.losses)) *
+                      100
+                    ).toFixed(2)}
+                    %)
+                  </p>
+                  {/* 이미지를 동적으로 설정 */}
+                  {rankImages[soloRankData.tier] && (
+                    <img
+                      src={rankImages[soloRankData.tier]}
+                      alt={`등급: ${soloRankData.tier}`}
+                      width="90"
+                      style={{ border: "0px" }}
+                    />
+                  )}
+                </div>
+              </div>
+            </>
+          ) : (
+            <>
+              <p>솔로랭크</p>
+              <p>등급: 배치</p>
+              <p></p>
+            </>
+          )}
+        </div>
       </div>
-      <div>
-        {flexRankData ? (
-          <>
-            <div>
-              <p>
-                소환사랭크: {flexRankData.tier} {flexRankData.rank}
-              </p>
-              <p>리그 포인트: {flexRankData.leaguePoints}</p>
-              <p>
-                {flexRankData.wins + flexRankData.losses}전 {flexRankData.wins}
-                승 {flexRankData.losses}패 (
-                {(
-                  (flexRankData.wins /
-                    (flexRankData.wins + flexRankData.losses)) *
-                  100
-                ).toFixed(2)}
-                %)
-              </p>
-            </div>
-          </>
-        ) : (
-          <p>"언랭크"</p>
-        )}
+      <div className="App">
+        <div className="container mt-3">
+          <br></br>
+          {flexRankData ? (
+            <>
+              <div>
+                <p>자유랭크</p>
+                <p>
+                  등급: {flexRankData.tier} {flexRankData.rank}
+                </p>
+                <p>리그 포인트: {flexRankData.leaguePoints}</p>
+                <p>
+                  {flexRankData.wins + flexRankData.losses}전{" "}
+                  {flexRankData.wins}승 {flexRankData.losses}패 (
+                  {(
+                    (flexRankData.wins /
+                      (flexRankData.wins + flexRankData.losses)) *
+                    100
+                  ).toFixed(2)}
+                  %)
+                </p>
+              </div>
+            </>
+          ) : (
+            <>
+              <p>자유랭크</p>
+              <p>등급: 배치</p>
+            </>
+          )}
+        </div>
       </div>
     </>
   );

@@ -6,16 +6,17 @@ const Searchbar = () => {
   const nagivate = useNavigate();
 
   const submitFunc = (event) => {
-    event.preventDefault()
+    event.preventDefault();
     nagivate("/search", {
-      state: { searchText }
+      state: { searchText },
     });
-  }
+  };
 
   return (
     <>
       <div className="App">
-        <form onSubmit={submitFunc}
+        <form
+          onSubmit={submitFunc}
           class="form-control me-2 d-flex "
           role="search"
           style={{ marginRight: "100px" }}
@@ -28,12 +29,14 @@ const Searchbar = () => {
             placeholder="소환사명 검색"
             aria-label="Search"
           />
-          <Link 
-            to = {{ pathname: '/search', state: {searchText: searchText} }}
+          <Link
+            to={{ pathname: "/search", state: { searchText: searchText } }}
             class="btn btn-outline-success me-2"
             type="text"
             state={{ searchText: searchText }}
-          > 검색
+          >
+            {" "}
+            검색
           </Link>
         </form>
       </div>
