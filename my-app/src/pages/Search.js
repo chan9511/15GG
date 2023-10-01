@@ -87,6 +87,10 @@ const Search = () => {
   };
   return (
     <>
+    <div style={{
+      backgroundColor: "#eee"
+    }}
+    >
       <div className="table_summary">
         <br></br>
         <div
@@ -116,6 +120,9 @@ const Search = () => {
           )}
         </div>
       </div>
+      <div >
+        <p>mike</p>
+      </div>
 
       <div className="table_summary">
         <br></br>
@@ -123,9 +130,11 @@ const Search = () => {
         <br></br>
         <br></br>
         <br></br>
-        <br></br>
+        
         <div
           style={{
+            display: "flex",
+            alignItems: "center",
             width: "480px",
             border: "1px solid silver",
             height: "200px",
@@ -138,6 +147,7 @@ const Search = () => {
             <>
             <div style={{ top: "40px", left: "60px", position: "absolute" }}>
               <img
+                
                 src={rankImages[soloRankData.tier]}
                 alt={`등급: ${soloRankData.tier}`}
                 width="120" // 이미지의 너비를 100픽셀로 변경
@@ -168,11 +178,12 @@ const Search = () => {
           ) : (
             <>
               {/* 랭크가 없는 경우 */}
-              <div style={{ top: "80px", left: "20px", position: "absolute" }}>
+              <div style={{ top: "40px", left: "60px", position: "absolute" }}>
                 <img
                   src={rankImages.UNRANKED}
-                  alt="기본 이미지"
-                  width="90"
+                  alt="UNRANKED"
+                  width="120"
+                  height="120"
                   style={{ border: "0px" }}
                 />
               </div>
@@ -239,11 +250,12 @@ const Search = () => {
           ) : (
             <>
               {/* 랭크가 없는 경우 */}
-              <div style={{ top: "80px", left: "20px", position: "absolute" }}>
+              <div style={{ top: "50px", left: "60px", position: "absolute" }}>
                 <img
                   src={rankImages.UNRANKED}
-                  alt="기본 이미지"
-                  width="90"
+                  alt="UNRANKED"
+                  width="120"
+                  height="120"
                   style={{ border: "0px" }}
                 />
               </div>
@@ -251,10 +263,13 @@ const Search = () => {
                 <p>자유랭크</p>
                 <p>등급: 배치</p>
               </div>
+              
             </>
           )}
         </div>
       </div>
+    </div>
+    <div>gd</div>
     </>
   );
 };

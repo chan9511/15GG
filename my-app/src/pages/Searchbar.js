@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import "./Searchbar.css";
 
 const Searchbar = () => {
   const [searchText, setSearchText] = useState("");
@@ -14,26 +15,29 @@ const Searchbar = () => {
 
   return (
     <>
-      <div className="App">
+      <div className="App" style={{ backgroundColor: "#fff" }}>
         <form
           onSubmit={submitFunc}
-          class="form-control me-2 d-flex "
+          class="form-control me-2 d-flex search-form"
           role="search"
-          style={{ marginRight: "100px" }}
+          
         >
           <input
+          
             className="form-control me-2"
             type="search"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
             placeholder="소환사명 검색"
             aria-label="Search"
+            
           />
           <Link
             to={{ pathname: "/search", state: { searchText: searchText } }}
             class="btn btn-outline-success me-2"
             type="text"
             state={{ searchText: searchText }}
+            style={{ backgroundColor: "#6699ff", color: "#fff", borderColor: "#6699ff" }}
           >
             {" "}
             click
