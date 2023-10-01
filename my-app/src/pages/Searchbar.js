@@ -15,12 +15,12 @@ const Searchbar = () => {
 
   return (
     <>
-      <div className="App" style={{ backgroundColor: "#fff" }}>
+      <div className="App" style={{ backgroundColor: "#fff"}}>
         <form
           onSubmit={submitFunc}
           class="form-control me-2 d-flex search-form"
           role="search"
-          
+          style={{border:0}}
         >
           <input
           
@@ -31,16 +31,17 @@ const Searchbar = () => {
             placeholder="소환사명 검색"
             aria-label="Search"
             
+           
           />
           <Link
             to={{ pathname: "/search", state: { searchText: searchText } }}
             class="btn btn-outline-success me-2"
             type="text"
             state={{ searchText: searchText }}
-            style={{ backgroundColor: "#6699ff", color: "#fff", borderColor: "#6699ff" }}
+            style={{ backgroundColor: "#6699ff", color: "#fff", borderColor: "#6699ff" , border:0}}
           >
             {" "}
-            click
+            Enter
           </Link>
         </form>
       </div>

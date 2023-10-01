@@ -48,7 +48,7 @@ const SignUp = () => {
           </div>
         </div>
         <div>
-          <button type="submit" class="btn btn-primary">
+        <button type="submit" class="btn btn-primary" style={{ backgroundColor: '#6699ff', color: 'white', border:0}}>
             회원가입
           </button>
         </div>

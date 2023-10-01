@@ -1,13 +1,10 @@
 import React from "react";
-
+import "./Search.css";
 
 const Ranking = () => {
   return (
-    <div>
-      
-      
-      <h1>응애 나 랭킹페이지</h1>
-    </div>
+    <div></div>
+    
   );
 };
 
