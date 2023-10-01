@@ -1,29 +1,4 @@
-/* CSS */
 .container {
-  display: flex;
-}
-
-.table_summary {
-  width: 480px;
-  
- 
-border: 1px solid silver;
-  
- 
-height: 200px;
-  
- 
-position: relative;
-  background-color: white;
-  
- 
-margin-right: 40px; /* Increase the margin as needed */
-}
-
-/* Add any other CSS styles you need for individual divs here */
-
-/* Style for the "mike" div */
-.container > div:last-child {
-  /* Add styles to position "mike" div to the right of the first div */
-  margin-left: 20px; /* Adjust this margin as needed */
+	display: flex;
+	/* display: inline-flex; */
 }

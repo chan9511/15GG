@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import "./Analyze.css";
 import "./Analyze2.css";
@@ -10,73 +9,87 @@ const Analyze = () => {
   const toggleHidden = () => {
     setIsHidden(!isHidden);
   };
+
   return (
     <div>
       {/* 큰 div태그 */}
       <div class="css-gtm9xc">
-        <div class="css-1dx96b5">
-          <label class="hidden" for="kr">
-            kr
-          </label>
-        </div>
-        
-
-        <div class="css-e52sg2">
-          <label class="hidden" for="emerald">
-            Emerald
-          </label>
-          <select id="emerald">
-            <option value="challenger">Challenger</option>
-            <option value="grandmaster">Grandmaster</option>
-            <option value="master">Master</option>
-            <option value="diamond">Diamond</option>
-            <option value="emerald">Emerald</option>
-            <option value="platinum">Platinum</option>
-            <option value="gold">Gold</option>
-            <option value="silver">Silver</option>
-            <option value="bronze">Bronze</option>
-            <option value="iron">Iron</option>
-          </select>
-        </div>
-        <div class="css-g46fbk">
-          <div>
-            <button class="css-776qz1" type="button" onClick={toggleHidden}>
-              <span>Emerald</span>
-            </button>
-            <div style={{display: isHidden ? 'none' : 'block' }}>
-              <button class="css-w2p1w6" type="button">
-                <span>Challenger</span>
-              </button>
-              <button class="css-w2p1w6" type="button">
-                <span>Grandmaster</span>
-              </button>
-              <button class="css-w2p1w6" type="button">
-                <span>Master</span>
-              </button>
-              <button class="css-w2p1w6" type="button">
-                <span>Diamond</span>
-              </button>
-              <button class="css-w2p1w6" type="button">
+        <nav>
+          <div class="css-e52sg2">
+            <label class="hidden" for="emerald">
+              Emerald
+            </label>
+            <select id="emerald">
+              <option value="challenger">Challenger</option>
+              <option value="grandmaster">Grandmaster</option>
+              <option value="master">Master</option>
+              <option value="diamond">Diamond</option>
+              <option value="emerald">Emerald</option>
+              <option value="platinum">Platinum</option>
+              <option value="gold">Gold</option>
+              <option value="silver">Silver</option>
+              <option value="bronze">Bronze</option>
+              <option value="iron">Iron</option>
+            </select>
+          </div>
+          <div class="css-g46fbk">
+            <div>
+              <button class="css-776qz1" type="button" onClick={toggleHidden}>
                 <span>Emerald</span>
               </button>
-              <button class="css-w2p1w6" type="button">
-                <span>Platinum</span>
-              </button>
-              <button class="css-w2p1w6" type="button">
-                <span>Gold</span>
-              </button>
-              <button class="css-w2p1w6" type="button">
-                <span>Silver</span>
-              </button>
-              <button class="css-w2p1w6" type="button">
-                <span>Bronze</span>
-              </button>
-              <button class="css-w2p1w6" type="button">
-                <span>Iron</span>
-              </button>
-
+              <div style={{ display: isHidden ? "none" : "block" }}>
+                <button class="css-w2p1w6" type="button">
+                  <span>Challenger</span>
+                </button>
+                <button class="css-w2p1w6" type="button">
+                  <span>Grandmaster</span>
+                </button>
+                <button class="css-w2p1w6" type="button">
+                  <span>Master</span>
+                </button>
+                <button class="css-w2p1w6" type="button">
+                  <span>Diamond</span>
+                </button>
+                <button class="css-w2p1w6" type="button">
+                  <span>Emerald</span>
+                </button>
+                <button class="css-w2p1w6" type="button">
+                  <span>Platinum</span>
+                </button>
+                <button class="css-w2p1w6" type="button">
+                  <span>Gold</span>
+                </button>
+                <button class="css-w2p1w6" type="button">
+                  <span>Silver</span>
+                </button>
+                <button class="css-w2p1w6" type="button">
+                  <span>Bronze</span>
+                </button>
+                <button class="css-w2p1w6" type="button">
+                  <span>Iron</span>
+                </button>
+              </div>
             </div>
           </div>
+        </nav>
+        <div>
+        <nav class="nav-container">
+          <button type="button" class="nav-button">
+            탑
+          </button>
+          <button type="button" class="nav-button">
+            정글
+          </button>
+          <button type="button" class="nav-button">
+            미드
+          </button>
+          <button type="button" class="nav-button">
+            바텀
+          </button>
+          <button type="button" class="nav-button">
+            서폿
+          </button>
+        </nav>
         </div>
       </div>
       <div>챔피언검색기</div>
