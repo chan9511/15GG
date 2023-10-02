@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import Searchbar from "./pages/Searchbar";
 import Ranking from "./pages/Ranking";
 import Aram from "./pages/Aram";
-import Analyze from "./pages/Analyze";
+import Classic from "./pages/Classic";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Nav from "./pages/Nav";
@@ -21,7 +21,7 @@ const App = () => {
       {/* 경로 설정 */}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/analyze" element={<Analyze />} />
+        <Route path="/classic" element={<Classic />} />
         <Route path="/aram" element={<Aram />} />
         <Route path="/ranking" element={<Ranking />} />
         <Route path="/login" element={<Login />} />
