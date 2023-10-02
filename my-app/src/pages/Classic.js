@@ -15,18 +15,18 @@ const Classic = () => {
       {/* 큰 div태그 */}
       <div className="css-gtm9xc">
         <nav>
-          
           <div className="css-g46fbk">
             <div>
               <button
                 className="css-776qz1"
                 type="button"
                 onClick={toggleDropdown}
+                
               >
                 <span>등급설정</span>
               </button>
               <div
-                className="dropdown-menu"
+                className="dropdoㅂ wn-menu"
                 style={{ display: isDropdownOpen ? "block" : "none" }}
               >
                 <button className="css-w2p1w6" type="button">
@@ -63,7 +63,18 @@ const Classic = () => {
             </div>
           </div>
         </nav>
-
+        <div class="input-table">
+        <form class="form-control me-2 d-flex search-form" role="search">
+          <input
+            className="form-control"
+            type="search"
+            placeholder="챔피언명 검색"
+            aria-label="Search"
+            
+          />
+          <button></button>
+        </form>
+      </div>
         <div>
           <nav class="nav-container">
             <button type="button" class="nav-button">
@@ -84,20 +95,7 @@ const Classic = () => {
           </nav>
         </div>
       </div>
-      <div class="input-table">
-        <form class="form-control me-2 d-flex search-form" role="search">
-          <input
-            className="form-control"
-            type="search"
-            placeholder="챔피언명 검색"
-            aria-label="Search"
-          />
-          <button>
-
-          </button>
-          
-        </form>
-      </div>
+      
       <div>
         <div class="table-container1">
           <div class="table-header">챔피언</div>

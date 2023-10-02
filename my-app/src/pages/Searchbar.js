@@ -4,11 +4,11 @@ import "./Searchbar.css";
 
 const Searchbar = () => {
   const [searchText, setSearchText] = useState("");
-  const nagivate = useNavigate();
+  const navigate = useNavigate();
 
   const submitFunc = (event) => {
     event.preventDefault();
-    nagivate("/search", {
+    navigate("/search", {
       state: { searchText },
     });
   };
@@ -21,6 +21,7 @@ const Searchbar = () => {
           class="form-control me-2 d-flex search-form"
           role="search"
         >
+          
           <input 
             className="custom-input"
             type="search"
@@ -35,7 +36,7 @@ const Searchbar = () => {
             type="text"
             state={{ searchText: searchText }}
             style={{
-              backgroundColor: "#6699ff",
+              backgroundColor: "#970000",
               color: "#fff",
               borderColor: "#6699ff",
               border: 0,

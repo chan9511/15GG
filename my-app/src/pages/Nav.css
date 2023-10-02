@@ -1,12 +1,17 @@
 .nav.nav-tabs {
-    background-color: #6699ff;
+    background-color: #380101;
     
   }
   
   
 .nav-link {
-    color: #fff;
+    color: #ffffff;
     font-size: 16px; 
     /* 여기에 네비게이션 링크에 대한 스타일을 추가합니다. */
     /* 예를 들어, 텍스트 크기, 텍스트 스타일 등을 정의할 수 있습니다. */
   }
+
+.nav-item.dropdown:hover .dropdown-menu a.dropdown-item {
+  background-color: #380101; /* 원하는 배경색으로 변경하세요 */
+  color: white; /* 텍스트 색상 변경 (선택 사항) */
+}

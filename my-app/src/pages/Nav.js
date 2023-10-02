@@ -3,13 +3,21 @@ import "./Nav.css";
 
 const Nav = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isChampionDropdownOpen, setIsChampionDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
+    setIsChampionDropdownOpen(false); // 챔피언 티어 드롭다운을 닫습니다.
   };
 
-  const closeDropdown = () => {
+  const toggleChampionDropdown = () => {
+    setIsChampionDropdownOpen(!isChampionDropdownOpen);
+    setIsDropdownOpen(false); // 다른 드롭다운을 닫습니다.
+  };
+
+  const closeDropdowns = () => {
     setIsDropdownOpen(false);
+    setIsChampionDropdownOpen(false);
   };
 
   return (
@@ -20,43 +28,61 @@ const Nav = () => {
             15GG
           </a>
         </li>
-        <li className="nav-item">
-          <a className="nav-link" href="/classic">
-            협곡 티어
-          </a>
-        </li>
         <li
           className={`nav-item dropdown ${isDropdownOpen ? "show" : ""}`}
           onMouseEnter={toggleDropdown}
-          onMouseLeave={closeDropdown}
+          onMouseLeave={closeDropdowns}
+        >
+          <a className="nav-link dropdown-toggle" href="/classic" role="button">
+            챔피언 분석
+          </a>
+          <ul
+            className={`dropdown-menu ${isDropdownOpen ? "show" : ""}`}
+            aria-labelledby="navbarDropdown"
+            style={{ backgroundColor: "#380101", color: "white" }}
+          >
+            <li>
+              <a className="dropdown-item" href="/Anal">
+                협곡 분석
+              </a>
+            </li>
+            <li>
+              <a className="dropdown-item" href="/Anal2">
+                칼바람 분석
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li
+          className={`nav-item dropdown ${
+            isChampionDropdownOpen ? "show" : ""
+          }`}
+          onMouseEnter={toggleChampionDropdown}
+          onMouseLeave={closeDropdowns}
         >
           <a
             className="nav-link dropdown-toggle"
-            href="/classic"
+            href="/champion"
             role="button"
           >
             챔피언 티어
           </a>
           <ul
-            className={`dropdown-menu ${isDropdownOpen ? "show" : ""}`}
+            className={`dropdown-menu ${isChampionDropdownOpen ? "show" : ""}`}
             aria-labelledby="navbarDropdown"
+            style={{ backgroundColor: "#380101", color: "white" }}
           >
             <li>
               <a className="dropdown-item" href="/classic">
-                소환사의 협곡
+                협곡 티어
               </a>
             </li>
             <li>
               <a className="dropdown-item" href="/aram">
-                칼바람
+                칼바람 티어
               </a>
             </li>
           </ul>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="/ranking">
-            랭 킹
-          </a>
         </li>
         <li className="nav-item">
           <a className="nav-link" href="/login">

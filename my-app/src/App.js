@@ -3,7 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Searchbar from "./pages/Searchbar";
-import Ranking from "./pages/Ranking";
 import Aram from "./pages/Aram";
 import Classic from "./pages/Classic";
 import Login from "./pages/Login";
@@ -23,7 +22,6 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/classic" element={<Classic />} />
         <Route path="/aram" element={<Aram />} />
-        <Route path="/ranking" element={<Ranking />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/search" element={<Search />} />

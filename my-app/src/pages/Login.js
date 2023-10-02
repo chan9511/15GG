@@ -45,7 +45,7 @@ const Login = () => {
           <button
             type="submit"
             class="btn btn-primary"
-            style={{ backgroundColor: "#6699ff", color: "white", border: 0 }}
+            style={{ backgroundColor: "#970000", color: "white", border: 0 }}
           >
             로그인하기
           </button>
@@ -57,7 +57,7 @@ const Login = () => {
           <button
             type="submit"
             class="btn btn-primary"
-            style={{ backgroundColor: "#6699ff", color: "white", border: 0 }}
+            style={{ backgroundColor: "#970000", color: "white", border: 0 }}
           >
             지금 회원가입하기
           </button>

@@ -1,13 +1,14 @@
 .css-gtm9xc {
     box-sizing: border-box;
-    width: 1080px;
-    margin: 8px auto;
-    padding: 4px;
+    width: 1000px;
+    
     border-radius: 4px;
     display: flex;
     -webkit-box-pack: justify;
     justify-content: space-between;
     background: var(--gray0);
+    flex: 1; /* 각 버튼을 균등한 너비로 설정합니다. */
+  
 }
 
 .css-1dx96b5 {
@@ -201,7 +202,7 @@ button {
 
 .nav-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     background-color: #fff; /* 배경색 지정 */
     padding: 10px; /* 패딩 추가 */
     
@@ -209,22 +210,25 @@ button {
   
   /* 버튼 스타일 */
   .nav-button {
+    
+    text-align: center; /* 텍스트를 가운데 정렬합니다. */
     background-color: #fff; /* 버튼 배경색 지정 */
     color: #000000; /* 텍스트 색상 지정 */
-    padding: 10px 20px; /* 패딩 추가 */
-    border: 1px solid #000;
-    border-radius: 5px;
+    padding: 10px 10px; /* 패딩 추가 */
+    border: 1px solid #b2adad;
+    border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease; /* 호버 효과 설정 */
   }
   
   .nav-button:hover {
-    background-color: #777; /* 호버 시 배경색 변경 */
+    background-color: #b2adad; /* 호버 시 배경색 변경 */
+    color: #fff; /* 호버 시 텍스트색 변경 */
   }
 
   button.css-776qz1,
   button.css-w2p1w6 {
-    border: 1px solid #000;
+    border: 1px solid #b2adad;
     padding: 5px 10px;
     margin: 5px;
     cursor: pointer;
@@ -238,7 +242,7 @@ button {
   /* 버튼에 호버 효과 스타일 추가 */
   button.css-776qz1:hover,
   button.css-w2p1w6:hover {
-    background-color: #77c4d5; /* 호버 시 배경색 변경 */
+    background-color: #b2adad; /* 호버 시 배경색 변경 */
     color: #fff; /* 호버 시 텍스트색 변경 */
   }
 

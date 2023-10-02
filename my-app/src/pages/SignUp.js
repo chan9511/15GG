@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import './SignUp.css';
 
 const SignUp = () => {
@@ -47,15 +48,15 @@ const SignUp = () => {
             </label>
           </div>
         </div> */}
-        <div>
+        <Link to="/">
           <button
             type="submit"
             class="btn btn-primary"
-            style={{ backgroundColor: "#6699ff", color: "white", border: 0 }}
+            style={{ backgroundColor: "#970000", color: "white", border: 0 }}
           >
             회원가입
           </button>
-        </div>
+          </Link>
       </form>
     </div>
   );

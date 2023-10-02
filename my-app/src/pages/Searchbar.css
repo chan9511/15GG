@@ -1,8 +1,8 @@
 .input-container {
   background-color: #fff;
   display: flex;
-  align-items: center;
-  margin-right: 100px;
+  align-items: left;
+  margin-left: 1200px;
 }
 
 .search-form {
