@@ -10,6 +10,7 @@ const Search = () => {
   const [userMatch, setUserMatch] = useState([]);
   const API_KEY = "RGAPI-d9d920d1-34c1-4fee-ae05-f7d31572d99b";
   const location = useLocation();
+  
   // console.log(location);
 
   const rankImages = {
@@ -26,10 +27,13 @@ const Search = () => {
     GRANDMASTER: `https://z.fow.kr/img/emblem/grandmaster.png`,
     CHALLENGER:`https://z.fow.kr/img/emblem/challenger.png`,
   };
+  
 
   useEffect(() => {
     searchForPlayer(location.state.searchText);
   }, [location.state.searchText]);
+
+  
 
   const searchForPlayer = async (searchText) => {
     try {
@@ -38,6 +42,7 @@ const Search = () => {
           ? searchText.charAt(0) + " " + searchText.charAt(1)
           : searchText;
       // 두글자만 들어오면 중간에 띄어쓰기 돼서 검색이 되게끔.
+
 
       var summonerV4 =
         "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/" +
@@ -66,6 +71,7 @@ const Search = () => {
       const matchId = matchdata.data;
       const matchLog = [];
       console.log(matchId); // 매치 목록 (최대 20개)
+      console.log(matchLog)
 
       for (let i = 0; i < 5; i++) {
         matchLog.push(
@@ -159,10 +165,10 @@ const Search = () => {
   return (
     <>
       {/* 통합 테이블 */}
-      <div className="table_summary">
+      <div className="table_summary" >
         <div
           style={{
-            backgroundColor: "#eee",
+            backgroundColor: "#fff",
           }}
         >
           <div className="table_summary">

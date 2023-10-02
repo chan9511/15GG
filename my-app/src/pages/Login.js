@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import './Login.css';
+
 
 const Login = () => {
   return (
-    <div>
-      <form class="px-4 py-3" >
+    <div class="hihi">
+      <form class="px-4 py-3">
         <div class="mb-3">
           <label for="exampleDropdownFormEmail1" class="form-label">
             이메일
@@ -39,21 +41,47 @@ const Login = () => {
             </label>
           </div>
         </div>
-        <div>
-        <button type="submit" class="btn btn-primary" style={{ backgroundColor: '#6699ff', color: 'white' , border:0}}>
-  로그인하기
-</button>
-
-        </div>
+        <div class="hihi">
+          <button
+            type="submit"
+            class="btn btn-primary"
+            style={{ backgroundColor: "#6699ff", color: "white", border: 0 }}
+          >
+            로그인하기
+          </button>
+          <br></br>
+        
         홈페이지 이용이 처음이신가요?
+        <br></br><br></br>
         <Link to="/SignUp">
-        <button type="submit" class="btn btn-primary" style={{ backgroundColor: '#6699ff', color: 'white' , border:0}}>
-          회원가입
-        </button>
+          <button
+            type="submit"
+            class="btn btn-primary"
+            style={{ backgroundColor: "#6699ff", color: "white", border: 0 }}
+          >
+            지금 회원가입하기
+          </button>
         </Link>
+        </div>
       </form>
     </div>
   );
 };
 
 export default Login;
+
+// // 예제: fetch를 사용한 POST 요청
+// fetch('/api/login', {
+//   method: 'POST',
+//   headers: {
+//     'Content-Type': 'application/json',
+//   },
+//   body: JSON.stringify({ email: 'user@example.com', password: 'password' }),
+// })
+//   .then(response => response.json())
+//   .then(data => {
+//     // 서버 응답에 대한 처리
+//   })
+//   .catch(error => {
+//     // 오류 처리
+//   });

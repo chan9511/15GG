@@ -1,0 +1,12 @@
+.gdgd {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* 위로 정렬 */
+    align-items: center;
+    height: 100vh; /* 높이를 화면 높이의 100%로 설정합니다. */
+}
+  
+  /* 폼 요소의 너비를 원하는 크기로 조절하세요. */
+  form {
+    width: 300px; /* 원하는 폼 너비로 설정합니다. */
+  }

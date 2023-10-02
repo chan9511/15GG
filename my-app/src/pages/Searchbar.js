@@ -15,30 +15,31 @@ const Searchbar = () => {
 
   return (
     <>
-      <div className="App" style={{ backgroundColor: "#fff"}}>
+      <div className="input-container">
         <form
           onSubmit={submitFunc}
           class="form-control me-2 d-flex search-form"
           role="search"
-          style={{border:0}}
         >
-          <input
-          
-            className="form-control me-2"
+          <input 
+            className="custom-input"
             type="search"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
             placeholder="소환사명 검색"
             aria-label="Search"
-            
-           
           />
           <Link
             to={{ pathname: "/search", state: { searchText: searchText } }}
             class="btn btn-outline-success me-2"
             type="text"
             state={{ searchText: searchText }}
-            style={{ backgroundColor: "#6699ff", color: "#fff", borderColor: "#6699ff" , border:0}}
+            style={{
+              backgroundColor: "#6699ff",
+              color: "#fff",
+              borderColor: "#6699ff",
+              border: 0,
+            }}
           >
             {" "}
             Enter

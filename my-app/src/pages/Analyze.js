@@ -35,7 +35,7 @@ const Analyze = () => {
           <div class="css-g46fbk">
             <div>
               <button class="css-776qz1" type="button" onClick={toggleHidden}>
-                <span>Emerald</span>
+                <span>등급설정</span>
               </button>
               <div style={{ display: isHidden ? "none" : "block" }}>
                 <button class="css-w2p1w6" type="button">
@@ -73,26 +73,33 @@ const Analyze = () => {
           </div>
         </nav>
         <div>
-        <nav class="nav-container">
-          <button type="button" class="nav-button">
-            탑
-          </button>
-          <button type="button" class="nav-button">
-            정글
-          </button>
-          <button type="button" class="nav-button">
-            미드
-          </button>
-          <button type="button" class="nav-button">
-            바텀
-          </button>
-          <button type="button" class="nav-button">
-            서폿
-          </button>
-        </nav>
+          <nav class="nav-container">
+            <button type="button" class="nav-button">
+              탑
+            </button>
+            <button type="button" class="nav-button">
+              정글
+            </button>
+            <button type="button" class="nav-button">
+              미드
+            </button>
+            <button type="button" class="nav-button">
+              바텀
+            </button>
+            <button type="button" class="nav-button">
+              서폿
+            </button>
+          </nav>
         </div>
       </div>
-      <div>챔피언검색기</div>
+      <div class="input-table">
+      <input
+        className="form-control"
+        type="search"
+        placeholder="챔피언명 검색"
+        aria-label="Search"
+      />
+      </div>
       <div>
         <div class="table-container1">
           <div class="table-header">챔피언</div>

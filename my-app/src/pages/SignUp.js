@@ -1,15 +1,15 @@
 import React from "react";
+import './SignUp.css';
 
 const SignUp = () => {
   return (
-    <div>
+    <div className="gdgd">
       <form class="form-control px-4 py-3">
         <div class="mb-3">
           <label for="exampleDropdownFormEmail1" class="form-label">
             이메일
           </label>
           <input
-          
             type="email"
             class="form-control"
             id="exampleDropdownFormEmail1"
@@ -35,7 +35,7 @@ const SignUp = () => {
             id="exampleDropdownFormPassword2"
           />
         </div>
-        <div class="mb-3">
+        {/* <div class="mb-3">
           <div class="form-check">
             <input
               type="checkbox"
@@ -46,9 +46,13 @@ const SignUp = () => {
               이용약관 및 개인정보 수집 및 이용 에 동의합니다.
             </label>
           </div>
-        </div>
+        </div> */}
         <div>
-        <button type="submit" class="btn btn-primary" style={{ backgroundColor: '#6699ff', color: 'white', border:0}}>
+          <button
+            type="submit"
+            class="btn btn-primary"
+            style={{ backgroundColor: "#6699ff", color: "white", border: 0 }}
+          >
             회원가입
           </button>
         </div>
