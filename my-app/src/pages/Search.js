@@ -8,11 +8,13 @@ const Search = () => {
   const [soloRankData, setSoloRankData] = useState(null);
   const [flexRankData, setFlexRankData] = useState(null);
   const [userMatch, setUserMatch] = useState([]);
-  const API_KEY = "보안";
+  const API_KEY = "RGAPI-d9d920d1-34c1-4fee-ae05-f7d31572d99b";
   const location = useLocation();
+
+
   
   console.log(location);
-
+  
   const rankImages = {
     UNRANKED: `https://z.fow.kr/img/emblem/unranked.png`,
     IRON: `https://z.fow.kr/img/emblem/iron.png`,
@@ -27,7 +29,7 @@ const Search = () => {
     GRANDMASTER: `https://z.fow.kr/img/emblem/grandmaster.png`,
     CHALLENGER:`https://z.fow.kr/img/emblem/challenger.png`,
   };
-  
+
 
   useEffect(() => {
     searchForPlayer(location.state.searchText);
@@ -82,7 +84,7 @@ const Search = () => {
       }
 
       const userDatas = [];
-      
+      console.log(matchLog[1])
       for (let i = 0; i < 5; i++) {
         for (let j = 0; j < 10; j++) {
           if (
@@ -186,14 +188,51 @@ const Search = () => {
               {playerData.id ? (
                 <>
                   <div>
-                    <div
+                  <div
+                    style={{ top: "40px", left: "60px", position: "absolute" }}
+                  >
+                    {/* <img
+                      src={https://ddragon.leagueoflegends.com/cdn/13.19.1/img/profileicon/{4389}.png}
+                      alt=""
                       style={{
+                        border: "1px",
+                        width: "128px",
+                        height: "128px;",
+                      }} // 이미지의 테두리 스타일을 설정 (선택 사항)
+                    /> */}
+                  </div>
+                  <div
+                    style={{
+                      width: "5px",
+                      heigth: "125px",
+                      position: "relative",
+                      float: "left",
+                    }}
+                  >
+                    {" "}
+                  </div>
+                  <div
+                    style={{ top: "10px", left: "60px", position: "absolute" }}
+                  >
+                    {/* <img
+                      src={}
+                      alt="프로필아이콘"
+                      style={{
+                        border: "1px",
+                        width: "100px",
+                        height: "128px;",
+                      }} // 이미지의 테두리 스타일을 설정 (선택 사항)
+                    /> */}
+                  </div>
+                    <div
+                      div style={{ marginLeft: "250px" ,
                         top: "10px",
-                        left: "20px",
+                        left: "0px",
                         position: "absolute",
                       }}
                     >
-                      <p>프로필코드: {playerData.profileIconId}</p>
+                      <p>프로필코드: {playerData.profileIconId}
+                      </p>
                       <p>소환사레벨: {playerData.summonerLevel}</p>
                       <p>소환사이름: {playerData.name}</p>
                     </div>
@@ -251,6 +290,8 @@ const Search = () => {
                             src={match.img}
                             alt="챔피언 이미지"
                             className="champion-img"
+                            width="80px"
+                            height="80px"
                           />
                         </td>
                         <td>
