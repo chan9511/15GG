@@ -8,7 +8,7 @@ const Search = () => {
   const [soloRankData, setSoloRankData] = useState(null);
   const [flexRankData, setFlexRankData] = useState(null);
   const [userMatch, setUserMatch] = useState([]);
-  const API_KEY = "RGAPI-d9d920d1-34c1-4fee-ae05-f7d31572d99b";
+  const API_KEY = "보안";
   const location = useLocation();
   
   console.log(location);
