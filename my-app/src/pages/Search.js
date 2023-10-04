@@ -11,7 +11,7 @@ const Search = () => {
   const API_KEY = "RGAPI-d9d920d1-34c1-4fee-ae05-f7d31572d99b";
   const location = useLocation();
   
-  // console.log(location);
+  console.log(location);
 
   const rankImages = {
     UNRANKED: `https://z.fow.kr/img/emblem/unranked.png`,

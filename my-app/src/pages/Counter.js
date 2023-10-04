@@ -7,7 +7,7 @@ function Counter() {
       <h1>0</h1>
       <button>+1</button>
       <button>-1</button>
-      <h1>렌더링{dvdv}테스트</h1>
+      <hdd1>렌더링{dvdv}테스d트</hdd1>
     </div>
   );
 }
