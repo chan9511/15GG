@@ -12,6 +12,9 @@ const Aram = () => {
 
   return (
     <div>
+      <div className="css-123">
+         칼바람 티어 정보
+         </div>
       {/* 큰 div태그 */}
       <div className="css-gtm9xc">
         <nav>
@@ -62,8 +65,7 @@ const Aram = () => {
             </div>
           </div>
         </nav>
-
-        <div>
+        <div class="input-table">
           <nav class="nav-container">
             <button type="button" class="nav-button">
               탑
