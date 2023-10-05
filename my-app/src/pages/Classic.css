@@ -29,9 +29,9 @@
   }
 
   .input-table input.form-control {
-    width: 100px; /* 원하는 너비로 조정하세요 */
+    width: 150px; /* 원하는 너비로 조정하세요 */
     border: 1px solid #b2adad;
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .custom-button {

@@ -35,7 +35,7 @@ const Aram = () => {
 
   return (
     <div>
-      <div className="css-123">협곡 티어 정보</div>
+      <div className="css-123">칼바람 티어 정보</div>
       <div className="css-gtm9xc">
         <nav>
           <div className="css-g46fbk">
