@@ -4,6 +4,7 @@ import "./Search.css";
 import "./Classic.css";
 import "./Classic2.css";
 
+
 const Anal = () => {
   const [searchText1, setSearchText1] = useState("");
   const navigate = useNavigate();

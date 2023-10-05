@@ -11,7 +11,7 @@ const Anal2 = () => {
 
   const submitFunc = (event) => {
     event.preventDefault();
-    navigate("/ClassicSearch", {
+    navigate("/AramSearch", {
       state: { searchText1 },
     });
   };

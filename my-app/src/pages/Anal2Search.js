@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const Anal2Search = () => {
   // JSON 파일 경로
-  const jsonFileURL = "./image/chall_cham.json";
+  const jsonFileURL = "./img/chall_cham.json";
 
   // JSON 데이터를 저장할 상태(State)
   const [jsonData, setJsonData] = useState(null);
