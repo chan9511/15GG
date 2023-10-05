@@ -4,104 +4,113 @@ import "./Classic2.css";
 
 const Classic = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [selectedTier, setSelectedTier] = useState("Emerald");
+  const [selectedRole, setSelectedRole] = useState("탑"); // 기본값은 "탑"으로 설정
 
-  // "등급설정" 버튼 클릭 시 드롭다운 표시/숨김
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
+  const tierList = [
+    "Challenger",
+    "Grandmaster",
+    "Master",
+    "Diamond",
+    "Emerald",
+    "Platinum",
+    "Gold",
+    "Silver",
+    "Bronze",
+    "Iron"
+  ];
+
+  const changeButtonText = (newText) => {
+    setSelectedTier(newText);
+    setIsDropdownOpen(false);
+  };
+
+  const handleRoleClick = (role) => {
+    setSelectedRole(role); // 클릭한 역할을 선택된 역할로 설정
+  };
+
   return (
-    <div>
-      <div className="css-123">
-         협곡 티어 정보
-         </div>
-      {/* 큰 div태그 */}
-      <div className="css-gtm9xc">
-        <nav>
-          <div className="css-g46fbk">
-            <div>
-              <button
-                className="css-776qz1"
-                type="button"
-                onClick={toggleDropdown}
-              >
-                <span>등급설정</span>
-              </button>
-              <div
-                className="dropdown-menu"
-                style={{ display: isDropdownOpen ? "block" : "none" }}
-              >
-                <button className="css-w2p1w6" type="button">
-                  <span>Challenger</span>
-                </button>
-                <button className="css-w2p1w6" type="button">
-                  <span>Grandmaster</span>
-                </button>
-                <button className="css-w2p1w6" type="button">
-                  <span>Master</span>
-                </button>
-                <button className="css-w2p1w6" type="button">
-                  <span>Diamond</span>
-                </button>
-                <button className="css-w2p1w6" type="button">
-                  <span>Emerald</span>
-                </button>
-                <button className="css-w2p1w6" type="button">
-                  <span>Platinum</span>
-                </button>
-                <button className="css-w2p1w6" type="button">
-                  <span>Gold</span>
-                </button>
-                <button className="css-w2p1w6" type="button">
-                  <span>Silver</span>
-                </button>
-                <button className="css-w2p1w6" type="button">
-                  <span>Bronze</span>
-                </button>
-                <button className="css-w2p1w6" type="button">
-                  <span>Iron</span>
-                </button>
+      <div>
+        <div className="css-123">협곡 티어 정보</div>
+        <div className="css-gtm9xc">
+          <nav>
+            <div className="css-g46fbk">
+              <div>
+                <div class="dropdown">
+                  <button
+                    class="btn custom-button dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    onClick={toggleDropdown}
+                  >
+                    {selectedTier}
+                  </button>
+                  <ul
+                    class={`dropdown-menu text-center ${
+                      isDropdownOpen ? "show dropdown-menu-up" : ""
+                    }`}
+                  >
+                    {tierList.map((tier) => (
+                      <li key={tier}>
+                        <a
+                          class="dropdown-item"
+                          href="#"
+                          onClick={() => changeButtonText(tier)}
+                        >
+                          {tier}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
-        </nav>
-        <div class="input-table">
-          <nav class="nav-container">
-            <button type="button" class="nav-button">
-              탑
-            </button>
-            <button type="button" class="nav-button">
-              정글
-            </button>
-            <button type="button" class="nav-button">
-              미드
-            </button>
-            <button type="button" class="nav-button">
-              바텀
-            </button>
-            <button type="button" class="nav-button">
-              서폿
-            </button>
           </nav>
+          <div class="input-table">
+            
+            <nav class="nav-container">
+              <button
+                type="button"
+                class={`nav-button ${selectedRole === "탑" ? "active" : ""}`}
+                onClick={() => handleRoleClick("탑")}
+              >
+                탑
+              </button>
+              {["정글", "미드", "바텀", "서폿"].map((role) => (
+                <button
+                  key={role}
+                  type="button"
+                  class={`nav-button ${selectedRole === role ? "active" : ""}`}
+                  onClick={() => handleRoleClick(role)}
+                >
+                  {role}
+                </button>
+              ))}
+            </nav>
+          </div>
         </div>
-      </div>
-      
-      <div>
-        <div class="table-container1">
-          <div class="table-header">챔피언</div>
-          <div class="table-header">티어</div>
-          <div class="table-header">승률</div>
-          <div class="table-header">픽률</div>
-          <div class="table-header">밴율</div>
-          <div class="table-cell">1</div>
-          <div class="table-cell">2</div>
-          <div class="table-cell">3</div>
-          <div class="table-cell">4</div>
-          <div class="table-cell">5</div>
-        </div>
-      </div>
-    </div>
-  );
-};
 
-export default Classic;
+        <div>
+          <div class="table-container1">
+            <div class="table-header">챔피언</div>
+            <div class="table-header">티어</div>
+            <div class="table-header">승률</div>
+            <div class="table-header">픽률</div>
+            <div class="table-header">밴율</div>
+            {[1, 2, 3, 4, 5].map((cell) => (
+              <div key={cell} class="table-cell">
+                {cell}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  export default Classic;

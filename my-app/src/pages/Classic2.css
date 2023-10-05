@@ -28,6 +28,9 @@
 }
 
 .css-g46fbk {
+    display: flex;
+    justify-content: space-between; /* 수평 정렬 설정 */
+    align-items: center;
     position: relative;
     display: inline-block;
     vertical-align: middle;
@@ -202,28 +205,34 @@ button {
 
 .nav-container {
     display: flex;
-    justify-content: space-between;
     background-color: #fff; /* 배경색 지정 */
     padding: 10px; /* 패딩 추가 */
-    
+    margin-left: 290px;
   }
   
   /* 버튼 스타일 */
   .nav-button {
-    
+    border:none;
     text-align: center; /* 텍스트를 가운데 정렬합니다. */
     background-color: #fff; /* 버튼 배경색 지정 */
     color: #000000; /* 텍스트 색상 지정 */
-    padding: 10px 10px; /* 패딩 추가 */
+    padding: 10px 20px; /* 패딩 추가 */
     border: 1px solid #b2adad;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease; /* 호버 효과 설정 */
+    width: 120px; /* 너비 설정 */
+    height: 40px; /* 높이 설정 */
   }
   
+  .nav-button.active {
+    background-color: #380101;
+    color: #fff;
+  }
+
   .nav-button:hover {
-    background-color: #b2adad; /* 호버 시 배경색 변경 */
-    color: #fff; /* 호버 시 텍스트색 변경 */
+    background-color: #380101;
+    color: #fff;
   }
 
   button.css-776qz1,
@@ -266,3 +275,8 @@ button {
 
   /* Classic.css or Classic2.css or a new CSS file for background styles */
 
+  .dropdown-menu a.dropdown-item:hover {
+    background-color: #380101; /* 원하는 배경색으로 변경하세요 */
+  color: white; /* 텍스트 색상 변경 (선택 사항) */
+  }
+  

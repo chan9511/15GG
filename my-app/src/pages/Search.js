@@ -37,7 +37,6 @@ const Search = () => {
     MASTER: master_image,
     GRANDMASTER: grandmaster_image,
     CHALLENGER: challenger_image
-
   }
   
   // const rankImages = {
@@ -198,7 +197,7 @@ const Search = () => {
             backgroundColor: "#fff",
           }}
         >
-          <div className="table_summary">
+          <div className="table_summary" >
             <br></br>
             <div
               style={{
@@ -237,27 +236,27 @@ const Search = () => {
                     {" "}
                   </div>
                   <div
-                    style={{ top: "10px", left: "60px", position: "absolute" }}
+                    style={{ top: "10px", left: "75px", position: "absolute" }}
                   >
-                    {/* <img
-                      src={}
+                    <img
+                      src={`https://ddragon.leagueoflegends.com/cdn/13.19.1/img/profileicon/${playerData.profileIconId}.png`}
                       alt="프로필아이콘"
                       style={{
                         border: "1px",
                         width: "100px",
                         height: "128px;",
                       }} // 이미지의 테두리 스타일을 설정 (선택 사항)
-                    /> */}
+                    />
                   </div>
                     <div
                       div style={{ marginLeft: "250px" ,
-                        top: "10px",
+                        top: "35px",
                         left: "0px",
                         position: "absolute",
                       }}
                     >
-                      <p>프로필코드: {playerData.profileIconId}
-                      </p>
+                      
+                      
                       <p>소환사레벨: {playerData.summonerLevel}</p>
                       <p>소환사이름: {playerData.name}</p>
                     </div>
@@ -271,7 +270,7 @@ const Search = () => {
 
               {/* 전적 테이블 */}
               <div className="new-table">
-                <table className="table table-bordered">
+                <table className="table table-bordered new-table">
                   <thead>
                     <tr className="table">
                       <th scope="col" className="text-center">
