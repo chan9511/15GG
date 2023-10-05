@@ -208,6 +208,7 @@ button {
     background-color: #fff; /* 배경색 지정 */
     padding: 10px; /* 패딩 추가 */
     margin-left: 290px;
+    font-size: 15px;
   }
   
   /* 버튼 스타일 */
