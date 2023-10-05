@@ -4,7 +4,6 @@ import "./Search.css";
 import "./Classic.css";
 import "./Classic2.css";
 
-
 const Anal2 = () => {
   const [searchText1, setSearchText1] = useState("");
   const navigate = useNavigate();
@@ -17,13 +16,13 @@ const Anal2 = () => {
   };
   return (
     <div>
-      <div className="css-123">
-         칼바람 챔피언 분석
-         </div>
+      <div className="css-123">칼바람 챔피언 분석</div>
       <div class="input-table">
         <form
           onSubmit={submitFunc}
-          class="form-control me-2 d-flex search-form" role="search">
+          class="form-control me-2 d-flex search-form"
+          role="search"
+        >
           <input
             className="form-control"
             type="search"
@@ -33,7 +32,10 @@ const Anal2 = () => {
             aria-label="Search"
           />
           <Link
-           to={{ pathname: "/Anal2Search", state: { searchText: searchText1 } }}
+            to={{
+              pathname: "/Anal2Search",
+              state: { searchText: searchText1 },
+            }}
             class="btn btn-outline-success me-2"
             type="text"
             state={{ searchText1: searchText1 }}
@@ -42,20 +44,15 @@ const Anal2 = () => {
               color: "#fff",
               borderColor: "#6699ff",
               border: 0,
-              marginLeft: 10
+              marginLeft: 10,
             }}
           >
             {" "}
             Enter
           </Link>
-          
         </form>
       </div>
-    
-      
-      
     </div>
-    
   );
 };
 

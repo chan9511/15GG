@@ -14,6 +14,7 @@ import Anal2 from "./pages/Anal2";
 import Anal from "./pages/Anal";
 import AnalSearch from "./pages/AnalSearch";
 import Anal2Search from "./pages/Anal2Search";
+import TestTest from "./pages/TestTest"
 
 
 const App = () => {
@@ -35,6 +36,8 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/testtest" element={<TestTest />} />
+
       </Routes>
       
     </div>
