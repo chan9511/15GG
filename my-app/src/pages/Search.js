@@ -2,6 +2,18 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
 import "./Search.css";
+import unranked_image from "../img/unranked.png"
+import iron_image from "../img/iron.png"
+import bronze_image from "../img/bronze.png"
+import silver_image from "../img/silver.png"
+import gold_image from "../img/gold.png"
+import platinum_image from "../img/platinum.png"
+import emerald_image from "../img/emerald.png"
+import diamond_image from "../img/diamond.png"
+import master_image from "../img/master.png"
+import grandmaster_image from "../img/grandmaster.png"
+import challenger_image from "../img/challenger.png"
+
 
 const Search = () => {
   const [playerData, setPlayerData] = useState({});
@@ -10,25 +22,38 @@ const Search = () => {
   const [userMatch, setUserMatch] = useState([]);
   const API_KEY = "RGAPI-d9d920d1-34c1-4fee-ae05-f7d31572d99b";
   const location = useLocation();
-
-
   
   console.log(location);
+
+  const imagess = {
+    UNRANKED: unranked_image,
+    IRON: iron_image,
+    BRONZE: bronze_image,
+    SILVER: silver_image,
+    GOLD: gold_image,
+    PLATINUM: platinum_image,
+    EMERALD: emerald_image,
+    DIAMOND: diamond_image,
+    MASTER: master_image,
+    GRANDMASTER: grandmaster_image,
+    CHALLENGER: challenger_image
+
+  }
   
-  const rankImages = {
-    UNRANKED: `https://z.fow.kr/img/emblem/unranked.png`,
-    IRON: `https://z.fow.kr/img/emblem/iron.png`,
-    BRONZE: `https://z.fow.kr/img/emblem/bronze.png`,
-    SILVER: `https://z.fow.kr/img/emblem/sliver.png`,
-    GOLD: `https://z.fow.kr/img/emblem/gold.png`,
-    // PLATINUM: `https://z.fow.kr/img/emblem/platinum.png`,
-    PLATINUM: `emblem-platinum.p`,
-    EMERALD: `https://z.fow.kr/img/emblem/emerald.png`,
-    DIAMOND: `https://z.fow.kr/img/emblem/diamond.png`,
-    MASTER: `https://z.fow.kr/img/emblem/master.png`,
-    GRANDMASTER: `https://z.fow.kr/img/emblem/grandmaster.png`,
-    CHALLENGER:`https://z.fow.kr/img/emblem/challenger.png`,
-  };
+  // const rankImages = {
+  //   UNRANKED: `https://z.fow.kr/img/emblem/unranked.png`,
+  //   IRON: `https://z.fow.kr/img/emblem/iron.png`,
+  //   BRONZE: `https://z.fow.kr/img/emblem/bronze.png`,
+  //   SILVER: `https://z.fow.kr/img/emblem/sliver.png`,
+  //   GOLD: `https://z.fow.kr/img/emblem/gold.png`,
+  //   // PLATINUM: `https://z.fow.kr/img/emblem/platinum.png`,
+  //   PLATINUM: `emblem-platinum.p`,
+  //   EMERALD: `https://z.fow.kr/img/emblem/emerald.png`,
+  //   DIAMOND: `https://z.fow.kr/img/emblem/diamond.png`,
+  //   MASTER: `https://z.fow.kr/img/emblem/master.png`,
+  //   GRANDMASTER: `https://z.fow.kr/img/emblem/grandmaster.png`,
+  //   CHALLENGER:`https://z.fow.kr/img/emblem/challenger.png`,
+  // };
 
 
   useEffect(() => {
@@ -337,7 +362,7 @@ const Search = () => {
                     style={{ top: "40px", left: "60px", position: "absolute" }}
                   >
                     <img
-                      src={rankImages[soloRankData.tier]}
+                      src={imagess[soloRankData.tier]}
                       alt={`등급: ${soloRankData.tier}`}
                       style={{
                         border: "1px",
@@ -357,7 +382,7 @@ const Search = () => {
                     {" "}
                   </div>
 
-                  <div style={{ marginLeft: "250px" }}>
+                  <div style={{ marginLeft: "245px" }}>
                     <p>솔로랭크</p>
                     <p>
                       등급: {soloRankData.tier} {soloRankData.rank}
@@ -382,7 +407,7 @@ const Search = () => {
                     style={{ top: "40px", left: "60px", position: "absolute" }}
                   >
                     <img
-                      src={rankImages.UNRANKED}
+                      src={imagess["UNRANKED"]}
                       alt="UNRANKED"
                       width="128px"
                       height="128px"
@@ -419,10 +444,10 @@ const Search = () => {
                     style={{ top: "40px", left: "60px", position: "absolute" }}
                   >
                     <img
-                      src={rankImages[flexRankData.tier]}
+                      src={imagess[flexRankData.tier]}
                       alt={`등급: ${flexRankData.tier}`}
-                      width="120" // 이미지의 너비를 100픽셀로 변경
-                      height="120" // 이미지의 높이를 100픽셀로 변경
+                      width="128" // 이미지의 너비를 100픽셀로 변경
+                      height="128" // 이미지의 높이를 100픽셀로 변경
                       style={{ border: "0px" }} // 이미지의 테두리 스타일을 설정 (선택 사항)
                     />
                   </div>
@@ -451,10 +476,10 @@ const Search = () => {
                     style={{ top: "50px", left: "60px", position: "absolute" }}
                   >
                     <img
-                      src={rankImages.UNRANKED}
+                      src={imagess.UNRANKED}
                       alt="UNRANKED"
-                      width="120"
-                      height="120"
+                      width="128"
+                      height="128"
                       style={{ border: "0px" }}
                     />
                   </div>
