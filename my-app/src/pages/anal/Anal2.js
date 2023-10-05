@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "./Search.css";
-import "./Classic.css";
-import "./Classic2.css";
+import "../Search.css";
+import "../Classic.css";
+import "../Classic2.css";
 
 const Anal2 = () => {
   const [searchText1, setSearchText1] = useState("");
@@ -10,7 +10,7 @@ const Anal2 = () => {
 
   const submitFunc = (event) => {
     event.preventDefault();
-    navigate("/AramSearch", {
+    navigate("./Anal2Search", {
       state: { searchText1 },
     });
   };
@@ -33,7 +33,7 @@ const Anal2 = () => {
           />
           <Link
             to={{
-              pathname: "/Anal2Search",
+              pathname: "./Anal2Search",
               state: { searchText: searchText1 },
             }}
             class="btn btn-outline-success me-2"

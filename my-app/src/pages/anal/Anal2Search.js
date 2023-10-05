@@ -1,7 +1,7 @@
 import React from "react";
-import "./AnalTable.css";
+import "./style/AnalTable.css";
 
-const AnalSearch = () => {
+const Anal2Search = () => {
   return (
     <div>
       <div className="css-456">챔피언 정보</div>
@@ -15,10 +15,10 @@ const AnalSearch = () => {
         <div className="rune-right">시작아이템</div>
         <div className="rune-right">신발</div>
       </div>
-      <div className="skill-left">스킬트리</div>
-      <div className="item-build">아이템빌드</div>
+      <div className="skill-left">챔피언명 스킬트리</div>
+      <div className="item-build">챔피언명 아이템빌드</div>
     </div>
   );
 };
 
-export default AnalSearch;
+export default Anal2Search;
