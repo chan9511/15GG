@@ -141,6 +141,7 @@ const Search = () => {
                 matchLog[i].data.info.participants[j].deaths
               ).toFixed(2),
               img: `https://ddragon.leagueoflegends.com/cdn/13.19.1/img/champion/${matchLog[i].data.info.participants[j].championName}.png`,
+              
               gameMode: matchLog[i].data.info.gameMode,
             });
           }
@@ -152,6 +153,7 @@ const Search = () => {
       console.log(userDatas);
       console.log(userMatch); // 5개의 매치기록 (총10개)
       console.log(matchLog[1]);
+    
 
       ////////////////////////////////////////////////////
       const soloRankData = result2.data.find(

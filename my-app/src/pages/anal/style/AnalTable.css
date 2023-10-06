@@ -2,9 +2,9 @@
     display: flex;
     flex-direction: column; /* 세로 정렬로 변경 */
     align-items: left;
-    height: 128px;
-    width: 128px;
-    margin-left: 130px;
+    height: 80px;
+    width: 80px;
+    margin-left: 140px;
     border: 1px solid #b2adad;
     margin-top: 20px;
 }
@@ -18,8 +18,10 @@
 
 .champname {
     display: inline-block;
-    margin-left:160px;
-    margin-top: 30px;
+    
+    margin-top: 10px;
+    text-align: center;
+    
     font-size: 18px;
     white-space: nowrap; /* 텍스트가 한 줄에 나오도록 함 */
 }
@@ -42,7 +44,9 @@
     background: #fff;
 }
 
-.rune-right {
+
+
+.spell {
     margin-top: 20px;
     width: 30%;
     height: 120px;
@@ -51,6 +55,18 @@
     border: 1px solid #eee;
     margin-right:130px;
     background: #fff;
+}
+
+.spell-image {
+    margin-right: 10px;
+    width: 50px; 
+    height: 50px; 
+  }
+
+.cursor-image {
+    margin-right: 10px;
+    width: 25px; 
+    height: 25px;
 }
 
 .skill {
@@ -76,4 +92,11 @@
     height: 200px;
     margin-right: 130px;
     float: right
+}
+
+
+
+.custom-border {
+    border: 1px solid #eee;
+    border-top: 0px;
 }
