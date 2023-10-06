@@ -12,7 +12,17 @@ const AnalSearch = () => {
   const summonerspell =
     "http://ddragon.leagueoflegends.com/cdn/13.19.1/img/spell/SummonerFlash.png";
   const cursor = "https://s-lol-web.op.gg/images/icon/icon-arrow-right.svg";
+  const skillImageUrl =
+    "https://opgg-static.akamaized.net/meta/images/lol/spell/AkaliQ.png?image=q_auto,f_webp,w_64&v=1696570752446";
+    const skillImageUrl2 =
+    "https://opgg-static.akamaized.net/meta/images/lol/spell/AkaliW.png?image=q_auto,f_webp,w_64&v=1696570752446";
+    const skillImageUrl3 =
+    "https://opgg-static.akamaized.net/meta/images/lol/spell/AkaliE.png?image=q_auto,f_webp,w_64&v=1696570752446";
 
+
+
+
+    
   return (
     <div>
       <div className="title">협곡 챔피언 분석</div>
@@ -38,7 +48,6 @@ const AnalSearch = () => {
       <div>
         <div className="rune-left">
           룬페이지
-          <div className="rune-1">ㅎㅇ</div>
           <div>ㅎㅇㅎㅇ</div>
         </div>
 
@@ -89,17 +98,28 @@ const AnalSearch = () => {
         </div>
       </div>
 
+
+
+
       <div className="skill-left">
-        챔피언명 스킬 빌드
-        <div>gd</div>
+        <div className="small-title">챔피언명 추천 스킬</div>
+        <img src={skillImageUrl} alt="skillimg" className="spell-image" />
+        <div className="skill-name">Q</div>
+        <img src={cursor} alt="cursor" className="cursor-image" />{" "}
+        <img src={skillImageUrl2} alt="skillimg" className="spell-image" />
+        <div className="skill-name">W</div>
+        <img src={cursor} alt="cursor" className="cursor-image" />{" "}
+        <img src={skillImageUrl3} alt="skillimg" className="spell-image" />
+        <div className="skill-name">E</div>
+        <br></br>
       </div>
+
+
+
 
       <div className="item-build">
         챔피언명 아이템 빌드
-        
         <div className="item-sub">승률</div>
-        
-        
         <div>
           <img src={itembuild} alt="shoes" className="spell-image" />{" "}
           <img src={cursor} alt="cursor" className="cursor-image" />{" "}
