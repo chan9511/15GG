@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "../Search.css";
-import "../Classic.css";
-import "../Classic2.css";
+import "../search/style/Search.css";
+import "../tier/style/Classic.css";
+import "../tier/style/Classic2.css";
 
 const Anal2 = () => {
   const [searchText1, setSearchText1] = useState("");

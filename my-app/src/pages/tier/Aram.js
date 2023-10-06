@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "./Classic.css";
-import "./Classic2.css";
+import "./style/Classic.css";
+import "./style/Classic2.css";
 
 const Aram = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);

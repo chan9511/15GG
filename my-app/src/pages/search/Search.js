@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
-import "./Search.css";
-import unranked_image from "../img/unranked.png"
-import iron_image from "../img/iron.png"
-import bronze_image from "../img/bronze.png"
-import silver_image from "../img/silver.png"
-import gold_image from "../img/gold.png"
-import platinum_image from "../img/platinum.png"
-import emerald_image from "../img/emerald.png"
-import diamond_image from "../img/diamond.png"
-import master_image from "../img/master.png"
-import grandmaster_image from "../img/grandmaster.png"
-import challenger_image from "../img/challenger.png"
+import "./style/Search.css";
+import unranked_image from "./img/unranked.png"
+import iron_image from "./img/iron.png"
+import bronze_image from "./img/bronze.png"
+import silver_image from "./img/silver.png"
+import gold_image from "./img/gold.png"
+import platinum_image from "./img/platinum.png"
+import emerald_image from "./img/emerald.png"
+import diamond_image from "./img/diamond.png"
+import master_image from "./img/master.png"
+import grandmaster_image from "./img/grandmaster.png"
+import challenger_image from "./img/challenger.png"
 
 
 const Search = () => {

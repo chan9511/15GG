@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "./Searchbar.css";
+import "./style/Searchbar.css";
 
 const Searchbar = () => {
   const [searchText, setSearchText] = useState("");
@@ -8,7 +8,7 @@ const Searchbar = () => {
 
   const submitFunc = (event) => {
     event.preventDefault();
-    navigate("/search", {
+    navigate("/search/search", {
       state: { searchText },
     });
   };
@@ -31,7 +31,7 @@ const Searchbar = () => {
             aria-label="Search"
           />
           <Link
-            to={{ pathname: "/search", state: { searchText: searchText } }}
+            to={{ pathname: "/search/search", state: { searchText: searchText } }}
             class="btn btn-outline-success me-2"
             type="text"
             state={{ searchText: searchText }}

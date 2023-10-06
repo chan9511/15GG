@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import './Login.css';
+import '../login/style/Login.css';
 
 
 const Login = () => {
@@ -53,7 +53,7 @@ const Login = () => {
         
         홈페이지 이용이 처음이신가요?
         <br></br><br></br>
-        <Link to="/SignUp">
+        <Link to="/login/SignUp">
           <button
             type="submit"
             class="btn btn-primary"

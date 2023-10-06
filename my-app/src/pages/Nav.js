@@ -62,7 +62,7 @@ const Nav = () => {
         >
           <a
             className="nav-link dropdown-toggle"
-            href="/classic"
+            href="/tier/classic  "
             role="button"
           >
             챔피언 티어
@@ -73,19 +73,19 @@ const Nav = () => {
             style={{ backgroundColor: "#380101", color: "white" }}
           >
             <li>
-              <a className="dropdown-item" href="/classic">
+              <a className="dropdown-item" href="/tier/classic">
                 협곡 티어
               </a>
             </li>
             <li>
-              <a className="dropdown-item" href="/aram">
+              <a className="dropdown-item" href="/tier/aram">
                 칼바람 티어
               </a>
             </li>
           </ul>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/login">
+          <a className="nav-link" href="/login/login">
             로그인
           </a>
         </li>
