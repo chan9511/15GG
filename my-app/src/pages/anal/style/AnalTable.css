@@ -9,21 +9,87 @@
     margin-top: 20px;
 }
 
-.css-456 {
+.champname {
+    margin-top: 20px;
+    width: 50%;
+    
+    height: 100px;
+    margin-left: 130px; 
+    float: left /* 텍스트가 한 줄에 나오도록 함 */
+}
+
+
+.title {
     margin-left: 130px;
     font-size: 20px;
     color: #000000;
-    
-  }
+}
 
-.champname {
-    display: inline-block;
+.small-title {
+    padding:1px;
+}
+
+.spell-sub {
+    width: 50%; 
+    height: 30px;
+    float: right;
+    text-align: center; /* 텍스트 가운데 정렬 */
+    justify-content: right; /* 요소들을 세로로 가운데 정렬 */
+    display: flex;
+    margin-right: 20px;
     
-    margin-top: 10px;
-    text-align: center;
+}
+
+.item-sub {
+    width: 10%;
+    float: right;
+    text-align: center; /* 텍스트 가운데 정렬 */
+    justify-content: right; /* 요소들을 세로로 가운데 정렬 */
+    display: flex;
+    margin-right: 20px;
+}
+
+.item-rate {
     
-    font-size: 18px;
-    white-space: nowrap; /* 텍스트가 한 줄에 나오도록 함 */
+    
+    
+    float: right;
+    text-align: right; /* 텍스트 가운데 정렬 */
+    justify-content: right; /* 요소들을 세로로 가운데 정렬 */
+    display: flex;
+    margin-top: 15px;
+    margin-right: 20px;
+    
+    
+}
+
+.spell-rate {
+    width: 50%;
+    height: 40px;
+    float: right;
+    text-align: center; /* 텍스트 가운데 정렬 */
+    justify-content: right; /* 요소들을 세로로 가운데 정렬 */
+    display: flex;
+    margin-right: 20px;
+    
+}
+
+
+.champinfo,
+.winrate,
+.pickrate,
+.banrate {
+    width: 21%; 
+    height: 100px;
+    float: right;
+    text-align: center; /* 텍스트 가운데 정렬 */
+    justify-content: center; /* 요소들을 세로로 가운데 정렬 */
+    display: flex;
+    flex-direction: column; /* 요소들을 세로로 배치 */
+}
+
+.champinfo {
+    font-size: 20px;
 }
 
 .rune {
@@ -55,12 +121,19 @@
     border: 1px solid #eee;
     margin-right:130px;
     background: #fff;
+    padding: 10px;
+}
+
+.champ-image {
+    margin-right: 10px;
+    width: 100px; 
+    height: 100px; 
 }
 
 .spell-image {
     margin-right: 10px;
-    width: 50px; 
-    height: 50px; 
+    width: 40px; 
+    height: 40px; 
   }
 
 .cursor-image {
@@ -78,25 +151,29 @@
 
 .skill-left {
     margin-top: 20px;
-    width: 40%;
+    width: 50%;
     border: 1px solid #eee;
-    height: 200px;
+    height: 160px;
     margin-left: 130px;
     float: left
 }
 
 .item-build {
     margin-top: 20px;
-    width: 40%;
+    width: 30%;
     border: 1px solid #eee;
-    height: 200px;
+    height: 160px;
     margin-right: 130px;
+    padding: 10px;
     float: right
+    
+    
 }
 
-
-
-.custom-border {
+.item-bulid-right {
+    flex: 1;
     border: 1px solid #eee;
-    border-top: 0px;
 }
+
+
+

@@ -15,12 +15,24 @@ const AnalSearch = () => {
 
   return (
     <div>
-      <div className="css-456">챔피언 정보</div>
-      <div className="champimg">
-        <img src={championImageUrl} alt="Champion" /> 
-        <div className="champname">아칼리</div>
+      <div className="title">협곡 챔피언 분석</div>
+      <div className="champname">
+        <img src={championImageUrl} alt="champimg" className="champ-image" />
+
+        <div className="banrate">
+          밴율
+          <p>40%</p>
+        </div>
+        <div className="pickrate">
+          픽률
+          <p>60%</p>
+        </div>
+        <div className="winrate">
+          승률
+          <p>60%</p>
+        </div>
+        <div className="champinfo">아칼리(챔피언명)</div>
       </div>
-      
 
       <br></br>
       <div>
@@ -30,9 +42,14 @@ const AnalSearch = () => {
           <div>ㅎㅇㅎㅇ</div>
         </div>
 
-
         <div className="spell">
-          <div className="custom-border">소환사 주문</div>
+          <div className="small-title">
+            소환사 주문
+            <div className="spell-sub">승률</div>
+            <div className="spell-rate">60%</div>
+            <div className="spell-rate">60%</div>
+          </div>
+
           <img src={summonerspell} alt="spell" className="spell-image" />
           <img src={summonerspell} alt="spell" className="spell-image" />
           <div>
@@ -42,7 +59,13 @@ const AnalSearch = () => {
         </div>
 
         <div className="spell">
-          <div className="custom-border">시작 아이템</div>
+          <div>
+            시작 아이템
+            <div className="spell-sub">승률</div>
+            <div className="spell-rate">60%</div>
+            <div className="spell-rate">60%</div>
+          </div>
+
           <img src={item} alt="shoes" className="spell-image" />
           <img src={item} alt="shoes" className="spell-image" />
           <div>
@@ -52,7 +75,12 @@ const AnalSearch = () => {
         </div>
 
         <div className="spell">
-          <div className="custom-border">신발</div>
+          <div>
+            신발
+            <div className="spell-sub">승률</div>
+            <div className="spell-rate">60%</div>
+            <div className="spell-rate">60%</div>
+          </div>
           <img src={item} alt="shoes" className="spell-image" />
 
           <div>
@@ -61,16 +89,24 @@ const AnalSearch = () => {
         </div>
       </div>
 
-      <div className="skill-left">챔피언명 스킬트리</div>
+      <div className="skill-left">
+        챔피언명 스킬 빌드
+        <div>gd</div>
+      </div>
 
       <div className="item-build">
-        챔피언명 아이템빌드
+        챔피언명 아이템 빌드
+        
+        <div className="item-sub">승률</div>
+        
+        
         <div>
           <img src={itembuild} alt="shoes" className="spell-image" />{" "}
           <img src={cursor} alt="cursor" className="cursor-image" />{" "}
           <img src={itembuild} alt="shoes" className="spell-image" />{" "}
           <img src={cursor} alt="cursor" className="cursor-image" />{" "}
           <img src={itembuild} alt="shoes" className="spell-image" />
+          <div className="item-rate">60%</div>
         </div>
         <div>
           <img src={itembuild} alt="shoes" className="spell-image" />{" "}
@@ -78,6 +114,7 @@ const AnalSearch = () => {
           <img src={itembuild} alt="shoes" className="spell-image" />{" "}
           <img src={cursor} alt="cursor" className="cursor-image" />{" "}
           <img src={itembuild} alt="shoes" className="spell-image" />
+          <div className="item-rate">60%</div>
         </div>
         <div>
           <img src={itembuild} alt="shoes" className="spell-image" />{" "}
@@ -85,6 +122,7 @@ const AnalSearch = () => {
           <img src={itembuild} alt="shoes" className="spell-image" />{" "}
           <img src={cursor} alt="cursor" className="cursor-image" />{" "}
           <img src={itembuild} alt="shoes" className="spell-image" />
+          <div className="item-rate">60%</div>
         </div>
       </div>
     </div>
