@@ -1,4 +1,5 @@
 import React from "react";
+import Anal2 from "./Anal2";
 import "./style/AnalTable.css";
 
 const Anal2Search = () => {
@@ -24,8 +25,10 @@ const Anal2Search = () => {
 
     
   return (
+    
     <div>
-      <div className="title">칼바람 챔피언 분석</div>
+      <Anal2 />
+      
       <div className="champname">
         <img src={championImageUrl} alt="champimg" className="champ-image" />
 

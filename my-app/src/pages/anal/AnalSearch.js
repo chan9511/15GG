@@ -1,4 +1,5 @@
 import React from "react";
+import Anal from "./Anal";
 import "./style/AnalTable.css";
 
 const AnalSearch = () => {
@@ -14,18 +15,17 @@ const AnalSearch = () => {
   const cursor = "https://s-lol-web.op.gg/images/icon/icon-arrow-right.svg";
   const skillImageUrl =
     "https://opgg-static.akamaized.net/meta/images/lol/spell/AkaliQ.png?image=q_auto,f_webp,w_64&v=1696570752446";
-    const skillImageUrl2 =
+  const skillImageUrl2 =
     "https://opgg-static.akamaized.net/meta/images/lol/spell/AkaliW.png?image=q_auto,f_webp,w_64&v=1696570752446";
-    const skillImageUrl3 =
+  const skillImageUrl3 =
     "https://opgg-static.akamaized.net/meta/images/lol/spell/AkaliE.png?image=q_auto,f_webp,w_64&v=1696570752446";
 
-
-
-
-    
   return (
+
     <div>
-      <div className="title">협곡 챔피언 분석</div>
+      <Anal />
+      
+      
       <div className="champname">
         <img src={championImageUrl} alt="champimg" className="champ-image" />
 
@@ -98,9 +98,6 @@ const AnalSearch = () => {
         </div>
       </div>
 
-
-
-
       <div className="skill-left">
         <div className="small-title">챔피언명 추천 스킬</div>
         <img src={skillImageUrl} alt="skillimg" className="spell-image" />
@@ -113,9 +110,6 @@ const AnalSearch = () => {
         <div className="skill-name">E</div>
         <br></br>
       </div>
-
-
-
 
       <div className="item-build">
         챔피언명 아이템 빌드

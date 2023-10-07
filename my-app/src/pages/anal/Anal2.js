@@ -15,7 +15,7 @@ const Anal2 = () => {
     });
   };
   return (
-    <div>
+    <div className="anal-title">
       <div className="css-123">칼바람 챔피언 분석</div>
       <div class="input-table">
         <form

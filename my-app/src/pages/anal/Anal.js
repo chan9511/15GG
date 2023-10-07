@@ -15,7 +15,7 @@ const Anal = () => {
     });
   };
   return (
-    <div>
+    <div className="anal-title">
       <div className="css-123">협곡 챔피언 분석</div>
       <div class="input-table">
         <form

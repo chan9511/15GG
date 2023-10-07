@@ -12,12 +12,12 @@
 
 .champ-image {
     border-radius: 50%;
+    
 }
 
 .champname {
     margin-top: 20px;
     width: 50%;
-    
     height: 100px;
     margin-left: 130px; 
     float: left /* 텍스트가 한 줄에 나오도록 함 */
@@ -211,3 +211,6 @@
     white-space: nowrap;
 }
 
+.anal-title {
+    margin-left: 130px;
+}
