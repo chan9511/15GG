@@ -20,41 +20,37 @@ const ClassicAn = () => {
 
   return (
     <div>
-        <main>
-      <div className="classic-table">
-        <img src={championImageUrl} alt="champimg" className="champ-image" />
+      <main>
+        <div className="classic-table">
+          <img src={championImageUrl} alt="champimg" className="champ-image" />
 
-        <div className="champ-name">아칼리(챔피언명)</div>
-    </div>
+          <div className="champ-name">아칼리(챔피언명)</div>
+        </div>
 
         <div className="rate-table">
           <div className="rate">승률</div>
-          <div>50%</div>
-        </div>
 
-        <div className="rate-table">
           <div className="rate">픽률</div>
-          <div>50%</div>
-        </div>
 
-        <div className="rate-table">
           <div className="rate">밴율</div>
-          <div className="percent">50%</div>
+        </div>
+        <div className="rate-table">
+          <div className="percent-table">50%</div>
+
+          <div className="percent-table">50%</div>
+
+          <div className="percent-table">50%</div>
         </div>
 
         <div className="rune-table"></div>
-      
 
-      <div className="rune-table">
-        <div className="rune-sub">gd</div>
-        
-      </div>
-      <div className="item-table">gd</div>
+        <div className="rune-table">
+          <div className="rune-sub">gd</div>
+        </div>
+        <div className="item-table">gd</div>
       </main>
 
-      <aside>
-        
-      </aside>
+      <aside></aside>
     </div>
   );
 };
