@@ -15,6 +15,7 @@ const Anal = () => {
     });
   };
   return (
+    
     <div className="anal-title">
       <div className="css-123">협곡 챔피언 분석</div>
       <div class="input-table">
@@ -33,7 +34,7 @@ const Anal = () => {
           />
           <Link
             to={{
-              pathname: "./AnalSearch",
+              pathname: "./ClassicAn",
               state: { searchText: searchText1 },
             }}
             class="btn btn-outline-success me-2"
@@ -52,6 +53,7 @@ const Anal = () => {
           </Link>
         </form>
       </div>
+      
     </div>
   );
 };

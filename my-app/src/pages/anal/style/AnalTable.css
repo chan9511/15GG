@@ -99,12 +99,7 @@
     font-size: 20px;
 }
 
-.rune {
-    
-    width:100%;
-    height:300px;
-    border:1px solid #000;
-}
+
 
 .rune-left {
     margin-top: 20px;
@@ -213,4 +208,22 @@
 
 .anal-title {
     margin-left: 130px;
+}
+
+.rune-title {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    max-width: 100%;
+    justify-content: space-between;
+    display: flex;
+    height: 100px;
+}
+
+.main-rune {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    flex: 1 1 0%;
+    justify-content: center;
+    display: flex;
+
 }

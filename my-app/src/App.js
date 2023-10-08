@@ -12,6 +12,7 @@ import Nav from "./pages/Nav";
 import Search from "./pages/search/Search";
 import Anal2 from "./pages/anal/Anal2";
 import Anal from "./pages/anal/Anal";
+import ClassicAn from "./pages/anal/ClassicAn";
 import AnalSearch from "./pages/anal/AnalSearch";
 import Anal2Search from "./pages/anal/Anal2Search";
 import TestTest from "./pages/TestTest";
@@ -32,9 +33,11 @@ const App = () => {
         <Route path="/anal" element={<Anal />} />
         <Route path="/anal/analsearch" element={<AnalSearch />} />
         <Route path="/anal2/anal2search" element={<Anal2Search />} />
+        <Route path="/anal/classican" element={<ClassicAn />} />
         <Route path="/login/login" element={<Login />} />
         <Route path="/login/signup" element={<SignUp />} />
         <Route path="/search/search" element={<Search />} />
+
         <Route path="/testtest" element={<TestTest />} />
       </Routes>
     </div>

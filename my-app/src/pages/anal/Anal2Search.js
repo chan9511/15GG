@@ -1,9 +1,8 @@
 import React from "react";
-import Anal2 from "./Anal2";
 import "./style/AnalTable.css";
 
 const Anal2Search = () => {
-  // Define the URL for the champion image
+  
   const championImageUrl =
     "https://ddragon.leagueoflegends.com/cdn/13.19.1/img/champion/Akali.png";
   const item =
@@ -27,7 +26,7 @@ const Anal2Search = () => {
   return (
     
     <div>
-      <Anal2 />
+      
       
       <div className="champname">
         <img src={championImageUrl} alt="champimg" className="champ-image" />

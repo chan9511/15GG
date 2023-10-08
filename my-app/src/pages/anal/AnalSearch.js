@@ -47,8 +47,10 @@ const AnalSearch = () => {
       <br></br>
       <div>
         <div className="rune-left">
-          룬페이지 이미지 맵핑 / 네비바 생성
-          <div>ㅎㅇㅎㅇ</div>
+          아칼리 룬
+          <div className="rune-title">gd</div>
+            <div className="main-run">gd</div>
+            <div className="main-run">gd</div>
         </div>
 
         <div className="spell">
