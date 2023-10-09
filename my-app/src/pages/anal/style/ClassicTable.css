@@ -48,31 +48,36 @@
     display: flex;
 }
 
-.rune-table-bottom {
-    margin-left: 10%;
-    margin-top: 5%;
-    width: 80%;
-}
+
 
 .runetable-left {
     width: 70%;
+    font-size: 14px;
     padding: 10px;
-    border: 1px solid #797878;
+    border: 1px solid #cdcdcd;
     border-radius: 10px;
 }
 
 .runetable-right {
     width: 30%;
-    float: right;
     padding: 10px;
-    border: 1px solid #797878;
+    border: 1px solid #cdcdcd;
     border-radius: 10px;
-    margin-left: 8px;
+    margin-left: 8px; 
     font-size: 14px;
-    height: 10%;
+    height: auto;
+}
+
+.runetable-1 {
+    width: 100%;
+    padding: 10px;
     
+    border-bottom: 1px solid #cdcdcd ;
+    
+    font-size: 14px;
     
 }
+
 
 .skill-tree {
     padding : 10px;

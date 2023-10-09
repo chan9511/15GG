@@ -45,45 +45,49 @@ const ClassicAn = () => {
         <div className="rune-table">
           <div className="runetable-left">
             룬페이지
-            <div>gdgdgd</div>
-            <div>gdgdgd</div>
-            <div>gdgdgd</div>
-            <div>gdgdgd</div>
-            <div>gdgdgd</div>
-            <div>gdgdgd</div>
-            <div>gdgdgd</div>
-            <div>gdgdgd</div>
-          </div>
-          
-          <div className="runetable-right">
-            소환사 주문
-            <div>
-              <img src={summonerspell} alt="spell" className="image-all" />
-              <img src={summonerspell} alt="spell" className="image-all" />
-              <div className="win-rate">승률:60%</div>
-            </div>
-          </div>
-          
-
-          <div className="runetable-right">
-            시작 아이템
-            <div>
-              <img src={summonerspell} alt="spell" className="image-all" />
-              <img src={summonerspell} alt="spell" className="image-all" />
-              <div className="win-rate">승률:60%</div>
-            </div>
             
           </div>
-          
+
+          <div className="runetable-right">
+            <div className="runetable-1">
+              소환사 주문
+              <div>
+                <img src={summonerspell} alt="spell" className="image-all" />
+                <img src={summonerspell} alt="spell" className="image-all" />
+                <div className="win-rate">승률:60%</div>
+              </div>
+              
+            </div>
+            <div className="runetable-1">
+              시작 아이템
+              <div>
+                <img src={summonerspell} alt="spell" className="image-all" />
+                <img src={summonerspell} alt="spell" className="image-all" />
+                <div className="win-rate">승률:60%</div>
+              </div>
+              
+            </div>
+            <div className="runetable-1">
+              신발
+              <div>
+                <img src={summonerspell} alt="spell" className="image-all" />
+                <img src={summonerspell} alt="spell" className="image-all" />
+                <div className="win-rate">승률:60%</div>
+              </div>
+              
+            </div>
+            <div className="runetable-1">
+              메인 아이템 빌드
+              <div>
+                <img src={summonerspell} alt="spell" className="image-all" />
+                <img src={summonerspell} alt="spell" className="image-all" />
+                <div className="win-rate">승률:60%</div>
+              </div>
+              
+            </div>
+          </div>
         </div>
-
-        <div>ㅎㅇ</div>
-        
-
-        
       </main>
-
-      
     </div>
   );
 };
