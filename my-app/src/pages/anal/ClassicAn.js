@@ -4,19 +4,19 @@ import "./style/ClassicTable.css";
 const ClassicAn = () => {
   const championImageUrl =
     "https://ddragon.leagueoflegends.com/cdn/13.19.1/img/champion/Akali.png";
-  //   const item =
-  //     "http://ddragon.leagueoflegends.com/cdn/13.19.1/img/item/1001.png";
-  //   const itembuild =
-  //     "http://ddragon.leagueoflegends.com/cdn/13.19.1/img/item/3003.png";
+  const item =
+    "http://ddragon.leagueoflegends.com/cdn/13.19.1/img/item/1001.png";
+  const itembuild =
+    "http://ddragon.leagueoflegends.com/cdn/13.19.1/img/item/3003.png";
   const summonerspell =
     "http://ddragon.leagueoflegends.com/cdn/13.19.1/img/spell/SummonerFlash.png";
-  //   const cursor = "https://s-lol-web.op.gg/images/icon/icon-arrow-right.svg";
-  //   const skillImageUrl =
-  //     "https://opgg-static.akamaized.net/meta/images/lol/spell/AkaliQ.png?image=q_auto,f_webp,w_64&v=1696570752446";
-  //   const skillImageUrl2 =
-  //     "https://opgg-static.akamaized.net/meta/images/lol/spell/AkaliW.png?image=q_auto,f_webp,w_64&v=1696570752446";
-  //   const skillImageUrl3 =
-  //     "https://opgg-static.akamaized.net/meta/images/lol/spell/AkaliE.png?image=q_auto,f_webp,w_64&v=1696570752446";
+  const cursor = "https://s-lol-web.op.gg/images/icon/icon-arrow-right.svg";
+    const skillImageUrl =
+      "https://opgg-static.akamaized.net/meta/images/lol/spell/AkaliQ.png?image=q_auto,f_webp,w_64&v=1696570752446";
+    const skillImageUrl2 =
+      "https://opgg-static.akamaized.net/meta/images/lol/spell/AkaliW.png?image=q_auto,f_webp,w_64&v=1696570752446";
+    const skillImageUrl3 =
+      "https://opgg-static.akamaized.net/meta/images/lol/spell/AkaliE.png?image=q_auto,f_webp,w_64&v=1696570752446";
 
   return (
     <div>
@@ -34,6 +34,7 @@ const ClassicAn = () => {
 
           <div className="rate">밴율</div>
         </div>
+        
         <div className="rate-table">
           <div className="percent-table">50%</div>
 
@@ -41,11 +42,102 @@ const ClassicAn = () => {
 
           <div className="percent-table">50%</div>
         </div>
+        
+        <div className="rate-table">
+          <div className="champ-name">스킬트리</div>
+          
+        </div>
+        <div className="rate-table">
+        <img src={skillImageUrl} alt="champimg" className="image-all" />
+        <img src={cursor} alt="champimg" className="image-all" />
+        <img src={skillImageUrl3} alt="champimg" className="image-all" />
+        <img src={cursor} alt="champimg" className="image-all" />
+        <img src={skillImageUrl2} alt="champimg" className="image-all" />
+        
+        </div>
+
+        <div className="rate-table">
+        <div className="skill-tree123">Q</div>
+        <img src={cursor} alt="champimg" className="image-all" />
+        <div className="skill-tree123">E</div>
+        <img src={cursor} alt="champimg" className="image-all" />
+        <div className="skill-tree123">W</div>
+        </div>
+        
+
+        
 
         <div className="rune-table">
           <div className="runetable-left">
-            룬페이지
-            
+            <div>룬페이지</div>
+            <div className="rune-page">
+              <div className="rune-page-perk1">
+                룬1
+                <div className="rune-row-top">
+                  <img src={summonerspell} alt="rune" className="rune-image" />
+                </div>
+                <div className="rune-row">
+                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={summonerspell} alt="rune" className="rune-image" />
+                </div>
+                <div className="rune-row">
+                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={summonerspell} alt="rune" className="rune-image" />
+                </div>
+                <div className="rune-row">
+                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={summonerspell} alt="rune" className="rune-image" />
+                </div>
+                <div className="rune-row">
+                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={summonerspell} alt="rune" className="rune-image" />
+                </div>
+              </div>
+              <div className="rune-page-perk1">
+                룬2
+                <div className="rune-row-top2">
+                  <img src={summonerspell} alt="rune" className="rune-image" />
+                </div>
+                <div className="rune-row">
+                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={summonerspell} alt="rune" className="rune-image" />
+                </div>
+                <div className="rune-row">
+                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={summonerspell} alt="rune" className="rune-image" />
+                </div>
+                <div className="rune-row">
+                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={summonerspell} alt="rune" className="rune-image" />
+                </div>
+              </div>
+
+              <div className="rune-page-perk1-end">
+                룬3
+                <div className="rune-row-top3">
+                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={summonerspell} alt="rune" className="rune-image" />
+                </div>
+                <div className="rune-row">
+                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={summonerspell} alt="rune" className="rune-image" />
+                </div>
+                <div className="rune-row">
+                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={summonerspell} alt="rune" className="rune-image" />
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="runetable-right">
@@ -54,39 +146,39 @@ const ClassicAn = () => {
               <div>
                 <img src={summonerspell} alt="spell" className="image-all" />
                 <img src={summonerspell} alt="spell" className="image-all" />
+
                 <div className="win-rate">승률:60%</div>
               </div>
-              
             </div>
             <div className="runetable-1">
               시작 아이템
               <div>
-                <img src={summonerspell} alt="spell" className="image-all" />
-                <img src={summonerspell} alt="spell" className="image-all" />
+                <img src={item} alt="shoes" className="image-all" />
+                <img src={item} alt="shoes" className="image-all" />
+
                 <div className="win-rate">승률:60%</div>
               </div>
-              
             </div>
             <div className="runetable-1">
               신발
               <div>
-                <img src={summonerspell} alt="spell" className="image-all" />
-                <img src={summonerspell} alt="spell" className="image-all" />
+                <img src={item} alt="shoes" className="image-all" />
+
                 <div className="win-rate">승률:60%</div>
               </div>
-              
             </div>
-            <div className="runetable-1">
+            <div className="runetable-end">
               메인 아이템 빌드
               <div>
-                <img src={summonerspell} alt="spell" className="image-all" />
-                <img src={summonerspell} alt="spell" className="image-all" />
+                <img src={itembuild} alt="shoes" className="image-all" />
+                <img src={cursor} alt="cursor" className="image-all" />
+                <img src={itembuild} alt="shoes" className="image-all" />
                 <div className="win-rate">승률:60%</div>
               </div>
-              
             </div>
           </div>
         </div>
+        
       </main>
     </div>
   );

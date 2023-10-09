@@ -43,20 +43,78 @@
 
 .rune-table {
     margin-left: 10%;
-    margin-top: 5%;
+    margin-top: 15px;
     width: 80%;
     display: flex;
 }
 
 
-
 .runetable-left {
     width: 70%;
-    font-size: 14px;
     padding: 10px;
     border: 1px solid #cdcdcd;
     border-radius: 10px;
 }
+
+.rune-page {
+    width: 100%;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    text-align: center; 
+    
+    
+    
+}
+.rune-page-perk1 {
+    font-size: 10px;
+    padding: 10px;
+    width: 33%;
+    border-right: 1px solid #cdcdcd;
+    
+}
+
+.rune-page-perk1-end {
+    font-size: 10px;
+    padding: 10px;
+    width: 33%;
+    
+    
+    height: auto;
+}
+
+.rune-row-top {
+    display: flex;
+    width: 100%;
+    margin-top: 5%;
+    justify-content: center; 
+    align-items: center;
+}
+
+.rune-row-top2 {
+    display: flex;
+    width: 100%;
+    margin-top: 26%;
+    justify-content: center; 
+    align-items: center;
+}
+
+.rune-row-top3 {
+    display: flex;
+    width: 100%;
+    margin-top: 47%;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.rune-row {
+    display: flex;
+    width: 100%;
+    margin-top: 5%;
+    justify-content: space-between; 
+    align-items: center;
+}
+
 
 .runetable-right {
     width: 30%;
@@ -73,7 +131,13 @@
     padding: 10px;
     
     border-bottom: 1px solid #cdcdcd ;
+    font-size: 14px;
     
+}
+
+.runetable-end {
+    width: 100%;
+    padding: 10px;
     font-size: 14px;
     
 }
@@ -93,6 +157,15 @@
     border-radius: 20%;
   }
 
+.rune-image {
+    padding: 1px;
+    width: 40px; 
+    height: 40px; 
+    border-radius: 20%;
+    text-align: center;
+    border-radius: 50%;
+}
+
 .win-rate {
     float: right;
     text-align: center; 
@@ -101,3 +174,27 @@
     margin-top:10px;
 }
 
+.skill-tree123 {
+    
+    min-width: 40px;
+    min-height: 40px;
+    background: rgba(32, 45, 55, 0.9);
+    color: #0093FF!important;
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    font-size: 11px!important;
+    border-radius: 4px;
+    font-family: "Roboto",sans-serif;
+    white-space: nowrap;
+    
+}
