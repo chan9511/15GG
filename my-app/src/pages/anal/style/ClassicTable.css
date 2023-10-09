@@ -26,18 +26,12 @@
     width: 33%;
 }
 
-
-.rune-table {
-    margin-left: 10%;
-    margin-top: 5%;
-    width: 50%;
-    display: flex;
-}
-
 .item-table {
     float:right;
     margin-right: 10%;
     border: 1px solid #000000;
+    display: flex;
+    
 }
 
 .percent-table {
@@ -46,3 +40,59 @@
     font-size: 14px;
     font-weight: bold;
 }
+
+.rune-table {
+    margin-left: 10%;
+    margin-top: 5%;
+    width: 80%;
+    display: flex;
+}
+
+.rune-table-bottom {
+    margin-left: 10%;
+    margin-top: 5%;
+    width: 80%;
+}
+
+.runetable-left {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #797878;
+    border-radius: 10px;
+}
+
+.runetable-right {
+    width: 30%;
+    float: right;
+    padding: 10px;
+    border: 1px solid #797878;
+    border-radius: 10px;
+    margin-left: 8px;
+    font-size: 14px;
+    height: 10%;
+    
+    
+}
+
+.skill-tree {
+    padding : 10px;
+    border: 1px solid #797878;
+    border-radius: 10px;
+    width: 70%;
+}
+
+.image-all {
+    padding: 1px;
+    width: 40px; 
+    height: 40px; 
+    border-radius: 20%;
+  }
+
+.win-rate {
+    float: right;
+    text-align: center; 
+    align-items: center;
+    
+    margin-top:10px;
+}
+
