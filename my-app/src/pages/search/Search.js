@@ -54,13 +54,13 @@ const Search = () => {
   //   CHALLENGER:`https://z.fow.kr/img/emblem/challenger.png`,
   // };
 
-
+  // Searchbar에서 입력된 input값 받아오기.
   useEffect(() => {
     searchForPlayer(location.state.searchText);
   }, [location.state.searchText]);
 
   
-
+  // 받아온 input값을 ex)인형이면 -> 인 형 으로 변환하기.
   const searchForPlayer = async (searchText) => {
     try {
       const modifiedSearchText =
@@ -69,7 +69,7 @@ const Search = () => {
           : searchText;
       // 두글자만 들어오면 중간에 띄어쓰기 돼서 검색이 되게끔.
 
-
+      // api에 수정된 텍스트 넣기.
       var summonerV4 =
         "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/" +
         modifiedSearchText +

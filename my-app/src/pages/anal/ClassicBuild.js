@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import "../search/style/Search.css";
 import "../tier/style/Classic.css";
 import "../tier/style/Classic2.css";
@@ -55,10 +55,12 @@ const ClassicBuild = () => {
               placeholder="챔피언명 검색"
               aria-label="Search"
             />
-            <button
+            <Link
+            to={{ pathname: "/classicbuild", state: { searchText1: searchText1 } }}
               id="enterButton"
               className="btn btn-outline-success me-2"
               type="button"
+              state={{ searchText1: searchText1 }}
               onClick={toggleClassicAn}
               onMouseEnter={handleButtonMouseEnter}
               onMouseLeave={handleButtonMouseLeave}
@@ -72,7 +74,7 @@ const ClassicBuild = () => {
             >
               {" "}
               Enter
-            </button>
+            </Link>
           </form>
         </div>
       </div>
