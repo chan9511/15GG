@@ -17,13 +17,17 @@ const Aram_Search = () => {
     "https://opgg-static.akamaized.net/meta/images/lol/spell/AkaliW.png?image=q_auto,f_webp,w_64&v=1696570752446";
   const skillImageUrl3 =
     "https://opgg-static.akamaized.net/meta/images/lol/spell/AkaliE.png?image=q_auto,f_webp,w_64&v=1696570752446";
+  const perkFirst =
+    "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7201_Precision.png"
+  const perkSecond =
+    "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/Conqueror/Conqueror.png"
 
   return (
     <div>
       <main className="main-123">
         <div className="classic-table">
           <img src={championImageUrl} alt="champimg" className="champ-image" />
-
+          
           <div className="champ-name">아칼리(챔피언명)</div>
         </div>
 
@@ -31,16 +35,20 @@ const Aram_Search = () => {
           <div className="rate">승률</div>
 
           <div className="rate">픽률</div>
+
+          
         </div>
 
         <div className="rate-table">
           <div className="percent-table">50%</div>
 
           <div className="percent-table">50%</div>
+
+          
         </div>
 
         <div className="rate-table">
-          <div className="champ-name">스킬트리</div>
+          <div className="skilltreename">스킬트리</div>
         </div>
         <div className="rate-table">
           <img src={skillImageUrl} alt="champimg" className="image-all" />
@@ -60,38 +68,40 @@ const Aram_Search = () => {
 
         <div className="rune-table">
           <div className="runetable-left">
-            <div>룬페이지</div>
+            <div className="rune-name">룬페이지</div>
             <div className="rune-page">
+              
               <div className="rune-page-perk1">
-                룬1
+                
                 <div className="rune-row-top">
-                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
+                  <img src={perkFirst} alt="rune" className="rune-image" />
                 </div>
                 <div className="rune-row">
                   <img src={summonerspell} alt="rune" className="disable-rune-image" />
                   <img src={summonerspell} alt="rune" className="disable-rune-image" />
                   <img src={summonerspell} alt="rune" className="disable-rune-image" />
+                  <img src={perkSecond} alt="rune" className="rune-image" />
                 </div>
                 <div className="rune-row">
                   <img src={summonerspell} alt="rune" className="disable-rune-image" />
                   <img src={summonerspell} alt="rune" className="disable-rune-image" />
-                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
+                  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/PresenceOfMind/PresenceOfMind.png" alt="rune" className="rune-image" />
                 </div>
                 <div className="rune-row">
                   <img src={summonerspell} alt="rune" className="disable-rune-image" />
-                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
+                  <img src={summonerspell} alt="rune" className="rune-image" />
                   <img src={summonerspell} alt="rune" className="disable-rune-image" />
                 </div>
                 <div className="rune-row">
-                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
+                  <img src={summonerspell} alt="rune" className="rune-image" />
                   <img src={summonerspell} alt="rune" className="disable-rune-image" />
                   <img src={summonerspell} alt="rune" className="disable-rune-image" />
                 </div>
               </div>
               <div className="rune-page-perk1">
-                룬2
+                
                 <div className="rune-row-top2">
-                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
+                  <img src={summonerspell} alt="rune" className="rune-image" />
                 </div>
                 <div className="rune-row">
                   <img src={summonerspell} alt="rune" className="disable-rune-image" />
@@ -100,18 +110,18 @@ const Aram_Search = () => {
                 </div>
                 <div className="rune-row">
                   <img src={summonerspell} alt="rune" className="disable-rune-image" />
-                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
+                  <img src={summonerspell} alt="rune" className="rune-image" />
                   <img src={summonerspell} alt="rune" className="disable-rune-image" />
                 </div>
                 <div className="rune-row">
-                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
+                  <img src={summonerspell} alt="rune" className="rune-image" />
                   <img src={summonerspell} alt="rune" className="disable-rune-image" />
                   <img src={summonerspell} alt="rune" className="disable-rune-image" />
                 </div>
               </div>
 
               <div className="rune-page-perk1-end">
-                룬3
+                
                 <div className="rune-row-top3">
                   <img src={summonerspell} alt="rune" className="disable-rune-image" />
                   <img src={summonerspell} alt="rune" className="disable-rune-image" />

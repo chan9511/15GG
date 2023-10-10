@@ -17,9 +17,24 @@ const ClassicBuild = () => {
     });
   };
 
-  // ClassicAn 컴포넌트를 토글하는 함수
   const toggleClassicAn = () => {
     setShowClassic_Search(!showClassic_Search);
+  };
+
+  const handleButtonMouseEnter = () => {
+    const button = document.getElementById("enterButton");
+    if (button) {
+      button.style.backgroundColor = "#fff";
+      button.style.color = "#000";
+    }
+  };
+
+  const handleButtonMouseLeave = () => {
+    const button = document.getElementById("enterButton");
+    if (button) {
+      button.style.backgroundColor = "#970000";
+      button.style.color = "#fff";
+    }
   };
 
   return (
@@ -41,9 +56,12 @@ const ClassicBuild = () => {
               aria-label="Search"
             />
             <button
+              id="enterButton"
               className="btn btn-outline-success me-2"
-              type="button" // Enter 버튼의 형식을 버튼으로 변경
-              onClick={toggleClassicAn} // ClassicAn 컴포넌트를 토글하는 함수를 호출
+              type="button"
+              onClick={toggleClassicAn}
+              onMouseEnter={handleButtonMouseEnter}
+              onMouseLeave={handleButtonMouseLeave}
               style={{
                 backgroundColor: "#970000",
                 color: "#fff",
@@ -58,7 +76,6 @@ const ClassicBuild = () => {
           </form>
         </div>
       </div>
-      {/* showClassicAn 상태에 따라 ClassicAn 컴포넌트를 렌더링 */}
 
       {showClassic_Search && <Classic_Search />}
     </div>

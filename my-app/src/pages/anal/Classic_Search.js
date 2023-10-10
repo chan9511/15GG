@@ -27,7 +27,7 @@ const Classic_Search = () => {
       <main className="main-123">
         <div className="classic-table">
           <img src={championImageUrl} alt="champimg" className="champ-image" />
-
+          
           <div className="champ-name">아칼리(챔피언명)</div>
         </div>
 
@@ -48,7 +48,7 @@ const Classic_Search = () => {
         </div>
 
         <div className="rate-table">
-          <div className="champ-name">스킬트리</div>
+          <div className="skilltreename">스킬트리</div>
         </div>
         <div className="rate-table">
           <img src={skillImageUrl} alt="champimg" className="image-all" />
@@ -68,10 +68,11 @@ const Classic_Search = () => {
 
         <div className="rune-table">
           <div className="runetable-left">
-            <div>룬페이지</div>
+            <div className="rune-name">룬페이지</div>
             <div className="rune-page">
+              
               <div className="rune-page-perk1">
-                룬1
+                
                 <div className="rune-row-top">
                   <img src={perkFirst} alt="rune" className="rune-image" />
                 </div>
@@ -98,7 +99,7 @@ const Classic_Search = () => {
                 </div>
               </div>
               <div className="rune-page-perk1">
-                룬2
+                
                 <div className="rune-row-top2">
                   <img src={summonerspell} alt="rune" className="rune-image" />
                 </div>
@@ -120,7 +121,7 @@ const Classic_Search = () => {
               </div>
 
               <div className="rune-page-perk1-end">
-                룬3
+                
                 <div className="rune-row-top3">
                   <img src={summonerspell} alt="rune" className="disable-rune-image" />
                   <img src={summonerspell} alt="rune" className="disable-rune-image" />

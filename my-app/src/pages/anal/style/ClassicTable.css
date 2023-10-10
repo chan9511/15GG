@@ -11,6 +11,16 @@
     min-width: 50%;
     white-space: nowrap;
     font-size: 20px;
+    margin-left:15%;
+    
+}
+
+.skilltreename {
+    display: flex;
+    min-width: 50%;
+    white-space: nowrap;
+    font-size: 20px;
+    
     
 }
 
@@ -55,6 +65,7 @@
     padding: 10px;
     border: 1px solid #cdcdcd;
     border-radius: 10px;
+    
 }
 
 .rune-page {
@@ -95,7 +106,7 @@
 .rune-row-top2 {
     display: flex;
     width: 100%;
-    margin-top: 22%;
+    margin-top: 27%;
     justify-content: center; 
     align-items: center;
 }
@@ -103,7 +114,7 @@
 .rune-row-top3 {
     display: flex;
     width: 100%;
-    margin-top: 39%;
+    margin-top: 49%;
     justify-content: space-between; 
     align-items: center;
 }
@@ -155,7 +166,7 @@
     padding: 1px;
     width: 40px; 
     height: 40px; 
-    border-radius: 20%;
+    border-radius: 30%;
   }
 
 .rune-image {
@@ -164,7 +175,9 @@
     height: 30px; 
     border: 3px solid #bf3434;
     text-align: center;
-    border-radius: 50%; 
+    border-radius: 50%;
+    margin-top: 5%;
+    
 }
 
 .disable-rune-image {
@@ -172,9 +185,10 @@
     padding: 1px;
     width: 30px; 
     height: 30px; 
-    
     text-align: center;
     border-radius: 50%;
+    margin-top: 5%;
+    
 }
 
 .win-rate {
@@ -209,6 +223,11 @@
     
 }
 
+.rune-name {
+    font-size: 14px;
+    text-align: center;
+}
+
 /* Add these media queries to adjust layout for smaller screens */
 @media screen and (max-width: 768px) {
     .classic-table {
@@ -218,7 +237,8 @@
   
     .champ-name {
       min-width: auto; /* Allow champ name to wrap on smaller screens */
-      font-size: 16px; /* Reduce font size for champ name */
+      font-size: 20px; /* Reduce font size for champ name */
+      font-weight: px;
     }
   
     .rate-table {
@@ -236,11 +256,13 @@
   
     .rune-table {
       margin-left: 5%;
+      height: auto;
     }
   
     .runetable-left,
     .runetable-right {
       width: 80%; /* Adjust width for smaller screens */
+      height: auto;
     }
   
     .rune-row-top{
@@ -248,11 +270,11 @@
     }
 
     .rune-row-top2 {
-      margin-top: 56%; /* Adjust margin for top rune rows */
+      margin-top: 60%; /* Adjust margin for top rune rows */
     }
 
     .rune-row-top3 {
-        margin-top: 91%; /* Adjust margin for top rune rows */
+        margin-top: 100%; /* Adjust margin for top rune rows */
       }
   
     .image-all,
@@ -260,12 +282,29 @@
     .disable-rune-image {
       width: 30px; /* Reduce image width for smaller screens */
       height: 30px; /* Reduce image height for smaller screens */
+      
     }
   
     .skill-tree123 {
       min-width: 30px; /* Reduce size for skill tree elements */
       min-height: 30px; /* Reduce size for skill tree elements */
       font-size: 10px; /* Reduce font size for skill tree elements */
+    }
+
+    .percent-table {
+        display: flex;
+        width: 30%;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .skilltreename {
+        display: flex;
+        min-width: 50%;
+        white-space: nowrap;
+        font-size: 20px;
+        
+        
     }
   }
   
