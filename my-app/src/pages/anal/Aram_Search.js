@@ -65,67 +65,67 @@ const Aram_Search = () => {
               <div className="rune-page-perk1">
                 룬1
                 <div className="rune-row-top">
-                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
                 </div>
                 <div className="rune-row">
-                  <img src={summonerspell} alt="rune" className="rune-image" />
-                  <img src={summonerspell} alt="rune" className="rune-image" />
-                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
+                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
+                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
                 </div>
                 <div className="rune-row">
-                  <img src={summonerspell} alt="rune" className="rune-image" />
-                  <img src={summonerspell} alt="rune" className="rune-image" />
-                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
+                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
+                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
                 </div>
                 <div className="rune-row">
-                  <img src={summonerspell} alt="rune" className="rune-image" />
-                  <img src={summonerspell} alt="rune" className="rune-image" />
-                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
+                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
+                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
                 </div>
                 <div className="rune-row">
-                  <img src={summonerspell} alt="rune" className="rune-image" />
-                  <img src={summonerspell} alt="rune" className="rune-image" />
-                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
+                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
+                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
                 </div>
               </div>
               <div className="rune-page-perk1">
                 룬2
                 <div className="rune-row-top2">
-                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
                 </div>
                 <div className="rune-row">
-                  <img src={summonerspell} alt="rune" className="rune-image" />
-                  <img src={summonerspell} alt="rune" className="rune-image" />
-                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
+                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
+                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
                 </div>
                 <div className="rune-row">
-                  <img src={summonerspell} alt="rune" className="rune-image" />
-                  <img src={summonerspell} alt="rune" className="rune-image" />
-                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
+                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
+                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
                 </div>
                 <div className="rune-row">
-                  <img src={summonerspell} alt="rune" className="rune-image" />
-                  <img src={summonerspell} alt="rune" className="rune-image" />
-                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
+                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
+                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
                 </div>
               </div>
 
               <div className="rune-page-perk1-end">
                 룬3
                 <div className="rune-row-top3">
-                  <img src={summonerspell} alt="rune" className="rune-image" />
-                  <img src={summonerspell} alt="rune" className="rune-image" />
-                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
+                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
+                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
                 </div>
                 <div className="rune-row">
-                  <img src={summonerspell} alt="rune" className="rune-image" />
-                  <img src={summonerspell} alt="rune" className="rune-image" />
-                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
+                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
+                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
                 </div>
                 <div className="rune-row">
-                  <img src={summonerspell} alt="rune" className="rune-image" />
-                  <img src={summonerspell} alt="rune" className="rune-image" />
-                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
+                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
+                  <img src={summonerspell} alt="rune" className="disable-rune-image" />
                 </div>
               </div>
             </div>

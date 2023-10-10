@@ -101,11 +101,12 @@ const Classic = () => {
           <div class="table-header">승률</div>
           <div class="table-header">픽률</div>
           <div class="table-header">밴율</div>
-          {[1, 2, 3, 4, 5].map((cell) => (
-            <div key={cell} class="table-cell">
-              {cell}
-            </div>
-          ))}
+          <div class="table-header">이미지</div>
+          <div class="table-header">티어이미지</div>
+          <div class="table-header">승률</div>
+          <div class="table-header">픽률</div>
+          <div class="table-header">밴율</div>
+          
         </div>
       </div>
     </div>
