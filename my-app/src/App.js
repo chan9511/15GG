@@ -10,12 +10,11 @@ import Login from "./pages/login/Login";
 import SignUp from "./pages/login/SignUp";
 import Nav from "./pages/Nav";
 import Search from "./pages/search/Search";
-import Anal2 from "./pages/anal/Anal2";
-import Anal from "./pages/anal/Anal";
-import ClassicAn from "./pages/anal/ClassicAn";
-import AnalSearch from "./pages/anal/AnalSearch";
-import Anal2Search from "./pages/anal/Anal2Search";
+import AramBuild from "./pages/anal/AramBuild";
+import ClassicBuild from "./pages/anal/ClassicBuild";
+import Classic_Search from "./pages/anal/Classic_Search";
 import TestTest from "./pages/TestTest";
+import Aram_Search from "./pages/anal/Aram_Search";
 
 const App = () => {
   return (
@@ -29,15 +28,13 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/tier/classic" element={<Classic />} />
         <Route path="/tier/aram" element={<Aram />} />
-        <Route path="/anal2" element={<Anal2 />} />
-        <Route path="/anal" element={<Anal />} />
-        <Route path="/anal/analsearch" element={<AnalSearch />} />
-        <Route path="/anal2/anal2search" element={<Anal2Search />} />
-        <Route path="/anal/classican" element={<ClassicAn />} />
+        <Route path="/arambuild" element={<AramBuild />} />
+        <Route path="/classicbuild" element={<ClassicBuild />} />
+        <Route path="/anal2/aramsearch" element={<Aram_Search />} />
+        <Route path="/anal/classicsearch" element={<Classic_Search />} />
         <Route path="/login/login" element={<Login />} />
         <Route path="/login/signup" element={<SignUp />} />
         <Route path="/search/search" element={<Search />} />
-
         <Route path="/testtest" element={<TestTest />} />
       </Routes>
     </div>

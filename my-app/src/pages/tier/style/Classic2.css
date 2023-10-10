@@ -1,7 +1,6 @@
 .css-gtm9xc {
     box-sizing: border-box;
-    width: 1000px;
-    
+    width: 100px;
     border-radius: 4px;
     display: flex;
     -webkit-box-pack: justify;
@@ -207,7 +206,6 @@ button {
     display: flex;
     background-color: #fff; /* 배경색 지정 */
     padding: 10px; /* 패딩 추가 */
-    margin-left: 290px;
     font-size: 15px;
   }
   
