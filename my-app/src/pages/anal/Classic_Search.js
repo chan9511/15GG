@@ -1,9 +1,9 @@
 import "./style/ClassicTable.css";
 import { useLocation } from "react-router-dom";
-import championData from"./json/bronze.json";
+import championData from "./json/bronze.json";
 
 const Classic_Search = () => {
-  const location = useLocation(); 
+  const location = useLocation();
 
   const championImageUrl =
     "https://ddragon.leagueoflegends.com/cdn/13.19.1/img/champion/Akali.png";
@@ -22,16 +22,21 @@ const Classic_Search = () => {
     "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7201_Precision.png";
   const perkSecond =
     "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/Conqueror/Conqueror.png";
-  // "Khazix"인 데이터를 추출
+
+  // 앞자리를 대문자로 추출하는 함수.
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+  const searchText1 = capitalizeFirstLetter(location.state.searchText1);
+  console.log(searchText1);
+  // ""인 데이터를 추출
   const filteredChampionData = championData.filter((champion) => {
-    return champion.championName === "Khazix";
+    return champion.championName === (searchText1);
   });
+  console.log(filteredChampionData);
 
   // 필터된 데이터를 콘솔에 출력
-  console.log(filteredChampionData);
   console.log(location);
-
-
 
   return (
     <div>
@@ -39,7 +44,7 @@ const Classic_Search = () => {
         <div className="classic-table">
           <img src={championImageUrl} alt="champimg" className="champ-image" />
 
-          <div className="champ-name">아칼리(챔피언명)</div>
+          <div className="champ-name">{searchText1}</div>
         </div>
 
         <div className="rate-table">
