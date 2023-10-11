@@ -1,4 +1,3 @@
-
 import "./style/ClassicTable.css";
 import { useLocation } from "react-router-dom";
 import championData from"./json/bronze.json";

@@ -64,24 +64,24 @@ const ClassicBuild = () => {
               onClick={toggleClassicAn}
               onMouseEnter={handleButtonMouseEnter}
               onMouseLeave={handleButtonMouseLeave}
-              style={{
-                backgroundColor: "#970000",
-                color: "#fff",
-                borderColor: "#6699ff",
-                border: 0,
-                marginLeft: 10,
-              }}
-            >
-              {" "}
-              Enter
-            </Link>
-          </form>
+                style={{
+                  backgroundColor: "#970000",
+                  color: "#fff",
+                  borderColor: "#6699ff",
+                  border: 0,
+                  marginLeft: 10,
+                }}
+              >
+                {" "}
+                Enter
+              </Link>
+            </form>
+          </div>
         </div>
+
+        {showClassic_Search && <Classic_Search />}
       </div>
+    );
+  };
 
-      {showClassic_Search && <Classic_Search />}
-    </div>
-  );
-};
-
-export default ClassicBuild;
+  export default ClassicBuild;

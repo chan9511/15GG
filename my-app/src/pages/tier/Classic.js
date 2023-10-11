@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./style/Classic.css";
 import "./style/Classic2.css";
+import championData from"./json/bronze.json";
 
 const Classic = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -10,6 +11,12 @@ const Classic = () => {
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
+
+  const filteredChampionData = championData.filter((champion) => {
+    return champion.championName === "Khazix";
+  });
+
+  console.log(filteredChampionData)
 
   const tierList = [
     "Challenger",
@@ -97,16 +104,10 @@ const Classic = () => {
       <div>
         <div class="table-container1">
           <div class="table-header">챔피언</div>
-          <div class="table-header">티어</div>
+          <div class="table-header">K/D/A</div>
           <div class="table-header">승률</div>
           <div class="table-header">픽률</div>
           <div class="table-header">밴율</div>
-          <div class="table-header">이미지</div>
-          <div class="table-header">티어이미지</div>
-          <div class="table-header">승률</div>
-          <div class="table-header">픽률</div>
-          <div class="table-header">밴율</div>
-          
         </div>
       </div>
     </div>
