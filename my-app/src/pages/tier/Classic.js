@@ -1,22 +1,16 @@
 import React, { useState } from "react";
 import "./style/Classic.css";
 import "./style/Classic2.css";
-import championData from"./json/bronze.json";
+import championData from "./json/em.json";
 
 const Classic = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedTier, setSelectedTier] = useState("Emerald");
-  const [selectedRole, setSelectedRole] = useState("탑"); // 기본값은 "탑"으로 설정
+  const [selectedRole, setSelectedRole] = useState("탑");
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
-
-  const filteredChampionData = championData.filter((champion) => {
-    return champion.championName === "Khazix";
-  });
-
-  console.log(filteredChampionData)
 
   const tierList = [
     "Challenger",
@@ -37,8 +31,13 @@ const Classic = () => {
   };
 
   const handleRoleClick = (role) => {
-    setSelectedRole(role); // 클릭한 역할을 선택된 역할로 설정
+    setSelectedRole(role);
   };
+
+  // "teamPosition"이 "TOP"인 데이터 필터링
+  const topPositionData = championData.filter(
+    (champion) => champion.teamPosition === "TOP"
+  );
 
   return (
     <div>
@@ -47,9 +46,9 @@ const Classic = () => {
         <nav>
           <div className="css-g46fbk">
             <div>
-              <div class="dropdown">
+              <div className="dropdown">
                 <button
-                  class="btn custom-button dropdown-toggle"
+                  className="btn custom-button dropdown-toggle"
                   type="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
@@ -58,14 +57,14 @@ const Classic = () => {
                   {selectedTier}
                 </button>
                 <ul
-                  class={`dropdown-menu text-center ${
+                  className={`dropdown-menu text-center ${
                     isDropdownOpen ? "show dropdown-menu-up" : ""
                   }`}
                 >
                   {tierList.map((tier) => (
                     <li key={tier}>
                       <a
-                        class="dropdown-item"
+                        className="dropdown-item"
                         href="##"
                         onClick={() => changeButtonText(tier)}
                       >
@@ -78,11 +77,11 @@ const Classic = () => {
             </div>
           </div>
         </nav>
-        <div class="input-table">
-          <nav class="nav-container">
+        <div className="input-table">
+          <nav className="nav-container">
             <button
               type="button"
-              class={`nav-button ${selectedRole === "탑" ? "active" : ""}`}
+              className={`nav-button ${selectedRole === "탑" ? "active" : ""}`}
               onClick={() => handleRoleClick("탑")}
             >
               탑
@@ -91,7 +90,7 @@ const Classic = () => {
               <button
                 key={role}
                 type="button"
-                class={`nav-button ${selectedRole === role ? "active" : ""}`}
+                className={`nav-button ${selectedRole === role ? "active" : ""}`}
                 onClick={() => handleRoleClick(role)}
               >
                 {role}
@@ -102,13 +101,22 @@ const Classic = () => {
       </div>
 
       <div>
-        <div class="table-container1">
-          <div class="table-header">챔피언</div>
-          <div class="table-header">K/D/A</div>
-          <div class="table-header">승률</div>
-          <div class="table-header">픽률</div>
-          <div class="table-header">밴율</div>
+        <div className="table-container1">
+          <div className="table-header">챔피언</div>
+          <div className="table-header">K/D/A</div>
+          <div className="table-header">승률</div>
+          <div className="table-header">픽률</div>
+          <div className="table-header">밴율</div>
         </div>
+        {topPositionData.map((champion) => (
+          <div key={champion.championName} className="table-row">
+            <div className="table-data">{champion.championName}</div>
+            <div className="table-data">{champion.av_kda}</div>
+            <div className="table-data">{champion.win_rate}</div>
+            <div className="table-data">{champion.pick_rate}</div>
+            <div className="table-data">{champion.ban_rate}</div>
+          </div>
+        ))}
       </div>
     </div>
   );

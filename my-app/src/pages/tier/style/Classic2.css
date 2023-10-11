@@ -134,20 +134,36 @@ option {
     white-space: nowrap;
 }
 
-button {
-    border: 0px;
-    padding: 0px;
-    background: transparent;
-    cursor: pointer;
-}
+/* CSS 파일에 아래 스타일을 추가합니다. */
+/* 버튼 스타일을 수정하여 border를 제거합니다. */
 
-button {
-    margin: 0px;
-    padding: 0px;
-    border: 0px;
-    cursor: pointer;
+/* 기본 버튼 스타일 */
+.table-header button {
     background: none;
-}
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    text-decoration: none; /* 선택 시 텍스트 밑줄 제거 */
+  }
+  
+  /* 선택된 열의 버튼 스타일 */
+  .table-header button.selected {
+    color: blue; /* 선택된 열은 파란색으로 표시됩니다. */
+  }
+  
+  /* 오름차순 및 내림차순 아이콘 스타일 */
+  .table-header button.asc::after {
+    content: "▲";
+    margin-left: 4px;
+  }
+  
+  .table-header button.desc::after {
+    content: "▼";
+    margin-left: 4px;
+  }
+  
 
 .css-60l9xa {
     display: flex;
@@ -220,7 +236,7 @@ button {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease; /* 호버 효과 설정 */
-    width: 120px; /* 너비 설정 */
+    width: 80px; /* 너비 설정 */
     height: 40px; /* 높이 설정 */
   }
   
