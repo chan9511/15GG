@@ -65,8 +65,8 @@ const Aram = () => {
           <div key={champion.championName} className="table-row2">
             <div className="table-data">{champion.championName}</div>
             <div className="table-data">{champion.av_kda}</div>
-            <div className="table-data">{champion.win_rate}</div>
-            <div className="table-data">{champion.pick_rate}</div>
+            <div className="table-data">{(champion.win_rate * 100).toFixed(0)}%</div>
+            <div className="table-data">{(champion.pick_rate * 100).toFixed(0)}%</div>
           </div>
         ))}
       </div>

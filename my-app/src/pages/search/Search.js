@@ -82,6 +82,7 @@ const Search = () => {
         `https://kr.api.riotgames.com/lol/league/v4/entries/by-summoner/${result.data.id}?api_key=${API_KEY}`
       ); // 비동기처리(leagueV4)
 
+      
       // const result3 = await axios.get(
       //   `https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${result.data.id}?api_key=${API_KEY}`
       // )
@@ -170,6 +171,7 @@ const Search = () => {
         profileIconId: result.data.profileIconId,
         puuid: result.data.puuid,
       });
+      
 
       setSoloRankData(soloRankData);
       setFlexRankData(flexRankData);
@@ -241,7 +243,7 @@ const Search = () => {
                     style={{ top: "10px", left: "75px", position: "absolute" }}
                   >
                     <img
-                      src={`https://ddragon.leagueoflegends.com/cdn/13.19.1/img/profileicon/${playerData.profileIconId}.png`}
+                      src={`https://ddragon.leagueoflegends.com/cdn/13.20.1/img/profileicon/${playerData.profileIconId}.png`}
                       alt="프로필아이콘"
                       style={{
                         border: "1px",
