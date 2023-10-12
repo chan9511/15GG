@@ -1,6 +1,6 @@
 import "./style/ClassicTable.css";
 import { useLocation } from "react-router-dom";
-import championData from "./json/bronze.json";
+import championData from "./json/em.json";
 
 const Classic_Search = () => {
   const location = useLocation();

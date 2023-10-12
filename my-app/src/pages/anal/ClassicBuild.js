@@ -7,12 +7,13 @@ import Classic_Search from "./Classic_Search";
 
 const ClassicBuild = () => {
   const [searchText1, setSearchText1] = useState("");
-  const [showClassic_Search, setShowClassic_Search] = useState(false); // ClassicAn 컴포넌트의 가시성을 제어하는 상태 추가
+  const [showClassic_Search, setShowClassic_Search] = useState(false);
   const navigate = useNavigate();
 
+  // searchText1에 입력 받은 것을 search페이지로 넘기기.
   const submitFunc = (event) => {
     event.preventDefault();
-    navigate("./Classic_Search", {
+    navigate("/classicbuild", {
       state: { searchText1 },
     });
   };
@@ -21,6 +22,8 @@ const ClassicBuild = () => {
     setShowClassic_Search(!showClassic_Search);
   };
 
+
+  // 엔터 버튼 마우스 호버
   const handleButtonMouseEnter = () => {
     const button = document.getElementById("enterButton");
     if (button) {
@@ -55,15 +58,15 @@ const ClassicBuild = () => {
               placeholder="챔피언명 검색"
               aria-label="Search"
             />
-            <Link
-            to={{ pathname: "/classicbuild", state: { searchText1: searchText1 } }}
-              id="enterButton"
-              className="btn btn-outline-success me-2"
-              type="button"
-              state={{ searchText1: searchText1 }}
-              onClick={toggleClassicAn}
-              onMouseEnter={handleButtonMouseEnter}
-              onMouseLeave={handleButtonMouseLeave}
+              <Link
+                to={{ pathname: "/classicbuild", state: { searchText1: searchText1 } }}
+                id="enterButton"
+                className="btn btn-outline-success me-2"
+                type="button"
+                state={{ searchText1: searchText1 }}
+                onClick={toggleClassicAn}
+                onMouseEnter={handleButtonMouseEnter}
+                onMouseLeave={handleButtonMouseLeave}
                 style={{
                   backgroundColor: "#970000",
                   color: "#fff",
@@ -71,7 +74,7 @@ const ClassicBuild = () => {
                   border: 0,
                   marginLeft: 10,
                 }}
-              >
+                >
                 {" "}
                 Enter
               </Link>
