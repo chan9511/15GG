@@ -34,10 +34,25 @@ const Classic = () => {
     setSelectedRole(role);
   };
 
-  // "teamPosition"이 "TOP"인 데이터 필터링
-  const topPositionData = championData.filter(
-    (champion) => champion.teamPosition === "TOP"
-  );
+  // Filter data based on the selected role
+  const filteredData = () => {
+    switch (selectedRole) {
+      case "탑":
+        return championData.filter((champion) => champion.teamPosition === "TOP");
+      case "정글":
+        return championData.filter((champion) => champion.teamPosition === "JUNGLE");
+      case "미드":
+        return championData.filter((champion) => champion.teamPosition === "MIDDLE");
+      case "바텀":
+        return championData.filter((champion) => champion.teamPosition === "BOTTOM");
+      case "서폿":
+        return championData.filter((champion) => champion.teamPosition === "UTILITY");
+      default:
+        return [];
+    }
+  };
+
+  const currentRoleData = filteredData();
 
   return (
     <div>
@@ -79,14 +94,7 @@ const Classic = () => {
         </nav>
         <div className="input-table">
           <nav className="nav-container">
-            <button
-              type="button"
-              className={`nav-button ${selectedRole === "탑" ? "active" : ""}`}
-              onClick={() => handleRoleClick("탑")}
-            >
-              탑
-            </button>
-            {["정글", "미드", "바텀", "서폿"].map((role) => (
+            {["탑", "정글", "미드", "바텀", "서폿"].map((role) => (
               <button
                 key={role}
                 type="button"
@@ -108,7 +116,7 @@ const Classic = () => {
           <div className="table-header">픽률</div>
           <div className="table-header">밴율</div>
         </div>
-        {topPositionData.map((champion) => (
+        {currentRoleData.map((champion) => (
           <div key={champion.championName} className="table-row">
             <div className="table-data">{champion.championName}</div>
             <div className="table-data">{champion.av_kda}</div>

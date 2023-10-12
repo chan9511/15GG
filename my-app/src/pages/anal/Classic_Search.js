@@ -355,7 +355,7 @@ const Classic_Search = () => {
             <div className="runetable-1">
               소환사 주문
               <div>
-                <img src={spellimg} alt="spell" className="image-all" />
+                <img src={summonerspell} alt="spell" className="image-all" />
                 <img src={summonerspell} alt="spell" className="image-all" />
 
                 <div className="win-rate">승률:60%</div>
