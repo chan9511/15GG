@@ -5,16 +5,8 @@ import championData from "./json/em.json";
 const Aram_Search = () => {
   const location = useLocation();
 
-  const summonerspell =
-    "http://ddragon.leagueoflegends.com/cdn/13.19.1/img/spell/SummonerBarrier.png";
-
   const cursor = "https://s-lol-web.op.gg/images/icon/icon-arrow-right.svg";
 
-  
-  const perkFirst =
-    "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7201_Precision.png";
-  const perkSecond =
-    "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/Conqueror/Conqueror.png";
 
   // 앞자리를 대문자로 추출하는 함수.
   function capitalizeFirstLetter(string) {
@@ -39,21 +31,20 @@ const Aram_Search = () => {
     console.log(filteredChampionData);
   }
 
-  let highestWinCnt = 0; // 초기 최고 승리 수를 0으로 설정
-  let bestChampionData = null; // 최고 승리 수를 가진 챔피언 데이터를 저장할 변수
+  let highestWinCnt = 0; // 초기 픽 수를 0으로 설정
+  let bestChampionData = null; // 가장 많은 픽 수를 가진 챔피언 데이터를 저장할 변수
 
   filteredChampionData.forEach((championData) => {
-    if (championData.win_cnt > highestWinCnt) {
-      highestWinCnt = championData.win_cnt;
+    if (championData.pick_cnt > highestWinCnt) {
+      highestWinCnt = championData.pick_cnt;
       bestChampionData = championData;
     }
   });
+  // 픽이 가장 많은 데이터
   console.log(bestChampionData);
+  // 전체 포지션 데이터
   console.log(filteredChampionData);
-  console.log(filteredChampionData[0]);
 
-  
-  
   const championImageUrl = `https://ddragon.leagueoflegends.com/cdn/13.20.1/img/champion/${searchText1}.png`;
   const itemStart = `http://ddragon.leagueoflegends.com/cdn/13.19.1/img/item/${bestChampionData.item_set1_1}.png`;
   const itemStart2 = `http://ddragon.leagueoflegends.com/cdn/13.19.1/img/item/${bestChampionData.item_set1_2}.png`;
@@ -137,21 +128,27 @@ const Aram_Search = () => {
     bestChampionData.spell1_2
   )}.png`;
 
-  const skillImageUrl = `https://opgg-static.akamaized.net/meta/images/lol/spell/${searchText1}${convertSkillBuild(bestChampionData.skill_build1)}.png?image=q_auto,f_webp,w_64&v=1696570752446`;
-  const skillImageUrl2 = `https://opgg-static.akamaized.net/meta/images/lol/spell/${searchText1}${convertSkillBuild(bestChampionData.skill_build2)}.png?image=q_auto,f_webp,w_64&v=1696570752446`;
-  const skillImageUrl3 = `https://opgg-static.akamaized.net/meta/images/lol/spell/${searchText1}${convertSkillBuild(bestChampionData.skill_build3)}.png?image=q_auto,f_webp,w_64&v=1696570752446`;
-  
-  // const runcode1 = 
-  // const runcode2 = 
-  // const runcode3 = 
-  // const runcode4 = 
-  // const runcode5 = 
-  // const runcode6 = 
-  // const runcode7 = 
-  // const runcode8 = 
-  const runecode9 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.abil_off}_60.webp`
-  const runecode10 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.abil_fle}_60.webp`
-  const runecode11 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.abil_def}_60.webp`
+  const skillImageUrl = `https://opgg-static.akamaized.net/meta/images/lol/spell/${searchText1}${convertSkillBuild(
+    bestChampionData.skill_build1
+  )}.png?image=q_auto,f_webp,w_64&v=1696570752446`;
+  const skillImageUrl2 = `https://opgg-static.akamaized.net/meta/images/lol/spell/${searchText1}${convertSkillBuild(
+    bestChampionData.skill_build2
+  )}.png?image=q_auto,f_webp,w_64&v=1696570752446`;
+  const skillImageUrl3 = `https://opgg-static.akamaized.net/meta/images/lol/spell/${searchText1}${convertSkillBuild(
+    bestChampionData.skill_build3
+  )}.png?image=q_auto,f_webp,w_64&v=1696570752446`;
+
+  const runecode1 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.most_pristyle}_60.webp`;
+  const runecode2 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.most_priperk1}_60.webp`;
+  const runecode3 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.most_priperk2}_60.webp`;
+  const runecode4 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.most_priperk3}_60.webp`;
+  const runecode5 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.most_priperk4}_60.webp`;
+  const runecode6 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.most_substyle}_60.webp`;
+  const runecode7 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.most_subperk1}_60.webp`;
+  const runecode8 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.most_subperk2}_60.webp`;
+  const runecode9 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.abil_off}_60.webp`;
+  const runecode10 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.abil_fle}_60.webp`;
+  const runecode11 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.abil_def}_60.webp`;
 
   return (
     <div>
@@ -166,8 +163,6 @@ const Aram_Search = () => {
           <div className="rate">승률</div>
 
           <div className="rate">픽률</div>
-
-          
         </div>
 
         <div className="rate-table">
@@ -212,36 +207,32 @@ const Aram_Search = () => {
             <div className="rune-page">
               <div className="rune-page-perk1">
                 <div className="rune-row-top">
-                  <img src={perkFirst} alt="rune" className="rune-image" />
+                  <img src={runecode1} alt="rune" className="rune-image" />
                 </div>
                 <div className="rune-row">
-                  <img src={perkSecond} alt="rune" className="rune-image" />
+                  <img src={runecode2} alt="rune" className="rune-image" />
                 </div>
                 <div className="rune-row">
-                  <img
-                    src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/PresenceOfMind/PresenceOfMind.png"
-                    alt="rune"
-                    className="rune-image"
-                  />
+                  <img src={runecode3} alt="rune" className="rune-image" />
                 </div>
                 <div className="rune-row">
-                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={runecode4} alt="rune" className="rune-image" />
                 </div>
                 <div className="rune-row">
-                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={runecode5} alt="rune" className="rune-image" />
                 </div>
               </div>
               <div className="rune-page-perk1">
                 <div className="rune-row-top2">
-                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={runecode6} alt="rune" className="rune-image" />
                 </div>
 
                 <div className="rune-row">
-                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={runecode7} alt="rune" className="rune-image" />
                 </div>
-                
+
                 <div className="rune-row">
-                  <img src={summonerspell} alt="rune" className="rune-image" />
+                  <img src={runecode8} alt="rune" className="rune-image" />
                 </div>
               </div>
 
