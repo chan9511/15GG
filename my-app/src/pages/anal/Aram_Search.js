@@ -266,7 +266,9 @@ const Aram_Search = () => {
               시작 아이템
               <div>
                 <img src={itemStart} alt="shoes" className="image-all" />
-                <img src={itemStart2} alt="shoes" className="image-all" />
+                {bestChampionData.item_set1_2 && (
+                  <img src={itemStart2} alt="shoes" className="image-all" />
+                )}
 
                 <div className="win-rate">
                   승률:

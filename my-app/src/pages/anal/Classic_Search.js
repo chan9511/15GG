@@ -119,14 +119,14 @@ const Classic_Search = () => {
     bestChampionData.skill_build3
   )}.png?image=q_auto,f_webp,w_64&v=1696570752446`;
 
-  const runecode1 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.most_pristyle}_60.webp`
+  const runecode1 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.most_pristyle}_60.webp`;
   const runecode2 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.most_priperk1}_60.webp`;
-  const runecode3 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.most_priperk2}_60.webp`
-  const runecode4 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.most_priperk3}_60.webp`
-  const runecode5 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.most_priperk4}_60.webp`
-  const runecode6 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.most_substyle}_60.webp`
-  const runecode7 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.most_subperk1}_60.webp`
-  const runecode8 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.most_subperk2}_60.webp`
+  const runecode3 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.most_priperk2}_60.webp`;
+  const runecode4 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.most_priperk3}_60.webp`;
+  const runecode5 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.most_priperk4}_60.webp`;
+  const runecode6 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.most_substyle}_60.webp`;
+  const runecode7 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.most_subperk1}_60.webp`;
+  const runecode8 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.most_subperk2}_60.webp`;
   const runecode9 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.abil_off}_60.webp`;
   const runecode10 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.abil_fle}_60.webp`;
   const runecode11 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.abil_def}_60.webp`;
@@ -137,7 +137,10 @@ const Classic_Search = () => {
         <div className="classic-table">
           <img src={championImageUrl} alt="champimg" className="champ-image" />
 
-          <div className="champ-name">{searchText1}</div>
+          <div className="champ-name">
+            {searchText1}
+            <br></br>({bestChampionData.teamPosition})
+          </div>
         </div>
 
         <div className="rate-table">
@@ -253,7 +256,10 @@ const Classic_Search = () => {
               시작 아이템
               <div>
                 <img src={itemStart} alt="shoes" className="image-all" />
-                <img src={itemStart2} alt="shoes" className="image-all" />
+                {/* 시작 아이템 두번째칸이 비어있으면 2번째칸 이미지가 나오지 않게 */}
+                {bestChampionData.item_set1_2 && (
+                  <img src={itemStart2} alt="shoes" className="image-all" />
+                )}
 
                 <div className="win-rate">
                   승률:
