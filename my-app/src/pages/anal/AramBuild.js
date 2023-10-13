@@ -43,7 +43,7 @@ const AramBuild = () => {
   return (
     <div>
       <div className="anal-title">
-        <div className="css-123">협곡 챔피언 분석</div>
+        <div className="css-123">칼바람 챔피언 분석</div>
         <div className="input-table">
           <form
             onSubmit={submitFunc}
