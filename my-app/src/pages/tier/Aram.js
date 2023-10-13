@@ -76,6 +76,16 @@ const Aram = () => {
                 : "▲"}
             </button>
           </div>
+          <div className="table-header">
+            표본
+            <button onClick={() => sortByKey("pick_cnt")}>
+              {sortBy === "pick_cnt"
+                ? sortDirection === "ascending"
+                  ? "▲"
+                  : "▼"
+                : "▲"}
+            </button>
+          </div>
         </div>
         {topPositionData.map((champion) => (
           <div key={champion.championName} className="table-row2">
@@ -103,11 +113,12 @@ const Aram = () => {
                 color: champion.win_rate >= 0.6 ? "#E84057" : "inherit",
               }}
             >
-              {(champion.win_rate * 100).toFixed(0)}%
+              {(champion.win_rate * 100).toFixed(2)}%
             </div>
             <div className="table-data">
-              {(champion.pick_rate * 100).toFixed(0)}%
+              {(champion.pick_rate * 100).toFixed(2)}%
             </div>
+            <div className="table-data">{champion.pick_cnt}</div>
           </div>
         ))}
       </div>

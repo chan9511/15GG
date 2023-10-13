@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./style/Classic.css";
 import "./style/Classic2.css";
-import championData from "./json/em.json";
+import championData from "./json/bro.json";
 
 const Classic = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -72,7 +72,6 @@ const Classic = () => {
 
   const currentRoleData = filteredData();
 
-  console.log(currentRoleData);
   // Sort data based on the selected sortBy and sortDirection
 
   const sortedData = currentRoleData.slice().sort((a, b) => {
@@ -144,7 +143,7 @@ const Classic = () => {
           <div className="table-header">챔피언</div>
           <div className="table-header">
             K/D/A
-            <button onClick={() => setSortBy("av_kda")}>
+            <button onClick={() => { setSortBy("av_kda"); toggleSortDirection();}}>
               {sortBy === "av_kda"
                 ? sortDirection === "ascending"
                   ? "▲"
@@ -154,7 +153,7 @@ const Classic = () => {
           </div>
           <div className="table-header">
             승률
-            <button onClick={() => setSortBy("win_rate")}>
+            <button onClick={() => { setSortBy("win_rate"); toggleSortDirection();}}>
               {sortBy === "win_rate"
                 ? sortDirection === "ascending"
                   ? "▲"
@@ -164,7 +163,7 @@ const Classic = () => {
           </div>
           <div className="table-header">
             픽률
-            <button onClick={() => setSortBy("pick_rate")}>
+            <button onClick={() => { setSortBy("pick_rate"); toggleSortDirection();}}>
               {sortBy === "pick_rate"
                 ? sortDirection === "ascending"
                   ? "▲"
@@ -174,7 +173,7 @@ const Classic = () => {
           </div>
           <div className="table-header">
             밴율
-            <button onClick={() => setSortBy("ban_rate")}>
+            <button onClick={() => { setSortBy("ban_rate"); toggleSortDirection();}}>
               {sortBy === "ban_rate"
                 ? sortDirection === "ascending"
                   ? "▲"
@@ -184,7 +183,7 @@ const Classic = () => {
           </div>
           <div className="table-header">
             표본
-            <button onClick={() => setSortBy("pick_cnt")}>
+            <button onClick={() => { setSortBy("pick_cnt"); toggleSortDirection();}}>
               {sortBy === "pick_cnt"
                 ? sortDirection === "ascending"
                   ? "▲"
@@ -219,13 +218,13 @@ const Classic = () => {
                 color: champion.win_rate >= 0.6 ? "#E84057" : "inherit",
               }}
             >
-              {(champion.win_rate * 100).toFixed(0)}%
+              {(champion.win_rate * 100).toFixed(2)}%
             </div>
             <div className="table-data">
-              {(champion.pick_rate * 100).toFixed(0)}%
+              {(champion.pick_rate * 100).toFixed(2)}%
             </div>
             <div className="table-data">
-              {(champion.ban_rate * 100).toFixed(0)}%
+              {(champion.ban_rate * 100).toFixed(2)}%
             </div>
             <div className="table-data">{champion.pick_cnt}</div>
           </div>
