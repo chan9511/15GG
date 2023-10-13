@@ -8,7 +8,9 @@ const Aram = () => {
 
   useEffect(() => {
     // 승률이 높은 순으로 정렬해서 초기 데이터 설정
-    const initialData = [...championData].sort((a, b) => b.win_rate - a.win_rate);
+    const initialData = [...championData].sort(
+      (a, b) => b.win_rate - a.win_rate
+    );
     setTopPositionData(initialData);
   }, []);
 
@@ -27,7 +29,9 @@ const Aram = () => {
     setTopPositionData(sortedData);
     setSortBy(key);
     // 정렬 방향을 토글 (ascending <-> descending)
-    setSortDirection(sortDirection === "ascending" ? "descending" : "ascending");
+    setSortDirection(
+      sortDirection === "ascending" ? "descending" : "ascending"
+    );
   };
 
   return (
@@ -45,28 +49,65 @@ const Aram = () => {
           <div className="table-header">
             K/D/A
             <button onClick={() => sortByKey("av_kda")}>
-              {sortBy === "av_kda" ? (sortDirection === "ascending" ? "▲" : "▼") : "▲"}
+              {sortBy === "av_kda"
+                ? sortDirection === "ascending"
+                  ? "▲"
+                  : "▼"
+                : "▲"}
             </button>
           </div>
           <div className="table-header">
             승률
             <button onClick={() => sortByKey("win_rate")}>
-              {sortBy === "win_rate" ? (sortDirection === "ascending" ? "▲" : "▼") : "▲"}
+              {sortBy === "win_rate"
+                ? sortDirection === "ascending"
+                  ? "▲"
+                  : "▼"
+                : "▲"}
             </button>
           </div>
           <div className="table-header">
             픽률
             <button onClick={() => sortByKey("pick_rate")}>
-              {sortBy === "pick_rate" ? (sortDirection === "ascending" ? "▲" : "▼") : "▲"}
+              {sortBy === "pick_rate"
+                ? sortDirection === "ascending"
+                  ? "▲"
+                  : "▼"
+                : "▲"}
             </button>
           </div>
         </div>
         {topPositionData.map((champion) => (
           <div key={champion.championName} className="table-row2">
             <div className="table-data">{champion.championName}</div>
-            <div className="table-data">{champion.av_kda}</div>
-            <div className="table-data">{(champion.win_rate * 100).toFixed(0)}%</div>
-            <div className="table-data">{(champion.pick_rate * 100).toFixed(0)}%</div>
+            <div
+              className="table-data"
+              style={{
+                color:
+                  champion.av_kda >= 4
+                    ? "#E84057"
+                    : champion.av_kda >= 3
+                    ? "#0093FF"
+                    : champion.av_kda >= 2
+                    ? "#00BBA3"
+                    : champion.av_kda < 2
+                    ? "#9AA4AF"
+                    : "inherit",
+              }}
+            >
+              {champion.av_kda}
+            </div>
+            <div
+              className="table-data"
+              style={{
+                color: champion.win_rate >= 0.6 ? "#E84057" : "inherit",
+              }}
+            >
+              {(champion.win_rate * 100).toFixed(0)}%
+            </div>
+            <div className="table-data">
+              {(champion.pick_rate * 100).toFixed(0)}%
+            </div>
           </div>
         ))}
       </div>

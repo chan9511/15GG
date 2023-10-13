@@ -141,8 +141,14 @@ const Aram_Search = () => {
   const skillImageUrl2 = `https://opgg-static.akamaized.net/meta/images/lol/spell/${searchText1}${convertSkillBuild(bestChampionData.skill_build2)}.png?image=q_auto,f_webp,w_64&v=1696570752446`;
   const skillImageUrl3 = `https://opgg-static.akamaized.net/meta/images/lol/spell/${searchText1}${convertSkillBuild(bestChampionData.skill_build3)}.png?image=q_auto,f_webp,w_64&v=1696570752446`;
   
-  
-  
+  // const runcode1 = 
+  // const runcode2 = 
+  // const runcode3 = 
+  // const runcode4 = 
+  // const runcode5 = 
+  // const runcode6 = 
+  // const runcode7 = 
+  // const runcode8 = 
   const runecode9 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.abil_off}_60.webp`
   const runecode10 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.abil_fle}_60.webp`
   const runecode11 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.abil_def}_60.webp`
