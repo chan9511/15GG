@@ -14,7 +14,6 @@ const Classic_Search = () => {
   const searchText1 = capitalizeFirstLetter(location.state.searchText1);
 
   console.log(location);
-
   console.log(searchText1);
   // classicbuild에서 input한 데이터 추출
   const filteredChampionData = championData.filter((champion) => {
@@ -24,7 +23,7 @@ const Classic_Search = () => {
     // 검색 결과가 없을 때 홈페이지로 이동
     window.location.href = "http://localhost:3000/"; // 이동하고자 하는 페이지 URL로 수정하세요
   } else {
-    // 검색 결과가 있을 때 처리 로직을 작성
+    
 
     // 챔피언명에 따른 전체데이터
     console.log(filteredChampionData);
@@ -244,8 +243,8 @@ const Classic_Search = () => {
             <div className="runetable-1">
               소환사 주문
               <div>
-                <img src={summonerspell1} alt="spell" className="image-all" />
-                <img src={summonerspell2} alt="spell" className="image-all" />
+                <img src={summonerspell1} alt="spell" className="image-all123" />
+                <img src={summonerspell2} alt="spell" className="image-all123" />
 
                 <div className="win-rate">
                   승률:{(bestChampionData.spell1_win * 100).toFixed(1)}%
@@ -255,10 +254,10 @@ const Classic_Search = () => {
             <div className="runetable-1">
               시작 아이템
               <div>
-                <img src={itemStart} alt="shoes" className="image-all" />
+                <img src={itemStart} alt="shoes" className="image-all123" />
                 {/* 시작 아이템 두번째칸이 비어있으면 2번째칸 이미지가 나오지 않게 */}
                 {bestChampionData.item_set1_2 && (
-                  <img src={itemStart2} alt="shoes" className="image-all" />
+                  <img src={itemStart2} alt="shoes" className="image-all123" />
                 )}
 
                 <div className="win-rate">
@@ -270,7 +269,7 @@ const Classic_Search = () => {
             <div className="runetable-1">
               신발
               <div>
-                <img src={itemShoes} alt="shoes" className="image-all" />
+                <img src={itemShoes} alt="shoes" className="image-all123" />
 
                 <div className="win-rate">
                   승률:{(bestChampionData.shoes1_win * 100).toFixed(1)}%
@@ -280,9 +279,9 @@ const Classic_Search = () => {
             <div className="runetable-end">
               메인 아이템 빌드
               <div>
-                <img src={mainItem} alt="shoes" className="image-all" />
-                <img src={cursor} alt="cursor" className="image-all" />
-                <img src={mainItem2} alt="shoes" className="image-all" />
+                <img src={mainItem} alt="shoes" className="image-all123" />
+                <img src={cursor} alt="cursor" className="image-all123" />
+                <img src={mainItem2} alt="shoes" className="image-all123" />
                 <div className="win-rate">
                   승률:{(bestChampionData.core1_win * 100).toFixed(1)}%
                 </div>

@@ -1,9 +1,72 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import '../login/style/Login.css';
+import { signInApi } from "../../api";
+
 
 
 const Login = () => {
+  const [userId, setUserId] = useState("");
+  const [userPassword, setUserPassword] = useState("");
+  const navigate = useNavigate();
+  
+  const SignInHandler = async (e) => {
+    e.preventDefault();
+
+    const data = {
+      userId,
+      userPassword,
+    };
+
+    if (userId.length === 0 || userPassword.length === 0) {
+      alert("아이디와 비밀번호를 입력하세요");
+      return;
+    }
+  
+    const signInResponse = await signInApi(data);
+
+    if (!signInResponse) {
+        console.log(signInResponse)
+        setUserId("");
+        setUserPassword("");
+        alert("로그인을 실패했습니다."); return;
+    }
+    if (!signInResponse.result) {
+        console.log(signInResponse)
+        setUserId("");
+        setUserPassword("");
+        alert(`${signInResponse.message}`); return;
+    }
+    alert("로그인 성공")
+
+    const {token, exprTime, user, widgetOne, widgetTwo} = signInResponse.data;
+    const expires = new Date();
+    expires.setMilliseconds(expires.getMilliseconds() + exprTime);
+
+
+    // 위젯 1,2 의 true 값이 뭔지 찾는 부분
+    const widgetOneTrue = Object.keys(widgetOne).find((key) => {
+        return widgetOne[key] === true;
+    })
+
+    const widgetTwoTrue = Object.keys(widgetTwo).find((key) => {
+        return widgetTwo[key] === true;
+    })
+
+    console.log(widgetOneTrue)
+    console.log(widgetTwoTrue)
+    sessionStorage.setItem("token", token, { expires });
+    sessionStorage.setItem("user", user.userId);
+    sessionStorage.setItem("widgetOneTrue", widgetOneTrue, { expires });
+    sessionStorage.setItem("widgetTwoTrue", widgetTwoTrue, { expires });
+    // setCookies("token", token, { expires });
+    // setCookies("widgetOneTrue", widgetOneTrue, { expires });
+    // setCookies("widgetTwoTrue", widgetTwoTrue);
+    // setUser(user);
+
+    navigate(`/`)
+  }
+
   return (
     <div class="hihi">
       <form class="px-4 py-3">
@@ -12,10 +75,12 @@ const Login = () => {
             이메일
           </label>
           <input
-            type="email"
+            type="ID"
             class="form-control"
             id="exampleDropdownFormEmail1"
-            placeholder="이메일을 입력해주세요"
+            placeholder="ID를 입력해주세요"
+            onChange={(e) => setUserId(e.target.value)}
+            value={userId}
           />
         </div>
         <div class="mb-3">
@@ -27,6 +92,8 @@ const Login = () => {
             class="form-control"
             id="exampleDropdownFormPassword1"
             placeholder="비밀번호를 입력해주세요"
+            onChange={(e) => setUserPassword(e.target.value)}
+            value={userPassword}
           />
         </div>
         <div class="mb-3">
@@ -46,6 +113,7 @@ const Login = () => {
             type="submit"
             class="btn btn-primary"
             style={{ backgroundColor: "#970000", color: "white", border: 0 }}
+            onClick={(e)=> SignInHandler(e)}
           >
             로그인하기
           </button>

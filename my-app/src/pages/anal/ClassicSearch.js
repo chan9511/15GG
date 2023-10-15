@@ -59,7 +59,7 @@ const ClassicBuild = () => {
               aria-label="Search"
             />
               <Link
-                to={{ pathname: "/", state: { searchText1: searchText1 } }}
+                to={{ pathname: "/classicsearch", state: { searchText1: searchText1 } }}
                 id="enterButton"
                 className="btn btn-outline-success me-2"
                 type="button"

@@ -3,9 +3,9 @@ import { Link,useNavigate } from "react-router-dom";
 import "../search/style/Search.css";
 import "../tier/style/Classic.css";
 import "../tier/style/Classic2.css";
-import Classic_Search from "./Classic_Search";
+import Aram_Search from "./Aram_Search";
 
-const ClassicBuild = () => {
+const AramBuild = () => {
   const [searchText1, setSearchText1] = useState("");
   const [showClassic_Search, setShowClassic_Search] = useState(false);
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ const ClassicBuild = () => {
   // searchText1에 입력 받은 것을 search페이지로 넘기기.
   const submitFunc = (event) => {
     event.preventDefault();
-    navigate("/classicbuild", {
+    navigate("/arambuild", {
       state: { searchText1 },
     });
   };
@@ -43,7 +43,7 @@ const ClassicBuild = () => {
   return (
     <div>
       <div className="anal-title">
-        <div className="css-123">협곡 챔피언 분석</div>
+        <div className="css-123">칼바람 챔피언 분석</div>
         <div className="input-table">
           <form
             onSubmit={submitFunc}
@@ -59,7 +59,7 @@ const ClassicBuild = () => {
               aria-label="Search"
             />
               <Link
-                to={{ pathname: "/", state: { searchText1: searchText1 } }}
+                to={{ pathname: "/aramsearch", state: { searchText1: searchText1 } }}
                 id="enterButton"
                 className="btn btn-outline-success me-2"
                 type="button"
@@ -82,9 +82,9 @@ const ClassicBuild = () => {
           </div>
         </div>
 
-        {showClassic_Search && <Classic_Search />}
+        {showClassic_Search && <Aram_Search />}
       </div>
     );
   };
 
-  export default ClassicBuild;
+  export default AramBuild;

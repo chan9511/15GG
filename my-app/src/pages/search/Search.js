@@ -13,6 +13,7 @@ import diamond_image from "./img/diamond.png"
 import master_image from "./img/master.png"
 import grandmaster_image from "./img/grandmaster.png"
 import challenger_image from "./img/challenger.png"
+import TestTest  from "../TestTest";
 
 
 const Search = () => {
@@ -75,8 +76,9 @@ const Search = () => {
         modifiedSearchText +
         "?api_key=" +
         API_KEY;
-      const result = await axios.get(summonerV4); // 비동기처리
-      console.log(result);
+      const result = await axios.get(summonerV4);
+       // 비동기처리
+      console.log(result)
 
       const result2 = await axios.get(
         `https://kr.api.riotgames.com/lol/league/v4/entries/by-summoner/${result.data.id}?api_key=${API_KEY}`
@@ -88,12 +90,12 @@ const Search = () => {
       // )
 
       //////////////////// 매치목록 뽑기 ////////////////
-      const puuid = result.data.puuid;
+      const puuid = result.data.puuid;      
       console.log(puuid);
       const matchdata = await axios.get(
         `https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/${puuid}/ids??start=0&count=20&api_key=${API_KEY}`
       ); // 비동기
-
+      
       console.log(matchdata);
       const matchId = matchdata.data;
       const matchLog = [];
@@ -189,7 +191,8 @@ const Search = () => {
       );
       console.log(flexRankData.wins, flexRankData.losses);
     } catch (error) {
-      console.log(error);
+      console.log("오류 발생:",error);
+      window.location.href = "http://localhost:3000/testtest";
     }
   };
   return (

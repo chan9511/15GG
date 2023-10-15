@@ -12,9 +12,9 @@ import Nav from "./pages/Nav";
 import Search from "./pages/search/Search";
 import AramBuild from "./pages/anal/AramBuild";
 import ClassicBuild from "./pages/anal/ClassicBuild";
-import Classic_Search from "./pages/anal/Classic_Search";
+import AramSearch from "./pages/anal/AramSearch";
+import ClassicSearch from "./pages/anal/ClassicSearch";
 import TestTest from "./pages/TestTest";
-import Aram_Search from "./pages/anal/Aram_Search";
 
 const App = () => {
   return (
@@ -29,9 +29,9 @@ const App = () => {
         <Route path="/tier/classic" element={<Classic />} />
         <Route path="/tier/aram" element={<Aram />} />
         <Route path="/arambuild" element={<AramBuild />} />
+        <Route path="/aramsearch" element={<AramSearch />} />
+        <Route path="/classicsearch" element={<ClassicSearch />} />
         <Route path="/classicbuild" element={<ClassicBuild />} />
-        <Route path="/anal2/aramsearch" element={<Aram_Search />} />
-        <Route path="/anal/classicsearch" element={<Classic_Search />} />
         <Route path="/login/login" element={<Login />} />
         <Route path="/login/signup" element={<SignUp />} />
         <Route path="/search/search" element={<Search />} />

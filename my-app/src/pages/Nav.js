@@ -33,7 +33,7 @@ const Nav = () => {
           onMouseEnter={toggleDropdown}
           onMouseLeave={closeDropdowns}
         >
-          <a className="nav-link dropdown-toggle" href="/classicbuild" role="button">
+          <a className="nav-link dropdown-toggle" href="/classicsearch" role="button">
             챔피언 분석
           </a>
           <ul
@@ -42,12 +42,12 @@ const Nav = () => {
             style={{ backgroundColor: "#380101", color: "white" }}
           >
             <li>
-              <a className="dropdown-item" href="/classicbuild">
+              <a className="dropdown-item" href="/classicsearch">
                 협곡 분석
               </a>
             </li>
             <li>
-              <a className="dropdown-item" href="/arambuild">
+              <a className="dropdown-item" href="/aramsearch">
                 칼바람 분석
               </a>
             </li>
