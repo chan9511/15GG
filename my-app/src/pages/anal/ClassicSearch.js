@@ -44,7 +44,7 @@ const ClassicSearch = () => {
     setSelectedTier(newText);
     setIsDropdownOpen(false);
   };
-  const [effectData, setEffectData] = useState([]);
+  const [effectData, setEffectData] = useState(null);
   useEffect(() => {
     console.log('effectData:', effectData);
     // return ()=>{
@@ -191,7 +191,7 @@ const getData = ()=>{
         </div>
       </div>
 
-      {showClassic_Search && <Classic_Search ChampionData={championData} />}
+      {effectData && <Classic_Search championData={effectData} />}
     </div>
   );
 };
