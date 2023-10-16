@@ -10,7 +10,6 @@ const Classic = () => {
   const [sortBy, setSortBy] = useState("win_rate"); // 초기 정렬 승률 높은순
   const [sortDirection, setSortDirection] = useState("descending");
   const [tierData, setTierData] = useState([]); // 상태 변수로 tierData를 저장
-  
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -56,7 +55,7 @@ const Classic = () => {
   };
 
   console.log(tierData);
-  const championData = tierData
+  const championData = tierData;
   console.log(championData);
 
   const toggleSortDirection = () => {
@@ -73,11 +72,7 @@ const Classic = () => {
     }
   });
 
-
-  
-
   return (
-    
     <div>
       <div className="css-123">협곡 티어 정보</div>
       <div className="css-gtm9xc">
@@ -117,7 +112,7 @@ const Classic = () => {
         </nav>
         <div className="input-table">
           <nav className="nav-container">
-            {["TOP", "JUNGLE", "MIDDLE", "BOTTOM", "UTILITY"].map((role) => (
+            {["탑", "정글", "미드", "바텀", "서폿"].map((role) => (
               <button
                 key={role}
                 type="button"
@@ -212,7 +207,7 @@ const Classic = () => {
             </button>
           </div>
         </div>
-        
+
         {sortedData.map((champion) => (
           <div key={champion.champion_name} className="table-row">
             <div className="table-data">{champion.champion_name}</div>
