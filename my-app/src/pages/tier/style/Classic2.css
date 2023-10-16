@@ -223,6 +223,7 @@ option {
     background-color: #fff; /* 배경색 지정 */
     padding: 10px; /* 패딩 추가 */
     font-size: 15px;
+    text-align: center !important; 
   }
   
   /* 버튼 스타일 */

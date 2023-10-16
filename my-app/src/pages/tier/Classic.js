@@ -1,32 +1,32 @@
 import React, { useState } from "react";
 import "./style/Classic.css";
 import "./style/Classic2.css";
-import championData from "./json/bro.json";
-
-
+import { ClassicTier } from "../../api";
 
 const Classic = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [selectedTier, setSelectedTier] = useState("Emerald");
-  const [selectedRole, setSelectedRole] = useState("탑");
+  const [selectedTier, setSelectedTier] = useState("");
+  const [selectedRole, setSelectedRole] = useState("");
   const [sortBy, setSortBy] = useState("win_rate"); // 초기 정렬 승률 높은순
   const [sortDirection, setSortDirection] = useState("descending");
+  const [tierData, setTierData] = useState([]); // 상태 변수로 tierData를 저장
+  
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
   const tierList = [
-    "Challenger",
-    "Grandmaster",
-    "Master",
-    "Diamond",
-    "Emerald",
-    "Platinum",
-    "Gold",
-    "Silver",
-    "Bronze",
-    "Iron",
+    "챌린저",
+    "그랜드마스터",
+    "마스터",
+    "다이아",
+    "에메랄드",
+    "플레티넘",
+    "골드",
+    "실버",
+    "브론즈",
+    "아이언",
   ];
 
   const changeButtonText = (newText) => {
@@ -34,9 +34,30 @@ const Classic = () => {
     setIsDropdownOpen(false);
   };
 
-  const handleRoleClick = (role) => {
+  const handleRoleClick = async (role) => {
     setSelectedRole(role);
+
+    const tier = selectedTier;
+    const team_position = role;
+
+    const data = {
+      tier,
+      team_position,
+    };
+
+    try {
+      const tierData = await ClassicTier(data);
+      setTierData(tierData.list);
+      console.log("tierData:", tierData.list);
+    } catch (error) {
+      // 오류 처리
+      console.error("Error fetching Classic Tier:", error);
+    }
   };
+
+  console.log(tierData);
+  const championData = tierData
+  console.log(championData);
 
   const toggleSortDirection = () => {
     setSortDirection(
@@ -44,39 +65,7 @@ const Classic = () => {
     );
   };
 
-  // Filter data based on the selected role
-  const filteredData = () => {
-    switch (selectedRole) {
-      case "탑":
-        return championData.filter(
-          (champion) => champion.teamPosition === "TOP"
-        );
-      case "정글":
-        return championData.filter(
-          (champion) => champion.teamPosition === "JUNGLE"
-        );
-      case "미드":
-        return championData.filter(
-          (champion) => champion.teamPosition === "MIDDLE"
-        );
-      case "바텀":
-        return championData.filter(
-          (champion) => champion.teamPosition === "BOTTOM"
-        );
-      case "서폿":
-        return championData.filter(
-          (champion) => champion.teamPosition === "UTILITY"
-        );
-      default:
-        return []; // 선택한 역할에 맞는 데이터가 없는 경우 빈 배열 반환
-    }
-  };
-
-  const currentRoleData = filteredData();
-
-  // Sort data based on the selected sortBy and sortDirection
-
-  const sortedData = currentRoleData.slice().sort((a, b) => {
+  const sortedData = championData.slice().sort((a, b) => {
     if (sortDirection === "ascending") {
       return a[sortBy] - b[sortBy];
     } else {
@@ -84,7 +73,11 @@ const Classic = () => {
     }
   });
 
+
+  
+
   return (
+    
     <div>
       <div className="css-123">협곡 티어 정보</div>
       <div className="css-gtm9xc">
@@ -124,7 +117,7 @@ const Classic = () => {
         </nav>
         <div className="input-table">
           <nav className="nav-container">
-            {["탑", "정글", "미드", "바텀", "서폿"].map((role) => (
+            {["TOP", "JUNGLE", "MIDDLE", "BOTTOM", "UTILITY"].map((role) => (
               <button
                 key={role}
                 type="button"
@@ -145,7 +138,12 @@ const Classic = () => {
           <div className="table-header">챔피언</div>
           <div className="table-header">
             K/D/A
-            <button onClick={() => { setSortBy("av_kda"); toggleSortDirection();}}>
+            <button
+              onClick={() => {
+                setSortBy("av_kda");
+                toggleSortDirection();
+              }}
+            >
               {sortBy === "av_kda"
                 ? sortDirection === "ascending"
                   ? "▲"
@@ -155,7 +153,12 @@ const Classic = () => {
           </div>
           <div className="table-header">
             승률
-            <button onClick={() => { setSortBy("win_rate"); toggleSortDirection();}}>
+            <button
+              onClick={() => {
+                setSortBy("win_rate");
+                toggleSortDirection();
+              }}
+            >
               {sortBy === "win_rate"
                 ? sortDirection === "ascending"
                   ? "▲"
@@ -165,7 +168,12 @@ const Classic = () => {
           </div>
           <div className="table-header">
             픽률
-            <button onClick={() => { setSortBy("pick_rate"); toggleSortDirection();}}>
+            <button
+              onClick={() => {
+                setSortBy("pick_rate");
+                toggleSortDirection();
+              }}
+            >
               {sortBy === "pick_rate"
                 ? sortDirection === "ascending"
                   ? "▲"
@@ -175,7 +183,12 @@ const Classic = () => {
           </div>
           <div className="table-header">
             밴율
-            <button onClick={() => { setSortBy("ban_rate"); toggleSortDirection();}}>
+            <button
+              onClick={() => {
+                setSortBy("ban_rate");
+                toggleSortDirection();
+              }}
+            >
               {sortBy === "ban_rate"
                 ? sortDirection === "ascending"
                   ? "▲"
@@ -185,7 +198,12 @@ const Classic = () => {
           </div>
           <div className="table-header">
             표본
-            <button onClick={() => { setSortBy("pick_cnt"); toggleSortDirection();}}>
+            <button
+              onClick={() => {
+                setSortBy("pick_cnt");
+                toggleSortDirection();
+              }}
+            >
               {sortBy === "pick_cnt"
                 ? sortDirection === "ascending"
                   ? "▲"
@@ -194,9 +212,10 @@ const Classic = () => {
             </button>
           </div>
         </div>
+        
         {sortedData.map((champion) => (
-          <div key={champion.championName} className="table-row">
-            <div className="table-data">{champion.championName}</div>
+          <div key={champion.champion_name} className="table-row">
+            <div className="table-data">{champion.champion_name}</div>
             <div
               className="table-data"
               style={{

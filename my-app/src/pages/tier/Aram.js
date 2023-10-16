@@ -34,6 +34,8 @@ const Aram = () => {
     );
   };
 
+  console.log(championData)
+
   return (
     <div>
       <div className="css-123">칼바람 티어 정보</div>
