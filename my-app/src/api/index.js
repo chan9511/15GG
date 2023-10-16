@@ -21,6 +21,7 @@ export const ClassicAnalysis = async (data) => {
     if (!response) return null;
 
     const result = response.data;
+    console.log('result:',result);
     return result;
 }
 
