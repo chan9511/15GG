@@ -67,9 +67,10 @@
 .widgetOneButton {
     position: absolute;
     left: 13%;
-    top: 2%;
+    top: 4%;
     z-index: 1;
-  width: 100%;
+    width: 100%;
+    
 }
 
 .widgetOneButton button {
@@ -90,7 +91,7 @@
 
 .widgetTwoButton {
     position: absolute;
-    top: 2%;
+    top: 4%;
     margin-left: 12%;
     z-index: 1;
    width: 100%;

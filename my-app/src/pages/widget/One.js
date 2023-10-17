@@ -42,9 +42,8 @@ export default function One() {
       console.log(widgetResponse.data.columnName);
       sessionStorage.setItem("widgetOneTrue",`${widgetResponse.data.columnName}`)
       navigate(0)
-    }
+    };
     
-
   return (
     <div className="widgetOneButton">
  

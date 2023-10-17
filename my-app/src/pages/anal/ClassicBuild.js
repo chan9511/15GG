@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import "../search/style/Search.css";
 import "../tier/style/Classic.css";
 import "../tier/style/Classic2.css";
@@ -10,6 +10,8 @@ const ClassicBuild = () => {
   const [selectedTier, setSelectedTier] = useState("등급설정  ");
   const [searchText1, setSearchText1] = useState("");
   const [buildData, setBuildData] = useState([]); // 상태 변수로 buildData를 저장
+  const imageUrl =
+    "https://i.namu.wiki/i/d87ruSFsV6wCgnE1MW03j4UVoP1GY5UOUWi4u_KDb35MyZMkXetzYT0t-X52WTKK3jrddfw-3VRUImhdA9W4EpYcM7YBaUpih7N59zxAJgYAiwHNFZEgRM1gQ_HHgBmaiUOa8HPPvweNvkmxzv85Ag.webp";
 
   const tierList = [
     "챌린저",
@@ -24,6 +26,16 @@ const ClassicBuild = () => {
     "아이언",
   ];
 
+  const buttonStyle = {
+    backgroundImage: `url(${imageUrl})`,
+    backgroundSize: "cover",
+    width: "50px", // 원하는 너비 설정
+    height: "50px", // 원하는 높이 설정
+    border: 'none',
+    borderRadius: '50%',
+
+  };
+
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
@@ -34,7 +46,7 @@ const ClassicBuild = () => {
   };
   const [effectData, setEffectData] = useState(null);
   useEffect(() => {
-    console.log('effectData:', effectData);
+    console.log("effectData:", effectData);
     // return ()=>{
     //   console.log('useEffect End');
     // }
@@ -54,7 +66,7 @@ const ClassicBuild = () => {
     try {
       const buildData = await ClassicAnalysis(data);
       console.log(1);
-      setEffectData(buildData.list)
+      setEffectData(buildData.list);
       console.log(2);
       setBuildData(buildData);
       console.log("buildData:", buildData.list[0]);
@@ -68,12 +80,12 @@ const ClassicBuild = () => {
       console.error("Error fetching Classic Build:", error);
     }
   };
-console.log(buildData);
+  console.log(buildData);
   // console.log("last: ",buildData, ', ',championData);
-const getData = ()=>{
-  console.log('getData:',searchText1);
-  handleRoleClick(searchText1).then(r=> console.log(r))
-}
+  const getData = () => {
+    console.log("getData:", searchText1);
+    handleRoleClick(searchText1).then((r) => console.log(r));
+  };
   return (
     <div>
       <div className="anal-title">
@@ -109,11 +121,7 @@ const getData = ()=>{
               </ul>
             </div>
           </div>
-          {/*<form*/}
-          {/*  onSubmit={submitFunc}*/}
-          {/*  className="form-control me-2 d-flex search-form"*/}
-          {/*  role="search"*/}
-          {/*>*/}
+          <div className="grade-table">
             <input
               className="form-control"
               type="search"
@@ -122,7 +130,14 @@ const getData = ()=>{
               placeholder="챔피언명 검색"
               aria-label="Search"
             />
-            <button type="button" onClick={getData}>찾기</button>
+            <button
+              className="search1234"
+              type="button"
+              onClick={getData}
+              style={buttonStyle}
+            >
+            </button>
+          </div>
         </div>
       </div>
 

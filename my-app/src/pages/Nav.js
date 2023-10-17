@@ -1,9 +1,16 @@
 import React, { useState } from "react";
 import "./Nav.css";
+import { useNavigate } from "react-router-dom";
 
 const Nav = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isChampionDropdownOpen, setIsChampionDropdownOpen] = useState(false);
+  const navigate = useNavigate();
+  const logOutHandler = () => {
+    sessionStorage.clear();
+    navigate(0);
+    navigate(`/`);
+  };
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -33,7 +40,11 @@ const Nav = () => {
           onMouseEnter={toggleDropdown}
           onMouseLeave={closeDropdowns}
         >
-          <a className="nav-link dropdown-toggle" href="/classicsearch" role="button">
+          <a
+            className="nav-link dropdown-toggle"
+            href="/classicsearch"
+            role="button"
+          >
             챔피언 분석
           </a>
           <ul
@@ -78,17 +89,25 @@ const Nav = () => {
               </a>
             </li>
             <li>
-              <p className="dropdown-item" href="/tier/aram">
+              <a className="dropdown-item" href="/tier/aram">
                 칼바람 티어
-              </p>
+              </a>
             </li>
           </ul>
         </li>
-        <li className="nav-item">
-          <a className="nav-link" href="/login/login">
-            로그인
-          </a>
-        </li>
+        {sessionStorage.getItem("token") ? (
+          <li className="nav-item">
+            <button className="nav-link" onClick={() => logOutHandler()}>
+              로그아웃
+            </button>
+          </li>
+        ) : (
+          <li className="nav-item">
+            <a className="nav-link" href="/login/Login">
+              로그인 / 회원가입
+            </a>
+          </li>
+        )}
       </nav>
     </div>
   );

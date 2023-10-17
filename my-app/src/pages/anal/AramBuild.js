@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../search/style/Search.css";
 import "../tier/style/Classic.css";
 import "../tier/style/Classic2.css";
@@ -9,6 +9,8 @@ const AramBuild = () => {
   const [searchText1, setSearchText1] = useState("");
   const [showClassic_Search, setShowClassic_Search] = useState(false);
   const navigate = useNavigate();
+  const imageUrl =
+    "https://i.namu.wiki/i/d87ruSFsV6wCgnE1MW03j4UVoP1GY5UOUWi4u_KDb35MyZMkXetzYT0t-X52WTKK3jrddfw-3VRUImhdA9W4EpYcM7YBaUpih7N59zxAJgYAiwHNFZEgRM1gQ_HHgBmaiUOa8HPPvweNvkmxzv85Ag.webp";
 
   // searchText1에 입력 받은 것을 search페이지로 넘기기.
   const submitFunc = (event) => {
@@ -22,22 +24,13 @@ const AramBuild = () => {
     setShowClassic_Search(!showClassic_Search);
   };
 
-
-  // 엔터 버튼 마우스 호버
-  const handleButtonMouseEnter = () => {
-    const button = document.getElementById("enterButton");
-    if (button) {
-      button.style.backgroundColor = "#fff";
-      button.style.color = "#000";
-    }
-  };
-
-  const handleButtonMouseLeave = () => {
-    const button = document.getElementById("enterButton");
-    if (button) {
-      button.style.backgroundColor = "#970000";
-      button.style.color = "#fff";
-    }
+  const buttonStyle = {
+    backgroundImage: `url(${imageUrl})`,
+    backgroundSize: "cover",
+    width: "50px", // 원하는 너비 설정
+    height: "50px", // 원하는 높이 설정
+    border: "none",
+    borderRadius: "50%",
   };
 
   return (
@@ -58,33 +51,24 @@ const AramBuild = () => {
               placeholder="챔피언명 검색"
               aria-label="Search"
             />
-              <Link
-                to={{ pathname: "/", state: { searchText1: searchText1 } }}
-                id="enterButton"
-                className="btn btn-outline-success me-2"
-                type="button"
-                state={{ searchText1: searchText1 }}
-                onClick={toggleClassicAn}
-                onMouseEnter={handleButtonMouseEnter}
-                onMouseLeave={handleButtonMouseLeave}
-                style={{
-                  backgroundColor: "#970000",
-                  color: "#fff",
-                  borderColor: "#6699ff",
-                  border: 0,
-                  marginLeft: 10,
-                }}
-                >
-                {" "}
-                Enter
-              </Link>
-            </form>
-          </div>
+            <Link
+              to={{ pathname: "/", state: { searchText1: searchText1 } }}
+              id="enterButton"
+              className="btn btn-outline-success me-2"
+              type="button"
+              state={{ searchText1: searchText1 }}
+              onClick={toggleClassicAn}
+              style={buttonStyle}
+            >
+              {" "}
+            </Link>
+          </form>
         </div>
-
-        {showClassic_Search && <Aram_Search />}
       </div>
-    );
-  };
 
-  export default AramBuild;
+      {showClassic_Search && <Aram_Search />}
+    </div>
+  );
+};
+
+export default AramBuild;
