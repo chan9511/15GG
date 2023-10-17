@@ -13,7 +13,6 @@ import diamond_image from "./img/diamond.png";
 import master_image from "./img/master.png";
 import grandmaster_image from "./img/grandmaster.png";
 import challenger_image from "./img/challenger.png";
-import TestTest from "../TestTest.js";
 import ErrorPage from "../ErrorPage.js";
 
 const Search = () => {
@@ -172,7 +171,7 @@ const Search = () => {
             <ErrorPage />
           </div>
         ) : (
-          <TestTest />  
+          <></>  
         )}
         <div
           style={{
@@ -201,15 +200,6 @@ const Search = () => {
                         position: "absolute",
                       }}
                     >
-                      {/* <img
-                      src={https://ddragon.leagueoflegends.com/cdn/13.19.1/img/profileicon/{4389}.png}
-                      alt=""
-                      style={{
-                        border: "1px",
-                        width: "128px",
-                        height: "128px;",
-                      }} // 이미지의 테두리 스타일을 설정 (선택 사항)
-                    /> */}
                     </div>
                     <div
                       style={{
@@ -235,7 +225,7 @@ const Search = () => {
                           border: "1px",
                           width: "100px",
                           height: "128px;",
-                        }} // 이미지의 테두리 스타일을 설정 (선택 사항)
+                        }}
                       />
                     </div>
                     <div

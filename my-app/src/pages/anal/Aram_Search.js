@@ -7,9 +7,12 @@ const Aram_Search = ({ championData }) => {
     return <div>Loading..</div>;
   }
   const bestChampionData = championData[0];
-  // 픽이 가장 많은 데이터
+  
+  if (!bestChampionData) {
+    return <div className="noname">없는 챔피언 이름입니다. 다시 한 번 확인해주세요.  </div>;
+  }
+
   console.log(bestChampionData);
-  // 전체 포지션 데이터
 
   const championImageUrl = `https://ddragon.leagueoflegends.com/cdn/13.20.1/img/champion/${bestChampionData.champion_name}.png`;
   const itemStart = `http://ddragon.leagueoflegends.com/cdn/13.19.1/img/item/${bestChampionData.itemSet1_1}.png`;
@@ -228,9 +231,17 @@ const Aram_Search = ({ championData }) => {
             <div className="runetable-1">
               시작 아이템
               <div>
-                <img src={itemStart} alt="시작아이템" className="image-all123" />
+                <img
+                  src={itemStart}
+                  alt="시작아이템"
+                  className="image-all123"
+                />
                 {bestChampionData.itemSet1_2 && (
-                  <img src={itemStart2} alt="시작아이템" className="image-all123" />
+                  <img
+                    src={itemStart2}
+                    alt="시작아이템"
+                    className="image-all123"
+                  />
                 )}
 
                 <div className="win-rate">

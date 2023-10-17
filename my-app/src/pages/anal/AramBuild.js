@@ -1,4 +1,4 @@
-import React, { useState , useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import "../search/style/Search.css";
 import "../tier/style/Classic.css";
@@ -58,6 +58,7 @@ const AramBuild = () => {
       <div className="anal-title">
         <div className="css-123">칼바람 챔피언 분석</div>
         <div className="input-table">
+          <div className="grade-table">
             <input
               className="form-control"
               type="search"
@@ -71,12 +72,12 @@ const AramBuild = () => {
               type="button"
               onClick={getData}
               style={buttonStyle}
-            >
-            </button>
+            ></button>
+          </div>
         </div>
       </div>
 
-      {effectData && <Aram_Search championData={effectData}/> }
+      {effectData && <Aram_Search championData={effectData} />}
     </div>
   );
 };

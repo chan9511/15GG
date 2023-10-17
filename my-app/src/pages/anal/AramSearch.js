@@ -59,21 +59,22 @@ const AramSearch = () => {
         <div className="css-123">칼바람 챔피언 분석</div>
         <div className="input-table">
           <div className="grade-table">
-          <input
-            className="form-control"
-            type="search"
-            value={searchText1}
-            onChange={(e) => setSearchText1(e.target.value)}
-            placeholder="챔피언명 검색"
-            aria-label="Search"
-          />
-          <button
-            className="search1234"
-            type="button"
-            onClick={getData}
-            style={buttonStyle}
-          ></button>
-        </div></div>
+            <input
+              className="form-control"
+              type="search"
+              value={searchText1}
+              onChange={(e) => setSearchText1(e.target.value)}
+              placeholder="챔피언명 검색"
+              aria-label="Search"
+            />
+            <button
+              className="search1234"
+              type="button"
+              onClick={getData}
+              style={buttonStyle}
+            ></button>
+          </div>
+        </div>
       </div>
 
       {effectData && <Aram_Search championData={effectData} />}

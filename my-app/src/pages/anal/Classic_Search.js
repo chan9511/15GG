@@ -1,5 +1,4 @@
 import "./style/ClassicTable.css";
-import React from "react";
 
 const Classic_Search = ({championData}) => {
   console.log('props:', championData);
@@ -7,11 +6,14 @@ const Classic_Search = ({championData}) => {
   if (championData === null) {
     return <div>Loading..</div>;
   }
-  
-  console.log(championData);
   const bestChampionData = championData[0];
-  console.log(bestChampionData);
   
+  if (bestChampionData === undefined) {
+        return <div className="noname">없는 챔피언 이름입니다. 다시 한 번 확인해주세요.  </div>;
+  } 
+  
+  console.log(bestChampionData);
+
   const championImageUrl = `https://ddragon.leagueoflegends.com/cdn/13.20.1/img/champion/${bestChampionData.champion_name}.png`;
   const itemStart = `http://ddragon.leagueoflegends.com/cdn/13.19.1/img/item/${bestChampionData.itemSet1_1}.png`;
   const itemStart2 = `http://ddragon.leagueoflegends.com/cdn/13.19.1/img/item/${bestChampionData.itemSet1_2}.png`;
