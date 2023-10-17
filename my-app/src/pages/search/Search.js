@@ -13,6 +13,8 @@ import diamond_image from "./img/diamond.png"
 import master_image from "./img/master.png"
 import grandmaster_image from "./img/grandmaster.png"
 import challenger_image from "./img/challenger.png"
+import TestTest from "../TestTest.js";
+import ErrorPage from "../ErrorPage.js";
 
 
 const Search = () => {
@@ -22,6 +24,7 @@ const Search = () => {
   const [userMatch, setUserMatch] = useState([]);
   const API_KEY = "RGAPI-d9d920d1-34c1-4fee-ae05-f7d31572d99b";
   const location = useLocation();
+  const [loading, setLoading] = useState(false);
   
   console.log(location);
 
@@ -48,6 +51,7 @@ const Search = () => {
   // 받아온 input값을 ex)인형이면 -> 인 형 으로 변환하기.
   const searchForPlayer = async (searchText) => {
     try {
+      setLoading(true);
       const modifiedSearchText =
         searchText.length === 2
           ? searchText.charAt(0) + " " + searchText.charAt(1)
@@ -67,11 +71,6 @@ const Search = () => {
       const result2 = await axios.get(
         `https://kr.api.riotgames.com/lol/league/v4/entries/by-summoner/${result.data.id}?api_key=${API_KEY}`
       ); // 비동기처리(leagueV4)
-
-      
-      // const result3 = await axios.get(
-      //   `https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${result.data.id}?api_key=${API_KEY}`
-      // )
 
       //////////////////// 매치목록 뽑기 ////////////////
       const puuid = result.data.puuid;      
@@ -162,27 +161,24 @@ const Search = () => {
       setSoloRankData(soloRankData);
       setFlexRankData(flexRankData);
 
-      console.log(
-        soloRankData.tier,
-        soloRankData.rank,
-        soloRankData.leaguePoints
-      );
-      console.log(soloRankData.wins, soloRankData.losses);
-      console.log(
-        flexRankData.tier,
-        flexRankData.rank,
-        flexRankData.leaguePoints
-      );
-      console.log(flexRankData.wins, flexRankData.losses);
+     setLoading(false);
+      
     } catch (error) {
       console.log("오류 발생:",error);
+      setLoading(false);
       window.location.href = "http://localhost:3000/testtest";
     }
   };
   return (
     <>
+   
       {/* 통합 테이블 */}
       <div className="table_summary" >
+      {loading ? (
+      <div className="loading-indicator"><ErrorPage/></div>
+    ) : (
+        < TestTest/>
+    )}
         <div
           style={{
             backgroundColor: "#fff",
