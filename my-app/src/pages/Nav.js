@@ -78,9 +78,9 @@ const Nav = () => {
               </a>
             </li>
             <li>
-              <a className="dropdown-item" href="/tier/aram">
+              <p className="dropdown-item" href="/tier/aram">
                 칼바람 티어
-              </a>
+              </p>
             </li>
           </ul>
         </li>

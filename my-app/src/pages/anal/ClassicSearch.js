@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import { Link, useNavigate } from "react-router-dom";
 import "../search/style/Search.css";
 import "../tier/style/Classic.css";
 import "../tier/style/Classic2.css";
@@ -10,10 +9,7 @@ const ClassicSearch = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedTier, setSelectedTier] = useState("등급설정  ");
   const [searchText1, setSearchText1] = useState("");
-  const [showClassic_Search, setShowClassic_Search] = useState(false);
   const [buildData, setBuildData] = useState([]); // 상태 변수로 buildData를 저장
-  const [championData, setChampionData] = useState([null]);
-  const navigate = useNavigate();
 
   const tierList = [
     "챌린저",
@@ -27,14 +23,6 @@ const ClassicSearch = () => {
     "브론즈",
     "아이언",
   ];
-  // searchText1에 입력 받은 것을 search페이지로 넘기기.
-  const submitFunc = (event) => {
-    console.log('submitFunc:');
-    event.preventDefault();
-    // navigate("/classic_search", {
-    //   state: { selectedTier, searchText1 },
-    // });
-  };
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -80,34 +68,8 @@ const ClassicSearch = () => {
       console.error("Error fetching Classic Build:", error);
     }
   };
-
+console.log(buildData);
   // console.log("last: ",buildData, ', ',championData);
-
-
-  const toggleClassicAn = () => {
-    setShowClassic_Search(!showClassic_Search);
-  };
-
-
-
-
-
-  // 엔터 버튼 마우스 호버
-  const handleButtonMouseEnter = () => {
-    const button = document.getElementById("enterButton");
-    if (button) {
-      button.style.backgroundColor = "#fff";
-      button.style.color = "#000";
-    }
-  };
-
-  const handleButtonMouseLeave = () => {
-    const button = document.getElementById("enterButton");
-    if (button) {
-      button.style.backgroundColor = "#970000";
-      button.style.color = "#fff";
-    }
-  };
 const getData = ()=>{
   console.log('getData:',searchText1);
   handleRoleClick(searchText1).then(r=> console.log(r))
@@ -147,11 +109,6 @@ const getData = ()=>{
               </ul>
             </div>
           </div>
-          {/*<form*/}
-          {/*  onSubmit={submitFunc}*/}
-          {/*  className="form-control me-2 d-flex search-form"*/}
-          {/*  role="search"*/}
-          {/*>*/}
             <input
               className="form-control"
               type="search"
@@ -161,33 +118,6 @@ const getData = ()=>{
               aria-label="Search"
             />
             <button type="button" onClick={getData}>찾기</button>
-            {/*<Link*/}
-            {/*  to={{*/}
-            {/*    pathname: "/classic_search",*/}
-            {/*    state: { searchText1: searchText1 },*/}
-            {/*  }}*/}
-            {/*  id="enterButton"*/}
-            {/*  className="btn btn-outline-success me-2"*/}
-            {/*  type="button"*/}
-            {/*  state={{ searchText1: searchText1 }}*/}
-            {/*  onClick={() => {*/}
-            {/*    toggleClassicAn();*/}
-            {/*    handleRoleClick(searchText1);*/}
-            {/*  }}*/}
-            {/*  onMouseEnter={handleButtonMouseEnter}*/}
-            {/*  onMouseLeave={handleButtonMouseLeave}*/}
-            {/*  style={{*/}
-            {/*    backgroundColor: "#970000",*/}
-            {/*    color: "#fff",*/}
-            {/*    borderColor: "#6699ff",*/}
-            {/*    border: 0,*/}
-            {/*    marginLeft: 10,*/}
-            {/*  }}*/}
-            {/*>*/}
-            {/*  {" "}*/}
-            {/*  Enter*/}
-            {/*</Link>*/}
-          {/*</form>*/}
         </div>
       </div>
 

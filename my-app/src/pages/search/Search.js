@@ -13,7 +13,6 @@ import diamond_image from "./img/diamond.png"
 import master_image from "./img/master.png"
 import grandmaster_image from "./img/grandmaster.png"
 import challenger_image from "./img/challenger.png"
-import TestTest  from "../TestTest";
 
 
 const Search = () => {
@@ -39,21 +38,6 @@ const Search = () => {
     GRANDMASTER: grandmaster_image,
     CHALLENGER: challenger_image
   }
-  
-  // const rankImages = {
-  //   UNRANKED: `https://z.fow.kr/img/emblem/unranked.png`,
-  //   IRON: `https://z.fow.kr/img/emblem/iron.png`,
-  //   BRONZE: `https://z.fow.kr/img/emblem/bronze.png`,
-  //   SILVER: `https://z.fow.kr/img/emblem/sliver.png`,
-  //   GOLD: `https://z.fow.kr/img/emblem/gold.png`,
-  //   // PLATINUM: `https://z.fow.kr/img/emblem/platinum.png`,
-  //   PLATINUM: `emblem-platinum.p`,
-  //   EMERALD: `https://z.fow.kr/img/emblem/emerald.png`,
-  //   DIAMOND: `https://z.fow.kr/img/emblem/diamond.png`,
-  //   MASTER: `https://z.fow.kr/img/emblem/master.png`,
-  //   GRANDMASTER: `https://z.fow.kr/img/emblem/grandmaster.png`,
-  //   CHALLENGER:`https://z.fow.kr/img/emblem/challenger.png`,
-  // };
 
   // Searchbar에서 입력된 input값 받아오기.
   useEffect(() => {
