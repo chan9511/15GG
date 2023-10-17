@@ -171,8 +171,6 @@ const Search = () => {
   };
   return (
     <>
-   
-      {/* 통합 테이블 */}
       <div className="table_summary" >
       {loading ? (
       <div className="loading-indicator"><ErrorPage/></div>
