@@ -7,7 +7,7 @@ import { ClassicAnalysis } from "../../api";
 
 const ClassicBuild = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [selectedTier, setSelectedTier] = useState("등급설정  ");
+  const [selectedTier, setSelectedTier] = useState("등급설정 ");
   const [searchText1, setSearchText1] = useState("");
   const [buildData, setBuildData] = useState([]); // 상태 변수로 buildData를 저장
   const imageUrl =
@@ -47,9 +47,6 @@ const ClassicBuild = () => {
   const [effectData, setEffectData] = useState(null);
   useEffect(() => {
     console.log("effectData:", effectData);
-    // return ()=>{
-    //   console.log('useEffect End');
-    // }
   }, [effectData]);
 
   const handleRoleClick = async (searchText1) => {
@@ -70,18 +67,12 @@ const ClassicBuild = () => {
       console.log(2);
       setBuildData(buildData);
       console.log("buildData:", buildData.list[0]);
-      // setChampionData(buildData);
-      // console.log(buildData);
-      //
-      // console.log(buildData);
-      // console.log(championData);
     } catch (error) {
       // 오류 처리
       console.error("Error fetching Classic Build:", error);
     }
   };
   console.log(buildData);
-  // console.log("last: ",buildData, ', ',championData);
   const getData = () => {
     console.log("getData:", searchText1);
     handleRoleClick(searchText1).then((r) => console.log(r));

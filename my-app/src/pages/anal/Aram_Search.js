@@ -1,53 +1,19 @@
 import "./style/ClassicTable.css";
-import { useLocation } from "react-router-dom";
-import championData from "./json/em.json";
 
-const Aram_Search = () => {
-  const location = useLocation();
-
+const Aram_Search = ({ championData }) => {
+  console.log("props:", championData);
   const cursor = "https://s-lol-web.op.gg/images/icon/icon-arrow-right.svg";
-
-
-  // 앞자리를 대문자로 추출하는 함수.
-  function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+  if (championData === null) {
+    return <div>Loading..</div>;
   }
-  const searchText1 = capitalizeFirstLetter(location.state.searchText1);
-
-  console.log(location);
-
-  console.log(searchText1);
-  // classicbuild에서 input한 데이터 추출
-  const filteredChampionData = championData.filter((champion) => {
-    return champion.championName === searchText1;
-  });
-  if (filteredChampionData.length === 0) {
-    // 검색 결과가 없을 때 홈페이지로 이동
-    window.location.href = "http://localhost:3000/"; // 
-  } else {
-    
-
-    // 챔피언명에 따른 전체데이터
-    console.log(filteredChampionData);
-  }
-
-  let highestWinCnt = 0; // 초기 픽 수를 0으로 설정
-  let bestChampionData = null; // 가장 많은 픽 수를 가진 챔피언 데이터를 저장할 변수
-
-  filteredChampionData.forEach((championData) => {
-    if (championData.pick_cnt > highestWinCnt) {
-      highestWinCnt = championData.pick_cnt;
-      bestChampionData = championData;
-    }
-  });
+  const bestChampionData = championData[0];
   // 픽이 가장 많은 데이터
   console.log(bestChampionData);
   // 전체 포지션 데이터
-  console.log(filteredChampionData);
 
-  const championImageUrl = `https://ddragon.leagueoflegends.com/cdn/13.20.1/img/champion/${searchText1}.png`;
-  const itemStart = `http://ddragon.leagueoflegends.com/cdn/13.19.1/img/item/${bestChampionData.item_set1_1}.png`;
-  const itemStart2 = `http://ddragon.leagueoflegends.com/cdn/13.19.1/img/item/${bestChampionData.item_set1_2}.png`;
+  const championImageUrl = `https://ddragon.leagueoflegends.com/cdn/13.20.1/img/champion/${bestChampionData.champion_name}.png`;
+  const itemStart = `http://ddragon.leagueoflegends.com/cdn/13.19.1/img/item/${bestChampionData.itemSet1_1}.png`;
+  const itemStart2 = `http://ddragon.leagueoflegends.com/cdn/13.19.1/img/item/${bestChampionData.itemSet1_2}.png`;
   const itemShoes = `http://ddragon.leagueoflegends.com/cdn/13.19.1/img/item/${bestChampionData.shoes1}.png`;
   const mainItem = `http://ddragon.leagueoflegends.com/cdn/13.19.1/img/item/${bestChampionData.core1_1}.png`;
   const mainItem2 = `http://ddragon.leagueoflegends.com/cdn/13.19.1/img/item/${
@@ -56,7 +22,7 @@ const Aram_Search = () => {
       : bestChampionData.core2_2
   }.png`;
   const convertSkillBuild = (skillValue) => {
-    switch (skillValue) {
+    switch (Number(skillValue)) {
       case 1:
         return "Q";
       case 2:
@@ -69,7 +35,7 @@ const Aram_Search = () => {
   };
 
   const convertSpellBuild = (spellValue) => {
-    switch (spellValue) {
+    switch (Number(spellValue)) {
       case 1:
         return "SummonerBoost";
       case 3:
@@ -98,28 +64,11 @@ const Aram_Search = () => {
   };
 
   // filteredChampionData 내의 데이터를 변환
-  const transformedChampionData = filteredChampionData.map((champion) => ({
-    ...champion,
-    skill_build1: convertSkillBuild(champion.skill_build1),
-    skill_build2: convertSkillBuild(champion.skill_build2),
-    skill_build3: convertSkillBuild(champion.skill_build3),
-  }));
-
-  const transformedSpellData = filteredChampionData.map((champion) => ({
-    ...champion,
-    spell1_1: convertSpellBuild(champion.spell1_1),
-    spell1_2: convertSpellBuild(champion.spell1_2),
-    spell2_1: convertSpellBuild(champion.spell2_1),
-    spell2_2: convertSpellBuild(champion.spell2_2),
-  }));
 
   // 스킬빌드 1,2,3형식으로 들어오는 것을 Q,W,E로 변환 확인
-  console.log(transformedChampionData[0].skill_build1);
-  console.log(bestChampionData.skill_build1);
   console.log(convertSkillBuild(bestChampionData.skill_build1));
 
   // 스펠 변환 형식으로 들어오는 것 확인
-  console.log(transformedSpellData[0].spell1_1);
   console.log(convertSpellBuild(bestChampionData.spell1_1));
   const summonerspell1 = `http://ddragon.leagueoflegends.com/cdn/13.19.1/img/spell/${convertSpellBuild(
     bestChampionData.spell1_1
@@ -128,13 +77,19 @@ const Aram_Search = () => {
     bestChampionData.spell1_2
   )}.png`;
 
-  const skillImageUrl = `https://opgg-static.akamaized.net/meta/images/lol/spell/${searchText1}${convertSkillBuild(
+  const skillImageUrl = `https://opgg-static.akamaized.net/meta/images/lol/spell/${
+    bestChampionData.champion_name
+  }${convertSkillBuild(
     bestChampionData.skill_build1
   )}.png?image=q_auto,f_webp,w_64&v=1696570752446`;
-  const skillImageUrl2 = `https://opgg-static.akamaized.net/meta/images/lol/spell/${searchText1}${convertSkillBuild(
+  const skillImageUrl2 = `https://opgg-static.akamaized.net/meta/images/lol/spell/${
+    bestChampionData.champion_name
+  }${convertSkillBuild(
     bestChampionData.skill_build2
   )}.png?image=q_auto,f_webp,w_64&v=1696570752446`;
-  const skillImageUrl3 = `https://opgg-static.akamaized.net/meta/images/lol/spell/${searchText1}${convertSkillBuild(
+  const skillImageUrl3 = `https://opgg-static.akamaized.net/meta/images/lol/spell/${
+    bestChampionData.champion_name
+  }${convertSkillBuild(
     bestChampionData.skill_build3
   )}.png?image=q_auto,f_webp,w_64&v=1696570752446`;
 
@@ -156,7 +111,7 @@ const Aram_Search = () => {
         <div className="classic-table">
           <img src={championImageUrl} alt="champimg" className="champ-image" />
 
-          <div className="champ-name">{searchText1}</div>
+          <div className="champ-name">{bestChampionData.champion_name}</div>
         </div>
 
         <div className="rate-table">
@@ -254,8 +209,16 @@ const Aram_Search = () => {
             <div className="runetable-1">
               소환사 주문
               <div>
-                <img src={summonerspell1} alt="spell" className="image-all123" />
-                <img src={summonerspell2} alt="spell" className="image-all123" />
+                <img
+                  src={summonerspell1}
+                  alt="spell"
+                  className="image-all123"
+                />
+                <img
+                  src={summonerspell2}
+                  alt="spell"
+                  className="image-all123"
+                />
 
                 <div className="win-rate">
                   승률:{(bestChampionData.spell1_win * 100).toFixed(1)}%
@@ -265,14 +228,14 @@ const Aram_Search = () => {
             <div className="runetable-1">
               시작 아이템
               <div>
-                <img src={itemStart} alt="shoes" className="image-all123" />
-                {bestChampionData.item_set1_2 && (
-                  <img src={itemStart2} alt="shoes" className="image-all123" />
+                <img src={itemStart} alt="시작아이템" className="image-all123" />
+                {bestChampionData.itemSet1_2 && (
+                  <img src={itemStart2} alt="시작아이템" className="image-all123" />
                 )}
 
                 <div className="win-rate">
                   승률:
-                  {(bestChampionData.item_set1_win * 100).toFixed(1)}%
+                  {(bestChampionData.itemSet1_win * 100).toFixed(1)}%
                 </div>
               </div>
             </div>

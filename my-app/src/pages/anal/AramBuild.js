@@ -1,28 +1,16 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState , useEffect } from "react";
+
 import "../search/style/Search.css";
 import "../tier/style/Classic.css";
 import "../tier/style/Classic2.css";
 import Aram_Search from "./Aram_Search";
+import { AramAnalysis } from "../../api";
 
 const AramBuild = () => {
   const [searchText1, setSearchText1] = useState("");
-  const [showClassic_Search, setShowClassic_Search] = useState(false);
-  const navigate = useNavigate();
+  const [buildData, setBuildData] = useState([]); // 상태 변수로 buildData를 저장
   const imageUrl =
     "https://i.namu.wiki/i/d87ruSFsV6wCgnE1MW03j4UVoP1GY5UOUWi4u_KDb35MyZMkXetzYT0t-X52WTKK3jrddfw-3VRUImhdA9W4EpYcM7YBaUpih7N59zxAJgYAiwHNFZEgRM1gQ_HHgBmaiUOa8HPPvweNvkmxzv85Ag.webp";
-
-  // searchText1에 입력 받은 것을 search페이지로 넘기기.
-  const submitFunc = (event) => {
-    event.preventDefault();
-    navigate("/arambuild", {
-      state: { searchText1 },
-    });
-  };
-
-  const toggleClassicAn = () => {
-    setShowClassic_Search(!showClassic_Search);
-  };
 
   const buttonStyle = {
     backgroundImage: `url(${imageUrl})`,
@@ -33,16 +21,43 @@ const AramBuild = () => {
     borderRadius: "50%",
   };
 
+  const [effectData, setEffectData] = useState(null);
+  useEffect(() => {
+    console.log("effectData:", effectData);
+  }, [effectData]);
+
+  const handleRoleClick = async (searchText1) => {
+    setSearchText1(searchText1);
+
+    const champion_name = searchText1;
+
+    const data = {
+      champion_name,
+    };
+
+    try {
+      const buildData = await AramAnalysis(data);
+      console.log(1);
+      setEffectData(buildData.list);
+      console.log(2);
+      setBuildData(buildData);
+      console.log("buildData:", buildData.list[0]);
+    } catch (error) {
+      // 오류 처리
+      console.error("Error fetching Classic Build:", error);
+    }
+  };
+  console.log(buildData);
+  const getData = () => {
+    console.log("getData:", searchText1);
+    handleRoleClick(searchText1).then((r) => console.log(r));
+  };
+
   return (
     <div>
       <div className="anal-title">
         <div className="css-123">칼바람 챔피언 분석</div>
         <div className="input-table">
-          <form
-            onSubmit={submitFunc}
-            className="form-control me-2 d-flex search-form"
-            role="search"
-          >
             <input
               className="form-control"
               type="search"
@@ -51,22 +66,17 @@ const AramBuild = () => {
               placeholder="챔피언명 검색"
               aria-label="Search"
             />
-            <Link
-              to={{ pathname: "/", state: { searchText1: searchText1 } }}
-              id="enterButton"
-              className="btn btn-outline-success me-2"
+            <button
+              className="search1234"
               type="button"
-              state={{ searchText1: searchText1 }}
-              onClick={toggleClassicAn}
+              onClick={getData}
               style={buttonStyle}
             >
-              {" "}
-            </Link>
-          </form>
+            </button>
         </div>
       </div>
 
-      {showClassic_Search && <Aram_Search />}
+      {effectData && <Aram_Search championData={effectData}/> }
     </div>
   );
 };

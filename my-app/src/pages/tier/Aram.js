@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./style/Classic.css";
 import "./style/Classic2.css";
 import championData from "./json/gold.json";
+// import { AramTier } from "../../api";
 
 const Aram = () => {
   const [topPositionData, setTopPositionData] = useState([]);
@@ -16,6 +17,7 @@ const Aram = () => {
 
   const [sortBy, setSortBy] = useState("win_rate"); // 초기 정렬 기준
   const [sortDirection, setSortDirection] = useState("descending"); // 초기 정렬 방향
+
 
   // 데이터를 주어진 key로 정렬하는 함수
   const sortByKey = (key) => {
@@ -34,7 +36,8 @@ const Aram = () => {
     );
   };
 
-  console.log(championData)
+    // console.log(championData)
+    // console.log(topPositionData)
 
   return (
     <div>

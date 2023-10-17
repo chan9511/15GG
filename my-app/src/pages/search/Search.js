@@ -2,20 +2,19 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
 import "./style/Search.css";
-import unranked_image from "./img/unranked.png"
-import iron_image from "./img/iron.png"
-import bronze_image from "./img/bronze.png"
-import silver_image from "./img/silver.png"
-import gold_image from "./img/gold.png"
-import platinum_image from "./img/platinum.png"
-import emerald_image from "./img/emerald.png"
-import diamond_image from "./img/diamond.png"
-import master_image from "./img/master.png"
-import grandmaster_image from "./img/grandmaster.png"
-import challenger_image from "./img/challenger.png"
+import unranked_image from "./img/unranked.png";
+import iron_image from "./img/iron.png";
+import bronze_image from "./img/bronze.png";
+import silver_image from "./img/silver.png";
+import gold_image from "./img/gold.png";
+import platinum_image from "./img/platinum.png";
+import emerald_image from "./img/emerald.png";
+import diamond_image from "./img/diamond.png";
+import master_image from "./img/master.png";
+import grandmaster_image from "./img/grandmaster.png";
+import challenger_image from "./img/challenger.png";
 import TestTest from "../TestTest.js";
 import ErrorPage from "../ErrorPage.js";
-
 
 const Search = () => {
   const [playerData, setPlayerData] = useState({});
@@ -25,7 +24,7 @@ const Search = () => {
   const API_KEY = "RGAPI-d9d920d1-34c1-4fee-ae05-f7d31572d99b";
   const location = useLocation();
   const [loading, setLoading] = useState(false);
-  
+
   console.log(location);
 
   const imagess = {
@@ -39,15 +38,14 @@ const Search = () => {
     DIAMOND: diamond_image,
     MASTER: master_image,
     GRANDMASTER: grandmaster_image,
-    CHALLENGER: challenger_image
-  }
+    CHALLENGER: challenger_image,
+  };
 
   // Searchbar에서 입력된 input값 받아오기.
   useEffect(() => {
     searchForPlayer(location.state.searchText);
   }, [location.state.searchText]);
 
-  
   // 받아온 input값을 ex)인형이면 -> 인 형 으로 변환하기.
   const searchForPlayer = async (searchText) => {
     try {
@@ -65,25 +63,25 @@ const Search = () => {
         "?api_key=" +
         API_KEY;
       const result = await axios.get(summonerV4);
-       // 비동기처리
-      console.log(result)
+      // 비동기처리
+      console.log(result);
 
       const result2 = await axios.get(
         `https://kr.api.riotgames.com/lol/league/v4/entries/by-summoner/${result.data.id}?api_key=${API_KEY}`
       ); // 비동기처리(leagueV4)
 
       //////////////////// 매치목록 뽑기 ////////////////
-      const puuid = result.data.puuid;      
+      const puuid = result.data.puuid;
       console.log(puuid);
       const matchdata = await axios.get(
         `https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/${puuid}/ids??start=0&count=20&api_key=${API_KEY}`
       ); // 비동기
-      
+
       console.log(matchdata);
       const matchId = matchdata.data;
       const matchLog = [];
       console.log(matchId); // 매치 목록 (최대 20개)
-      console.log(matchLog)
+      console.log(matchLog);
 
       for (let i = 0; i < 5; i++) {
         matchLog.push(
@@ -94,7 +92,7 @@ const Search = () => {
       }
 
       const userDatas = [];
-      console.log(matchLog[1])
+      console.log(matchLog[1]);
       for (let i = 0; i < 5; i++) {
         for (let j = 0; j < 10; j++) {
           if (
@@ -127,7 +125,7 @@ const Search = () => {
                 matchLog[i].data.info.participants[j].deaths
               ).toFixed(2),
               img: `https://ddragon.leagueoflegends.com/cdn/13.19.1/img/champion/${matchLog[i].data.info.participants[j].championName}.png`,
-              
+
               gameMode: matchLog[i].data.info.gameMode,
             });
           }
@@ -139,7 +137,6 @@ const Search = () => {
       console.log(userDatas);
       console.log(userMatch); // 5개의 매치기록 (총10개)
       console.log(matchLog[1]);
-    
 
       ////////////////////////////////////////////////////
       const soloRankData = result2.data.find(
@@ -156,33 +153,33 @@ const Search = () => {
         profileIconId: result.data.profileIconId,
         puuid: result.data.puuid,
       });
-      
 
       setSoloRankData(soloRankData);
       setFlexRankData(flexRankData);
 
-     setLoading(false);
-      
+      setLoading(false);
     } catch (error) {
-      console.log("오류 발생:",error);
+      console.log("오류 발생:", error);
       setLoading(false);
       window.location.href = "http://localhost:3000/testtest";
     }
   };
   return (
     <>
-      <div className="table_summary" >
-      {loading ? (
-      <div className="loading-indicator"><ErrorPage/></div>
-    ) : (
-        < TestTest/>
-    )}
+      <div className="table_summary">
+        {loading ? (
+          <div className="loading-indicator">
+            <ErrorPage />
+          </div>
+        ) : (
+          <TestTest />  
+        )}
         <div
           style={{
             backgroundColor: "#fff",
           }}
         >
-          <div className="table_summary" >
+          <div className="table_summary">
             <br></br>
             <div
               style={{
@@ -197,10 +194,14 @@ const Search = () => {
               {playerData.id ? (
                 <>
                   <div>
-                  <div
-                    style={{ top: "40px", left: "60px", position: "absolute" }}
-                  >
-                    {/* <img
+                    <div
+                      style={{
+                        top: "40px",
+                        left: "60px",
+                        position: "absolute",
+                      }}
+                    >
+                      {/* <img
                       src={https://ddragon.leagueoflegends.com/cdn/13.19.1/img/profileicon/{4389}.png}
                       alt=""
                       style={{
@@ -209,39 +210,43 @@ const Search = () => {
                         height: "128px;",
                       }} // 이미지의 테두리 스타일을 설정 (선택 사항)
                     /> */}
-                  </div>
-                  <div
-                    style={{
-                      width: "5px",
-                      heigth: "125px",
-                      position: "relative",
-                      float: "left",
-                    }}
-                  >
-                    {" "}
-                  </div>
-                  <div
-                    style={{ top: "10px", left: "75px", position: "absolute" }}
-                  >
-                    <img
-                      src={`https://ddragon.leagueoflegends.com/cdn/13.20.1/img/profileicon/${playerData.profileIconId}.png`}
-                      alt="프로필아이콘"
-                      style={{
-                        border: "1px",
-                        width: "100px",
-                        height: "128px;",
-                      }} // 이미지의 테두리 스타일을 설정 (선택 사항)
-                    />
-                  </div>
+                    </div>
                     <div
-                      div style={{ marginLeft: "250px" ,
+                      style={{
+                        width: "5px",
+                        heigth: "125px",
+                        position: "relative",
+                        float: "left",
+                      }}
+                    >
+                      {" "}
+                    </div>
+                    <div
+                      style={{
+                        top: "10px",
+                        left: "75px",
+                        position: "absolute",
+                      }}
+                    >
+                      <img
+                        src={`https://ddragon.leagueoflegends.com/cdn/13.20.1/img/profileicon/${playerData.profileIconId}.png`}
+                        alt="프로필아이콘"
+                        style={{
+                          border: "1px",
+                          width: "100px",
+                          height: "128px;",
+                        }} // 이미지의 테두리 스타일을 설정 (선택 사항)
+                      />
+                    </div>
+                    <div
+                      div
+                      style={{
+                        marginLeft: "250px",
                         top: "35px",
                         left: "0px",
                         position: "absolute",
                       }}
                     >
-                      
-                      
                       <p>소환사레벨: {playerData.summonerLevel}</p>
                       <p>소환사이름: {playerData.name}</p>
                     </div>
@@ -470,7 +475,6 @@ const Search = () => {
                   <div style={{ marginLeft: "250px" }}>
                     <p>자유랭크</p>
                     <p>등급: 배치</p>
-                    
                   </div>
                 </>
               )}

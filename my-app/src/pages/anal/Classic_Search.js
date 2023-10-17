@@ -4,7 +4,6 @@ import React from "react";
 const Classic_Search = ({championData}) => {
   console.log('props:', championData);
   const cursor = "https://s-lol-web.op.gg/images/icon/icon-arrow-right.svg";
-  console.log('championData:');
   if (championData === null) {
     return <div>Loading..</div>;
   }
@@ -14,8 +13,8 @@ const Classic_Search = ({championData}) => {
   console.log(bestChampionData);
   
   const championImageUrl = `https://ddragon.leagueoflegends.com/cdn/13.20.1/img/champion/${bestChampionData.champion_name}.png`;
-  const itemStart = `http://ddragon.leagueoflegends.com/cdn/13.19.1/img/item/${bestChampionData.item_set1_1}.png`;
-  const itemStart2 = `http://ddragon.leagueoflegends.com/cdn/13.19.1/img/item/${bestChampionData.item_set1_2}.png`;
+  const itemStart = `http://ddragon.leagueoflegends.com/cdn/13.19.1/img/item/${bestChampionData.itemSet1_1}.png`;
+  const itemStart2 = `http://ddragon.leagueoflegends.com/cdn/13.19.1/img/item/${bestChampionData.itemSet1_2}.png`;
   const itemShoes = `http://ddragon.leagueoflegends.com/cdn/13.19.1/img/item/${bestChampionData.shoes1}.png`;
   const mainItem = `http://ddragon.leagueoflegends.com/cdn/13.19.1/img/item/${bestChampionData.core1_1}.png`;
   const mainItem2 = `http://ddragon.leagueoflegends.com/cdn/13.19.1/img/item/${
@@ -242,13 +241,13 @@ const Classic_Search = ({championData}) => {
               <div>
                 <img src={itemStart} alt="shoes" className="image-all123" />
                 {/* 시작 아이템 두번째칸이 비어있으면 2번째칸 이미지가 나오지 않게 */}
-                {bestChampionData.item_set1_2 && (
-                  <img src={itemStart2} alt="shoes" className="image-all123" />
+                {bestChampionData.itemSet1_2 && (
+                  <img src={itemStart2} alt="시작아이템" className="image-all123" />
                 )}
   
                 <div className="win-rate">
                   승률:
-                  {(bestChampionData.item_set1_win * 100).toFixed(1)}%
+                  {(bestChampionData.itemSet1_win * 100).toFixed(1)}%
                 </div>
               </div>
             </div>
