@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'omyu_pretty';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
 .nav.nav-tabs {
     background-color: #380101;
     
@@ -12,6 +18,11 @@
   }
 
 .nav-item.dropdown:hover .dropdown-menu a.dropdown-item {
-  background-color: #380101; /* 원하는 배경색으로 변경하세요 */
+  background-color: #560000; /* 원하는 배경색으로 변경하세요 */
   color: white; /* 텍스트 색상 변경 (선택 사항) */
+}
+
+.App {
+  font-family: 'omyu_pretty', sans-serif;
+  font-size: 18px;
 }

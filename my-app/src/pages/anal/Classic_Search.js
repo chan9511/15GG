@@ -144,7 +144,7 @@ const Classic_Search = ({championData}) => {
         </div>
   
         <div className="rate-table">
-          <div className="skilltreename">스킬트리</div>
+          <div className="skilltreename">추천 스킬트리</div>
         </div>
         {/* 스킬 빌드에 들어오는 순서대로 리턴 */}
         <div className="rate-table">

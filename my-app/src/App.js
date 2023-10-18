@@ -14,7 +14,7 @@ import AramBuild from "./pages/anal/AramBuild";
 import ClassicBuild from "./pages/anal/ClassicBuild";
 import AramSearch from "./pages/anal/AramSearch";
 import ClassicSearch from "./pages/anal/ClassicSearch";
-import TestTest from "./pages/TestTest";
+import Noname from "./pages/Noname";
 import ErrorPage from "./pages/ErrorPage";
 
 const App = () => {
@@ -36,7 +36,7 @@ const App = () => {
         <Route path="/login/login" element={<Login />} />
         <Route path="/login/signup" element={<SignUp />} />
         <Route path="/search/search" element={<Search />} />
-        <Route path="/testtest" element={<TestTest />} />
+        <Route path="/noname" element={<Noname />} />
         <Route path="/errorpage" element={<ErrorPage />} />
       </Routes>
     </div>

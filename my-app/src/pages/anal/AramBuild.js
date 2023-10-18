@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 import "../search/style/Search.css";
 import "../tier/style/Classic.css";
 import "../tier/style/Classic2.css";

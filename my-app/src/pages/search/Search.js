@@ -160,7 +160,7 @@ const Search = () => {
     } catch (error) {
       console.log("오류 발생:", error);
       setLoading(false);
-      window.location.href = "http://localhost:3000/testtest";
+      window.location.href = "http://localhost:3000/Noname";
     }
   };
   return (
@@ -171,7 +171,7 @@ const Search = () => {
             <ErrorPage />
           </div>
         ) : (
-          <></>  
+          <></>
         )}
         <div
           style={{
@@ -199,8 +199,7 @@ const Search = () => {
                         left: "60px",
                         position: "absolute",
                       }}
-                    >
-                    </div>
+                    ></div>
                     <div
                       style={{
                         width: "5px",
@@ -235,6 +234,8 @@ const Search = () => {
                         top: "35px",
                         left: "0px",
                         position: "absolute",
+                        fontFamily: "omyu_pretty, sans-serif",
+                        fontSize: "15px",
                       }}
                     >
                       <p>소환사레벨: {playerData.summonerLevel}</p>
@@ -361,7 +362,13 @@ const Search = () => {
                     {" "}
                   </div>
 
-                  <div style={{ marginLeft: "245px" }}>
+                  <div
+                    style={{
+                      marginLeft: "245px",
+                      fontFamily: "omyu_pretty, sans-serif",
+                      fontSize: "15px",
+                    }}
+                  >
                     <p>솔로랭크</p>
                     <p>
                       등급: {soloRankData.tier} {soloRankData.rank}
@@ -393,7 +400,13 @@ const Search = () => {
                       style={{ border: "1px" }}
                     />
                   </div>
-                  <div style={{ marginLeft: "250px" }}>
+                  <div
+                    style={{
+                      marginLeft: "250px",
+                      fontFamily: "omyu_pretty, sans-serif",
+                      fontSize: "15px",
+                    }}
+                  >
                     <p>솔로랭크</p>
                     <p>등급: 배치</p>
                   </div>
@@ -430,7 +443,13 @@ const Search = () => {
                       style={{ border: "0px" }} // 이미지의 테두리 스타일을 설정 (선택 사항)
                     />
                   </div>
-                  <div style={{ marginLeft: "250px" }}>
+                  <div
+                    style={{
+                      marginLeft: "250px",
+                      fontFamily: "omyu_pretty, sans-serif",
+                      fontSize: "15px",
+                    }}
+                  >
                     <p>자유랭크</p>
                     <p>
                       등급: {flexRankData.tier} {flexRankData.rank}
@@ -462,7 +481,13 @@ const Search = () => {
                       style={{ border: "0px" }}
                     />
                   </div>
-                  <div style={{ marginLeft: "250px" }}>
+                  <div
+                    style={{
+                      marginLeft: "250px",
+                      fontFamily: "omyu_pretty, sans-serif",
+                      fontSize: "15px",
+                    }}
+                  >
                     <p>자유랭크</p>
                     <p>등급: 배치</p>
                   </div>

@@ -1,9 +1,17 @@
+@font-face {
+  font-family: 'omyu_pretty';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .classic-table {
-    margin-left: 10%;
+    margin-left: 5%;
     display:flex;
     width: 10%;
     text-align: center; 
     align-items: center;
+    
 }
 
 .champ-name {
@@ -11,7 +19,8 @@
     min-width: 50%;
     white-space: nowrap;
     font-size: 20px;
-    margin-left:15%;
+    margin-left:35%;
+    font-family: 'omyu_pretty', sans-serif;
     
 }
 
@@ -19,14 +28,15 @@
     display: flex;
     min-width: 50%;
     white-space: nowrap;
-    font-size: 20px;
+    font-size: 24px;
+    font-family: 'omyu_pretty', sans-serif;
     
     
 }
 
 .rate-table {
     margin-top: 1%;
-    margin-left: 10%;
+    margin-left: 5%;
     display: flex;
     width: 35%;
     
@@ -34,6 +44,8 @@
 
 .rate {
     width: 33%;
+    font-family: 'omyu_pretty', sans-serif;
+    font-size: 15px;
 }
 
 .item-table {
@@ -47,12 +59,13 @@
 .percent-table {
     display: flex;
     width: 33%;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: bold;
+    font-family: 'omyu_pretty', sans-serif;
 }
 
 .rune-table {
-    margin-left: 10%;
+    margin-left: 5%;
     margin-top: 15px;
     width: 80%;
     display: flex;
@@ -62,7 +75,7 @@
 
 .runetable-left {
     width: 70%;
-    padding: 10px;
+    
     border: 1px solid #cdcdcd;
     border-radius: 10px;
     
@@ -141,19 +154,24 @@
 .runetable-1 {
     width: 100%;
     padding: 10px;
+    font-family: 'omyu_pretty', sans-serif;
     
     border-bottom: 1px solid #cdcdcd ;
-    font-size: 14px;
+    font-size: 15px;
     
 }
 
 .runetable-end {
     width: 100%;
     padding: 10px;
-    font-size: 14px;
+    font-size: 15px;
+    font-family: 'omyu_pretty', sans-serif;
     
 }
 
+.champ-image {
+  border-radius: 50%;
+}
 
 .skill-tree {
     padding : 10px;
@@ -203,6 +221,8 @@
     text-align: center; 
     align-items: center;
     margin-top:10px;
+    font-family: 'omyu_pretty', sans-serif;
+    font-size: 15px;
 }
 
 .skill-tree123 {
@@ -231,8 +251,10 @@
 }
 
 .rune-name {
-    font-size: 14px;
+    font-size: 15px;
+    margin-top: 2%;
     text-align: center;
+    font-family: 'omyu_pretty', sans-serif;
 }
 
 /* Add these media queries to adjust layout for smaller screens */
@@ -270,6 +292,7 @@
     .runetable-right {
       width: 80%; /* Adjust width for smaller screens */
       height: auto;
+
     }
   
     .rune-row-top{
@@ -310,8 +333,7 @@
         min-width: 50%;
         white-space: nowrap;
         font-size: 20px;
-        
-        
+        font-family: 'omyu_pretty', sans-serif;
     }
   }
   

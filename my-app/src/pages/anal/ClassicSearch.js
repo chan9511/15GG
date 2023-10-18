@@ -83,7 +83,7 @@ const ClassicSearch = () => {
         <div className="css-123">협곡 챔피언 분석</div>
         <div className="input-table">
           <div>
-            <div className="dropdown">
+            <div className="dropdown123">
               <button
                 className="btn custom-button dropdown-toggle"
                 type="button"

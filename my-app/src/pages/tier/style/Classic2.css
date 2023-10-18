@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'omyu_pretty';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .css-gtm9xc {
     box-sizing: border-box;
     width: 100px;
@@ -221,8 +228,9 @@ option {
 .nav-container {
     display: flex;
     background-color: #fff; /* 배경색 지정 */
-    padding: 10px; /* 패딩 추가 */
-    font-size: 15px;
+    padding: 12px; /* 패딩 추가 */
+    font-size: 16px;
+    font-family: 'omyu_pretty', sans-serif;
     text-align: center !important; 
     
   }
@@ -235,7 +243,7 @@ option {
     color: #000000; /* 텍스트 색상 지정 */
     padding: 10px 20px; /* 패딩 추가 */
     border: 1px solid #b2adad;
-    border-radius: 4px;
+    border-radius: 50px;
     cursor: pointer;
     transition: background-color 0.3s ease; /* 호버 효과 설정 */
     width: 80px; /* 너비 설정 */
@@ -290,8 +298,9 @@ option {
   .css-123 {
     margin-top: 15px;
     margin-left: 15px;
-    font-size: 20px;
+    font-size: 24px;
     color: #000000;
+    font-family: 'omyu_pretty', sans-serif;
   }
 
   /* Classic.css or Classic2.css or a new CSS file for background styles */
@@ -300,4 +309,4 @@ option {
     background-color: #380101; /* 원하는 배경색으로 변경하세요 */
   color: white; /* 텍스트 색상 변경 (선택 사항) */
   }
-  
+

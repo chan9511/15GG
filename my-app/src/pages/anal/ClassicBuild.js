@@ -7,7 +7,7 @@ import { ClassicAnalysis } from "../../api";
 
 const ClassicBuild = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [selectedTier, setSelectedTier] = useState("등급설정 ");
+  const [selectedTier, setSelectedTier] = useState("등급설정  ");
   const [searchText1, setSearchText1] = useState("");
   const [buildData, setBuildData] = useState([]); // 상태 변수로 buildData를 저장
   const imageUrl =
@@ -31,9 +31,8 @@ const ClassicBuild = () => {
     backgroundSize: "cover",
     width: "50px", // 원하는 너비 설정
     height: "50px", // 원하는 높이 설정
-    border: 'none',
-    borderRadius: '50%',
-
+    border: "none",
+    borderRadius: "50%",
   };
 
   const toggleDropdown = () => {
@@ -47,6 +46,9 @@ const ClassicBuild = () => {
   const [effectData, setEffectData] = useState(null);
   useEffect(() => {
     console.log("effectData:", effectData);
+    // return ()=>{
+    //   console.log('useEffect End');
+    // }
   }, [effectData]);
 
   const handleRoleClick = async (searchText1) => {
@@ -62,9 +64,7 @@ const ClassicBuild = () => {
 
     try {
       const buildData = await ClassicAnalysis(data);
-      console.log(1);
       setEffectData(buildData.list);
-      console.log(2);
       setBuildData(buildData);
       console.log("buildData:", buildData.list[0]);
     } catch (error) {
@@ -83,7 +83,7 @@ const ClassicBuild = () => {
         <div className="css-123">협곡 챔피언 분석</div>
         <div className="input-table">
           <div>
-            <div className="dropdown">
+            <div className="dropdown123">
               <button
                 className="btn custom-button dropdown-toggle"
                 type="button"
@@ -126,8 +126,7 @@ const ClassicBuild = () => {
               type="button"
               onClick={getData}
               style={buttonStyle}
-            >
-            </button>
+            ></button>
           </div>
         </div>
       </div>

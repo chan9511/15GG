@@ -2,13 +2,26 @@ import React, { useState, useEffect } from "react";
 import "./style/Classic.css";
 import "./style/Classic2.css";
 import championData from "./json/gold.json";
-// import { AramTier } from "../../api";
+import { AramTier } from "../../api";
 
 const Aram = () => {
   const [topPositionData, setTopPositionData] = useState([]);
 
+  AramTier()
+    .then((result) => {
+      if (result) {
+        console.log("받아온 Tier 데이터:", { result });
+      } else {
+        console.log("Tier 데이터를 받아올 수 없음.");
+      }
+    })
+    .catch((error) => {
+      console.error("오류 발생:", error);
+    });
+
   useEffect(() => {
     // 승률이 높은 순으로 정렬해서 초기 데이터 설정
+
     const initialData = [...championData].sort(
       (a, b) => b.win_rate - a.win_rate
     );
@@ -17,7 +30,6 @@ const Aram = () => {
 
   const [sortBy, setSortBy] = useState("win_rate"); // 초기 정렬 기준
   const [sortDirection, setSortDirection] = useState("descending"); // 초기 정렬 방향
-
 
   // 데이터를 주어진 key로 정렬하는 함수
   const sortByKey = (key) => {
@@ -35,9 +47,6 @@ const Aram = () => {
       sortDirection === "ascending" ? "descending" : "ascending"
     );
   };
-
-    // console.log(championData)
-    // console.log(topPositionData)
 
   return (
     <div>

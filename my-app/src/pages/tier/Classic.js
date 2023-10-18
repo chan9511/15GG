@@ -5,7 +5,7 @@ import { ClassicTier } from "../../api";
 
 const Classic = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [selectedTier, setSelectedTier] = useState("");
+  const [selectedTier, setSelectedTier] = useState("등급설정");
   const [selectedRole, setSelectedRole] = useState("");
   const [sortBy, setSortBy] = useState("win_rate"); // 초기 정렬 승률 높은순
   const [sortDirection, setSortDirection] = useState("descending");
@@ -115,6 +115,7 @@ const Classic = () => {
           <nav className="nav-container">
             {["탑", "정글", "미드", "바텀", "서폿"].map((role) => (
               <button
+                
                 key={role}
                 type="button"
                 className={`nav-button ${
