@@ -31,8 +31,8 @@ const ClassicSearch = () => {
     backgroundSize: "cover",
     width: "50px", // 원하는 너비 설정
     height: "50px", // 원하는 높이 설정
-    border: 'none',
-    borderRadius: '50%',
+    border: "none",
+    borderRadius: "50%",
   };
 
   const toggleDropdown = () => {

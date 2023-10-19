@@ -53,6 +53,7 @@ OPTION { font-size: 8pt; }
 	align-items: left;
 	margin: 0 10px; /* 테이블 간격 조절 */
 	
+	
   }
 
 .table-bordered {
@@ -72,7 +73,10 @@ OPTION { font-size: 8pt; }
 	vertical-align: middle;
 	font-family: 'omyu_pretty', sans-serif;
 	font-size: 15px;
+	
 }
+
+
 
 @font-face {
 	font-family: 'omyu_pretty';

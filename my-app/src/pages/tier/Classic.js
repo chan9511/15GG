@@ -7,12 +7,14 @@ const Classic = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedTier, setSelectedTier] = useState("등급설정");
   const [selectedRole, setSelectedRole] = useState("");
-  const [sortBy, setSortBy] = useState("win_rate"); // 초기 정렬 승률 높은순
+  const [sortBy, setSortBy] = useState("pick_rate"); // 초기 정렬 승률 높은순
   const [sortDirection, setSortDirection] = useState("descending");
   const [tierData, setTierData] = useState([]); // 상태 변수로 tierData를 저장
+  const [buttonState, setButtonState] = useState(false);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
+    setButtonState(true);
   };
 
   const tierList = [
@@ -34,6 +36,7 @@ const Classic = () => {
   };
 
   const handleRoleClick = async (role) => {
+    setButtonState(false);
     setSelectedRole(role);
 
     const tier = selectedTier;
@@ -121,6 +124,7 @@ const Classic = () => {
                 className={`nav-button ${
                   selectedRole === role ? "active" : ""
                 }`}
+                disabled={!buttonState}
                 onClick={() => handleRoleClick(role)}
               >
                 {role}

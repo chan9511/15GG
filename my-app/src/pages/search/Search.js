@@ -339,7 +339,7 @@ const Search = () => {
               {soloRankData ? (
                 <>
                   <div
-                    style={{ top: "40px", left: "60px", position: "absolute" }}
+                    style={{ top: "40px", left: "60px", position: "absolute"}}
                   >
                     <img
                       src={imagess[soloRankData.tier]}

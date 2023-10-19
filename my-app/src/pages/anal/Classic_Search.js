@@ -116,9 +116,12 @@ const Classic_Search = ({championData}) => {
           <img src={championImageUrl} alt="champimg" className="champ-image" />
   
           <div className="champ-name">
+            
             {bestChampionData.champion_name}
             <br></br>({bestChampionData.team_position})
+            
           </div>
+         
         </div>
   
         <div className="rate-table">
