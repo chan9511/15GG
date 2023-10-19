@@ -17,7 +17,7 @@
   }
 
 .nav-item.dropdown:hover .dropdown-menu a.dropdown-item {
-  background-color: #560000; /* 원하는 배경색으로 변경하세요 */
+  background-color: #380101; /* 원하는 배경색으로 변경하세요 */
   color: white; /* 텍스트 색상 변경 (선택 사항) */
 }
 

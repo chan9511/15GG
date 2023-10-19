@@ -114,6 +114,10 @@ const ClassicSearch = () => {
           </div>
           <div className="grade-table">
             <input
+              style={{
+                fontFamily: "omyu_pretty, sans-serif",
+                fontSize: "18px",
+              }}
               className="form-control"
               type="search"
               value={searchText1}

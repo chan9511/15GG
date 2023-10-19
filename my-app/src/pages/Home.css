@@ -102,6 +102,7 @@
     z-index: 1;
     font-family: 'omyu_pretty', sans-serif;
     
+    
 }
 
 .widgetOneButton button {
@@ -112,7 +113,7 @@
     padding: 10px 15px;
     border: 1px solid #b2adad;
     border-radius: 4px;
-    font-size: 15px;
+    font-size: 16px;
     width: auto;
     height: auto;
     cursor: pointer;
@@ -138,7 +139,7 @@
     padding: 10px 15px;
     border: 1px solid #b2adad;
     border-radius: 4px;
-    font-size: 15px;
+    font-size: 16px;
     width: auto;
     height: auto;
     cursor: pointer;

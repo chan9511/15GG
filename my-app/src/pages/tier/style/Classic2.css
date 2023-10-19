@@ -228,26 +228,27 @@ option {
 .nav-container {
     display: flex;
     background-color: #fff; /* 배경색 지정 */
-    padding: 12px; /* 패딩 추가 */
+    padding: 10px; /* 패딩 추가 */
     font-size: 16px;
     font-family: 'omyu_pretty', sans-serif;
     text-align: center !important; 
+    margin-top: 5px;
     
   }
   
   /* 버튼 스타일 */
   .nav-button {
-    border:none;
     text-align: center; /* 텍스트를 가운데 정렬합니다. */
     background-color: #fff; /* 버튼 배경색 지정 */
     color: #000000; /* 텍스트 색상 지정 */
-    padding: 10px 20px; /* 패딩 추가 */
-    border: 1px solid #b2adad;
-    border-radius: 50px;
+    padding: 5px ; /* 패딩 추가 */
+    border: 1px solid #ffffff;
+    border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s ease; /* 호버 효과 설정 */
     width: 80px; /* 너비 설정 */
     height: 40px; /* 높이 설정 */
+    font-size: 18px;
   }
   
   .nav-button.active {
@@ -256,10 +257,10 @@ option {
   }
 
   .nav-button:hover {
-    background-color: #380101;
+    background-color: #5b4646;
     color: #fff;
   }
-
+  #380101
   button.css-776qz1,
   button.css-w2p1w6 {
     border: 1px solid #b2adad;
