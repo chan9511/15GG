@@ -5,33 +5,28 @@ import { AramTier } from "../../api";
 
 const Aram = () => {
   const [topPositionData, setTopPositionData] = useState([]);
-  const [test, setTest] = useState([]);
-
 
   useEffect(() => {
-
     AramTier()
-    .then((result) => {
-      if (result) {
-        console.log("받아온 Tier 데이터:", { result });
-        setTest(result.list);
-      } else {
-        console.log("Tier 데이터를 받아올 수 없음.");
-      }
-    })
-    .catch((error) => {
-      console.error("오류 발생:", error);
-    });
+      .then((result) => {
+        if (result) {
+          console.log("받아온 Tier 데이터:", { result });
+          const initialData = [...result.list].sort((a, b) => b.pick_cnt - a.pick_cnt);
+          setTopPositionData(initialData);
+        } else {
+          console.log("Tier 데이터를 받아올 수 없음.");
+        }
+      })
+      .catch((error) => {
+        console.error("오류 발생:", error);
+      });
 
-    // 승률이 높은 순으로 정렬해서 초기 데이터 설정
-    const initialData = [...test].sort(
-      (a, b) => b.pick_rate - a.pick_rate
-    );
-    setTopPositionData(initialData);
+    // 표본이 높은 순으로 정렬해서 초기 데이터 설정
+    // const initialData = [...topPositionData].sort((a, b) => b.pick_cnt - a.pick_cnt);
+    // setTopPositionData(initialData);
   }, []);
-  console.log(topPositionData);
 
-  const [sortBy, setSortBy] = useState("win_rate"); // 초기 정렬 기준
+  const [sortBy, setSortBy] = useState("pick_cnt"); // 초기 정렬 기준
   const [sortDirection, setSortDirection] = useState("descending"); // 초기 정렬 방향
 
   // 데이터를 주어진 key로 정렬하는 함수

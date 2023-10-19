@@ -50,7 +50,7 @@ const Classic = () => {
     try {
       const tierData = await ClassicTier(data);
       setTierData(tierData.list);
-      console.log("tierData:", tierData.list);
+      // console.log("tierData:", tierData.list);
       
     } catch (error) {
       // 오류 처리
@@ -58,9 +58,9 @@ const Classic = () => {
     }
   };
 
-  console.log(tierData);
+  // console.log(tierData);
   const championData = tierData;
-  console.log(championData);
+  // console.log(championData);
 
   const toggleSortDirection = () => {
     setSortDirection(
