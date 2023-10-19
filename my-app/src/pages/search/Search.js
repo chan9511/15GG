@@ -187,7 +187,7 @@ const Search = () => {
             <div
               style={{
                 width: "480px",
-                border: "1px solid  silver",
+                // border: "1px solid  silver",
                 height: "125px",
                 position: "relative",
                 backgroundColor: "white",
@@ -225,10 +225,10 @@ const Search = () => {
                         src={`https://ddragon.leagueoflegends.com/cdn/13.20.1/img/profileicon/${playerData.profileIconId}.png`}
                         alt="프로필아이콘"
                         style={{
-                          
+                          marginLeft:"7px",
                           width: "100px",
                           height: "100px;",
-                          borderRadius: "5px"
+                          borderRadius: "50px",
                         }}
                       />
                     </div>
@@ -333,7 +333,7 @@ const Search = () => {
                 display: "flex",
                 alignItems: "center",
                 width: "480px",
-                border: "1px solid silver",
+                // border: "1px solid silver",
                 height: "200px",
                 position: "relative",
                 backgroundColor: "white",
@@ -350,6 +350,7 @@ const Search = () => {
                       src={imagess[soloRankData.tier]}
                       alt={`등급: ${soloRankData.tier}`}
                       style={{
+                        
                         border: "1px",
                         width: "144px",
                         height: "144px;",
@@ -380,7 +381,7 @@ const Search = () => {
                         fontFamily: "omyu_pretty, sans-serif",
                         fontSize: "24px",
                         marginLeft: "50px",
-                        fontWeight:"bold"
+                        fontWeight: "bold",
                       }}
                     >
                       {" "}
@@ -428,7 +429,7 @@ const Search = () => {
                       style={{
                         fontFamily: "omyu_pretty, sans-serif",
                         fontSize: "24px",
-                        fontWeight: "bold"
+                        fontWeight: "bold",
                       }}
                     >
                       <p>솔로랭크</p>
@@ -448,7 +449,7 @@ const Search = () => {
                 display: "flex",
                 alignItems: "center",
                 width: "480px",
-                border: "1px solid silver",
+                // border: "1px solid silver",
                 height: "200px",
                 position: "relative",
                 backgroundColor: "white",
@@ -481,7 +482,7 @@ const Search = () => {
                         fontFamily: "omyu_pretty, sans-serif",
                         fontSize: "24px",
                         marginLeft: "50px",
-                        fontWeight: "bold"
+                        fontWeight: "bold",
                       }}
                     >
                       <p>자유랭크</p>
@@ -527,7 +528,7 @@ const Search = () => {
                       style={{
                         fontFamily: "omyu_pretty, sans-serif",
                         fontSize: "24px",
-                        fontWeight: "bold"
+                        fontWeight: "bold",
                       }}
                     >
                       <p>자유랭크</p>

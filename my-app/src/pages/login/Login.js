@@ -37,7 +37,7 @@ const Login = () => {
       alert(`${signInResponse.message}`);
       return;
     }
-    alert("로그인 성공");
+    console.log("로그인 성공");
 
     const { token, exprTime, user, widgetOne, widgetTwo } = signInResponse.data;
     const expires = new Date();

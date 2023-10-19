@@ -26,7 +26,7 @@ const Home = () => {
     <div className="container">
       <div className="image-container">
         <img
-          src="https://event.leagueoflegends.co.kr/beemo-Teemo/img/beemo-wp.jpg"
+          src="https://cdn-store.leagueoflegends.co.kr/images/v2/champion-splashes/17018.jpg"
           alt=""
           style={{ width: "100%" }} // 원하는 너비로 설정하세요
         />

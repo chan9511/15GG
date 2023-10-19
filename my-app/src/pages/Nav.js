@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 const Nav = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isChampionDropdownOpen, setIsChampionDropdownOpen] = useState(false);
+  const imageUrl =
+    "https://velog.velcdn.com/images/kyungjin/post/fdd5cc22-dfdc-4091-a2fb-039ce36ce9d8/%ED%8B%B0%EB%AA%A8.png";
   const navigate = useNavigate();
   const logOutHandler = () => {
     sessionStorage.clear();
@@ -30,6 +32,19 @@ const Nav = () => {
   return (
     <div className="App">
       <nav className="nav nav-tabs">
+        <li className="nav-item">
+          <a className="nav-link" href="/">
+            <button
+              style={{
+                backgroundImage: `url(${imageUrl})`,
+                backgroundSize: "cover",
+                width: "35px", // 원하는 너비 설정
+                height: "35px", // 원하는 높이 설정
+                borderRadius: "50%",
+              }}
+            ></button>
+          </a>
+        </li>
         <li className="nav-item">
           <a className="nav-link" href="/">
             15GG

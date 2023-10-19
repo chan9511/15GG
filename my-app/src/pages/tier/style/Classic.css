@@ -18,9 +18,8 @@
     text-align: center;
     background-color: #ebdada; /* 헤더 배경색 설정 */
     padding: 5px;
-    font-size: 15px;
+    font-size: 17px;
     font-family: 'omyu_pretty', sans-serif;
-    
   }
 
   .table-data {
@@ -85,7 +84,7 @@
   .input-table input.form-control {
     width: 150px; /* 원하는 너비로 조정하세요 */
     border: 1px solid #b2adad;
-    font-size: 14px;
+    font-size: 18px;
     
     margin-top: 15px;
   }
