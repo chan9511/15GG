@@ -44,7 +44,7 @@ const Home = () => {
             </div>
           ) : (
             <div className="widgetNotLogin1">
-              로그인시 이용 가능한 페이지입니다.
+              <div className="widgetNotLogin3">로그인시 이용 가능한 페이지입니다.</div>
             </div>
           )}
 
@@ -60,7 +60,7 @@ const Home = () => {
             </div>
           ) : (
             <div className="widgetNotLogin2">
-              로그인시 이용 가능한 페이지입니다.
+              <div className="widgetNotLogin3">로그인시 이용 가능한 페이지입니다.</div>
             </div>
           )}
         </div>

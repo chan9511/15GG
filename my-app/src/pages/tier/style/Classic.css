@@ -101,6 +101,7 @@
   .custom-button {
     background-color: #380101;
     color: #fff; /* 텍스트 색상을 백그라운드와 대조되게 흰색으로 지정합니다. */
+    font-size: 18px;
   }
 
   .custom-button:hover {
@@ -117,6 +118,7 @@
     margin-top: 12px; /* 원하는 크기로 조절하세요. */
     margin-left: 15px;
     font-family: 'omyu_pretty', sans-serif;
+    font-size: 18px;
   }
 
   .anal-title {

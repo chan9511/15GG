@@ -308,5 +308,6 @@ option {
   .dropdown-menu a.dropdown-item:hover {
     background-color: #380101; /* 원하는 배경색으로 변경하세요 */
   color: white; /* 텍스트 색상 변경 (선택 사항) */
+  
   }
 

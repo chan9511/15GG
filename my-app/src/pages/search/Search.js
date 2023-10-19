@@ -178,6 +178,10 @@ const Search = () => {
             backgroundColor: "#fff",
           }}
         >
+          <div className="main-name">
+            <div className="main-subname">소환사 정보</div>
+            <div className="main-subname2">게임 전적</div>
+          </div>
           <div className="table_summary">
             <br></br>
             <div
@@ -221,9 +225,10 @@ const Search = () => {
                         src={`https://ddragon.leagueoflegends.com/cdn/13.20.1/img/profileicon/${playerData.profileIconId}.png`}
                         alt="프로필아이콘"
                         style={{
-                          border: "1px",
+                          
                           width: "100px",
-                          height: "128px;",
+                          height: "100px;",
+                          borderRadius: "5px"
                         }}
                       />
                     </div>
@@ -231,11 +236,11 @@ const Search = () => {
                       div
                       style={{
                         marginLeft: "250px",
-                        top: "35px",
+                        top: "20px",
                         left: "0px",
                         position: "absolute",
                         fontFamily: "omyu_pretty, sans-serif",
-                        fontSize: "15px",
+                        fontSize: "20px",
                       }}
                     >
                       <p>소환사레벨: {playerData.summonerLevel}</p>
@@ -339,15 +344,15 @@ const Search = () => {
               {soloRankData ? (
                 <>
                   <div
-                    style={{ top: "40px", left: "60px", position: "absolute"}}
+                    style={{ top: "40px", left: "60px", position: "absolute" }}
                   >
                     <img
                       src={imagess[soloRankData.tier]}
                       alt={`등급: ${soloRankData.tier}`}
                       style={{
                         border: "1px",
-                        width: "128px",
-                        height: "128px;",
+                        width: "144px",
+                        height: "144px;",
                       }} // 이미지의 테두리 스타일을 설정 (선택 사항)
                     />
                   </div>
@@ -365,11 +370,22 @@ const Search = () => {
                   <div
                     style={{
                       marginLeft: "245px",
+                      marginTop: "12px",
                       fontFamily: "omyu_pretty, sans-serif",
-                      fontSize: "15px",
+                      fontSize: "18px",
                     }}
                   >
-                    <p>솔로랭크</p>
+                    <div
+                      style={{
+                        fontFamily: "omyu_pretty, sans-serif",
+                        fontSize: "24px",
+                        marginLeft: "50px",
+                        fontWeight:"bold"
+                      }}
+                    >
+                      {" "}
+                      <p>솔로랭크</p>
+                    </div>
                     <p>
                       등급: {soloRankData.tier} {soloRankData.rank}
                     </p>
@@ -395,20 +411,29 @@ const Search = () => {
                     <img
                       src={imagess["UNRANKED"]}
                       alt="UNRANKED"
-                      width="128px"
-                      height="128px"
+                      width="144px"
+                      height="144px"
                       style={{ border: "1px" }}
                     />
                   </div>
+
                   <div
                     style={{
-                      marginLeft: "250px",
+                      marginLeft: "300px",
                       fontFamily: "omyu_pretty, sans-serif",
-                      fontSize: "15px",
+                      fontSize: "20px",
                     }}
                   >
-                    <p>솔로랭크</p>
-                    <p>등급: 배치</p>
+                    <div
+                      style={{
+                        fontFamily: "omyu_pretty, sans-serif",
+                        fontSize: "24px",
+                        fontWeight: "bold"
+                      }}
+                    >
+                      <p>솔로랭크</p>
+                    </div>
+                    <p>등급 : 배치</p>
                   </div>
                 </>
               )}
@@ -438,19 +463,29 @@ const Search = () => {
                     <img
                       src={imagess[flexRankData.tier]}
                       alt={`등급: ${flexRankData.tier}`}
-                      width="128" // 이미지의 너비를 100픽셀로 변경
-                      height="128" // 이미지의 높이를 100픽셀로 변경
+                      width="144" // 이미지의 너비를 100픽셀로 변경
+                      height="144" // 이미지의 높이를 100픽셀로 변경
                       style={{ border: "0px" }} // 이미지의 테두리 스타일을 설정 (선택 사항)
                     />
                   </div>
                   <div
                     style={{
                       marginLeft: "250px",
+                      marginTop: "12px",
                       fontFamily: "omyu_pretty, sans-serif",
-                      fontSize: "15px",
+                      fontSize: "18px",
                     }}
                   >
-                    <p>자유랭크</p>
+                    <div
+                      style={{
+                        fontFamily: "omyu_pretty, sans-serif",
+                        fontSize: "24px",
+                        marginLeft: "50px",
+                        fontWeight: "bold"
+                      }}
+                    >
+                      <p>자유랭크</p>
+                    </div>
                     <p>
                       등급: {flexRankData.tier} {flexRankData.rank}
                     </p>
@@ -476,20 +511,28 @@ const Search = () => {
                     <img
                       src={imagess.UNRANKED}
                       alt="UNRANKED"
-                      width="128"
-                      height="128"
+                      width="144"
+                      height="144"
                       style={{ border: "0px" }}
                     />
                   </div>
                   <div
                     style={{
-                      marginLeft: "250px",
+                      marginLeft: "300px",
                       fontFamily: "omyu_pretty, sans-serif",
-                      fontSize: "15px",
+                      fontSize: "20px",
                     }}
                   >
-                    <p>자유랭크</p>
-                    <p>등급: 배치</p>
+                    <div
+                      style={{
+                        fontFamily: "omyu_pretty, sans-serif",
+                        fontSize: "24px",
+                        fontWeight: "bold"
+                      }}
+                    >
+                      <p>자유랭크</p>
+                    </div>
+                    <p>등급 : 배치</p>
                   </div>
                 </>
               )}

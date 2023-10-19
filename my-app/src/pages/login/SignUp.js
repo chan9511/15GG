@@ -52,7 +52,7 @@ import {signUpApi} from "../../api";
       <form class="form-control px-4 py-3">
         <div class="mb-3">
           <label for="exampleDropdownFormEmail1" class="form-label">
-            이메일
+          <div style={{ fontFamily: "omyu_pretty, sans-serif", fontSize:"18px" }}>아이디</div>
           </label>
           <input
             type="ID"
@@ -64,7 +64,7 @@ import {signUpApi} from "../../api";
         </div>
         <div class="mb-3">
           <label for="exampleDropdownFormPassword1" class="form-label">
-            비밀번호
+          <div style={{ fontFamily: "omyu_pretty, sans-serif", fontSize:"18px" }}>비밀번호</div>
           </label>
           <input
             type="password"
@@ -76,7 +76,7 @@ import {signUpApi} from "../../api";
         </div>
         <div class="mb-3">
           <label for="exampleDropdownFormPassword2" class="form-label">
-            비밀번호 확인
+          <div style={{ fontFamily: "omyu_pretty, sans-serif", fontSize:"18px" }}>비밀번호 확인</div>
           </label>
           <input
              type="password"
@@ -102,7 +102,7 @@ import {signUpApi} from "../../api";
           <button
             type="submit"
             class="btn btn-primary"
-            style={{ backgroundColor: "#970000", color: "white", border: 0 }}
+            style={{ backgroundColor: "#970000", color: "white", border: 0,fontFamily: "omyu_pretty, sans-serif", fontSize:"18px" }}
             onClick={(e) => SignUpHandler(e)}
           >
             회원가입

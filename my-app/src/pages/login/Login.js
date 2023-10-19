@@ -1,15 +1,13 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import '../login/style/Login.css';
+import "../login/style/Login.css";
 import { signInApi } from "../../api";
-
-
 
 const Login = () => {
   const [userId, setUserId] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const navigate = useNavigate();
-  
+
   const SignInHandler = async (e) => {
     e.preventDefault();
 
@@ -22,39 +20,40 @@ const Login = () => {
       alert("아이디와 비밀번호를 입력하세요");
       return;
     }
-  
+
     const signInResponse = await signInApi(data);
 
     if (!signInResponse) {
-        console.log(signInResponse)
-        setUserId("");
-        setUserPassword("");
-        alert("로그인을 실패했습니다."); return;
+      console.log(signInResponse);
+      setUserId("");
+      setUserPassword("");
+      alert("로그인을 실패했습니다.");
+      return;
     }
     if (!signInResponse.result) {
-        console.log(signInResponse)
-        setUserId("");
-        setUserPassword("");
-        alert(`${signInResponse.message}`); return;
+      console.log(signInResponse);
+      setUserId("");
+      setUserPassword("");
+      alert(`${signInResponse.message}`);
+      return;
     }
-    alert("로그인 성공")
+    alert("로그인 성공");
 
-    const {token, exprTime, user, widgetOne, widgetTwo} = signInResponse.data;
+    const { token, exprTime, user, widgetOne, widgetTwo } = signInResponse.data;
     const expires = new Date();
     expires.setMilliseconds(expires.getMilliseconds() + exprTime);
 
-
     // 위젯 1,2 의 true 값이 뭔지 찾는 부분
     const widgetOneTrue = Object.keys(widgetOne).find((key) => {
-        return widgetOne[key] === true;
-    })
+      return widgetOne[key] === true;
+    });
 
     const widgetTwoTrue = Object.keys(widgetTwo).find((key) => {
-        return widgetTwo[key] === true;
-    })
+      return widgetTwo[key] === true;
+    });
 
-    console.log(widgetOneTrue)
-    console.log(widgetTwoTrue)
+    console.log(widgetOneTrue);
+    console.log(widgetTwoTrue);
     sessionStorage.setItem("token", token, { expires });
     sessionStorage.setItem("user", user.userId);
     sessionStorage.setItem("widgetOneTrue", widgetOneTrue, { expires });
@@ -64,17 +63,18 @@ const Login = () => {
     // setCookies("widgetTwoTrue", widgetTwoTrue);
     // setUser(user);
 
-    navigate(`/`)
-  }
+    navigate(`/`);
+  };
 
   return (
     <div class="hihi">
       <form class="px-4 py-3">
         <div class="mb-3">
           <label for="exampleDropdownFormEmail1" class="form-label">
-            이메일
+            <div style={{ fontFamily: "omyu_pretty, sans-serif", fontSize:"18px" }}>아이디</div>
           </label>
           <input
+            style={{ fontFamily: "omyu_pretty, sans-serif", fontSize:"18px" }}
             type="ID"
             class="form-control"
             id="exampleDropdownFormEmail1"
@@ -85,9 +85,10 @@ const Login = () => {
         </div>
         <div class="mb-3">
           <label for="exampleDropdownFormPassword1" class="form-label">
-            비밀번호
+            <div style={{ fontFamily: "omyu_pretty, sans-serif", fontSize:"18px" }}>비밀번호</div>
           </label>
           <input
+            style={{ fontFamily: "omyu_pretty, sans-serif" , fontSize:"18px"}}
             type="password"
             class="form-control"
             id="exampleDropdownFormPassword1"
@@ -96,40 +97,32 @@ const Login = () => {
             value={userPassword}
           />
         </div>
-        <div class="mb-3">
-          <div class="form-check">
-            <input
-              type="checkbox"
-              class="form-check-input"
-              id="dropdownCheck"
-            />
-            <label class="form-check-label" for="dropdownCheck">
-              로그인 상태 유지하기
-            </label>
-          </div>
-        </div>
+
         <div class="hihi">
           <button
             type="submit"
             class="btn btn-primary"
-            style={{ backgroundColor: "#970000", color: "white", border: 0 }}
-            onClick={(e)=> SignInHandler(e)}
+            style={{ fontFamily: "omyu_pretty, sans-serif", fontSize:"18px",backgroundColor: "#970000", color: "white", border: 0 }}
+            onClick={(e) => SignInHandler(e)}
           >
             로그인하기
           </button>
           <br></br>
-        
-        홈페이지 이용이 처음이신가요?
-        <br></br><br></br>
-        <Link to="/login/SignUp">
-          <button
-            type="submit"
-            class="btn btn-primary"
-            style={{ backgroundColor: "#970000", color: "white", border: 0 }}
-          >
-            지금 회원가입하기
-          </button>
-        </Link>
+          <div style={{ fontFamily: "omyu_pretty, sans-serif",
+        fontSize: "18px" }}>
+            홈페이지 이용이 처음이신가요?
+          </div>
+          <br></br>
+          
+          <Link to="/login/SignUp">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              style={{ backgroundColor: "#970000", color: "white", border: 0 }}
+            >
+              <div style={{ fontFamily: "omyu_pretty, sans-serif", fontSize:"18px" }}>지금 회원가입하기</div>
+            </button>
+          </Link>
         </div>
       </form>
     </div>

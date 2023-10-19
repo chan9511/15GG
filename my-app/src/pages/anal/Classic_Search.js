@@ -1,17 +1,21 @@
 import "./style/ClassicTable.css";
 
-const Classic_Search = ({championData}) => {
-  console.log('props:', championData);
+const Classic_Search = ({ championData }) => {
+  console.log("props:", championData);
   const cursor = "https://s-lol-web.op.gg/images/icon/icon-arrow-right.svg";
   if (championData === null) {
     return <div>Loading..</div>;
   }
   const bestChampionData = championData[0];
-  
+
   if (bestChampionData === undefined) {
-        return <div className="noname">없는 챔피언 이름입니다. 다시 한 번 확인해주세요.  </div>;
-  } 
-  
+    return (
+      <div className="noname">
+        없는 챔피언 이름입니다. 다시 한 번 확인해주세요.{" "}
+      </div>
+    );
+  }
+
   console.log(bestChampionData);
 
   const championImageUrl = `https://ddragon.leagueoflegends.com/cdn/13.20.1/img/champion/${bestChampionData.champion_name}.png`;
@@ -36,7 +40,7 @@ const Classic_Search = ({championData}) => {
         return ""; // 다른 값이 들어올 경우 처리
     }
   };
-  
+
   const convertSpellBuild = (spellValue) => {
     switch (Number(spellValue)) {
       case 1:
@@ -65,14 +69,14 @@ const Classic_Search = ({championData}) => {
         return ""; // 다른 값이 들어올 경우 처리
     }
   };
-  
+
   // 스킬빌드 1,2,3형식으로 들어오는 것을 Q,W,E로 변환 확인
-  
+
   console.log(bestChampionData.skill_build1);
   console.log(convertSkillBuild(bestChampionData.skill_build1));
-  
+
   // 스펠 변환 형식으로 들어오는 것 확인
-  
+
   console.log(convertSpellBuild(bestChampionData.spell1_1));
   const summonerspell1 = `http://ddragon.leagueoflegends.com/cdn/13.19.1/img/spell/${convertSpellBuild(
     bestChampionData.spell1_1
@@ -80,7 +84,7 @@ const Classic_Search = ({championData}) => {
   const summonerspell2 = `http://ddragon.leagueoflegends.com/cdn/13.19.1/img/spell/${convertSpellBuild(
     bestChampionData.spell1_2
   )}.png`;
-  
+
   const skillImageUrl = `https://opgg-static.akamaized.net/meta/images/lol/spell/${
     bestChampionData.champion_name
   }${convertSkillBuild(
@@ -96,7 +100,7 @@ const Classic_Search = ({championData}) => {
   }${convertSkillBuild(
     bestChampionData.skill_build3
   )}.png?image=q_auto,f_webp,w_64&v=1696570752446`;
-  
+
   const runecode1 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.most_pristyle}_60.webp`;
   const runecode2 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.most_priperk1}_60.webp`;
   const runecode3 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.most_priperk2}_60.webp`;
@@ -108,44 +112,41 @@ const Classic_Search = ({championData}) => {
   const runecode9 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.abil_off}_60.webp`;
   const runecode10 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.abil_fle}_60.webp`;
   const runecode11 = `https://cdn.lol.ps/assets/img/runes/${bestChampionData.abil_def}_60.webp`;
-  
+
   return (
     <div>
       <main className="main-123">
         <div className="classic-table">
           <img src={championImageUrl} alt="champimg" className="champ-image" />
-  
+
           <div className="champ-name">
-            
             {bestChampionData.champion_name}
             <br></br>({bestChampionData.team_position})
-            
           </div>
-         
         </div>
-  
+
         <div className="rate-table">
           <div className="rate">승률</div>
-  
+
           <div className="rate">픽률</div>
-  
+
           <div className="rate">밴율</div>
         </div>
-  
+
         <div className="rate-table">
           <div className="percent-table">
             {(bestChampionData.win_rate * 100).toFixed(1)}%
           </div>
-  
+
           <div className="percent-table">
             {(bestChampionData.pick_rate * 100).toFixed(1)}%
           </div>
-  
+
           <div className="percent-table">
             {(bestChampionData.ban_rate * 100).toFixed(1)}%
           </div>
         </div>
-  
+
         <div className="rate-table">
           <div className="skilltreename">추천 스킬트리</div>
         </div>
@@ -157,7 +158,7 @@ const Classic_Search = ({championData}) => {
           <img src={cursor} alt="champimg" className="image-all" />
           <img src={skillImageUrl3} alt="champimg" className="image-all" />
         </div>
-  
+
         <div className="rate-table">
           <div className="skill-tree123">
             {convertSkillBuild(bestChampionData.skill_build1)}
@@ -171,7 +172,7 @@ const Classic_Search = ({championData}) => {
             {convertSkillBuild(bestChampionData.skill_build3)}
           </div>
         </div>
-  
+
         <div className="rune-table">
           <div className="runetable-left">
             <div className="rune-name">룬페이지</div>
@@ -197,16 +198,16 @@ const Classic_Search = ({championData}) => {
                 <div className="rune-row-top2">
                   <img src={runecode6} alt="rune" className="rune-image" />
                 </div>
-  
+
                 <div className="rune-row">
                   <img src={runecode7} alt="rune" className="rune-image" />
                 </div>
-  
+
                 <div className="rune-row">
                   <img src={runecode8} alt="rune" className="rune-image" />
                 </div>
               </div>
-  
+
               <div className="rune-page-perk1-end">
                 <div className="rune-row-top3">
                   <img src={runecode9} alt="rune" className="rune-image" />
@@ -220,7 +221,7 @@ const Classic_Search = ({championData}) => {
               </div>
             </div>
           </div>
-  
+
           <div className="runetable-right">
             <div className="runetable-1">
               소환사 주문
@@ -235,7 +236,7 @@ const Classic_Search = ({championData}) => {
                   alt="spell"
                   className="image-all123"
                 />
-  
+
                 <div className="win-rate">
                   승률:{(bestChampionData.spell1_win * 100).toFixed(1)}%
                 </div>
@@ -247,9 +248,13 @@ const Classic_Search = ({championData}) => {
                 <img src={itemStart} alt="shoes" className="image-all123" />
                 {/* 시작 아이템 두번째칸이 비어있으면 2번째칸 이미지가 나오지 않게 */}
                 {bestChampionData.itemSet1_2 && (
-                  <img src={itemStart2} alt="시작아이템" className="image-all123" />
+                  <img
+                    src={itemStart2}
+                    alt="시작아이템"
+                    className="image-all123"
+                  />
                 )}
-  
+
                 <div className="win-rate">
                   승률:
                   {(bestChampionData.itemSet1_win * 100).toFixed(1)}%
@@ -260,7 +265,7 @@ const Classic_Search = ({championData}) => {
               신발
               <div>
                 <img src={itemShoes} alt="shoes" className="image-all123" />
-  
+
                 <div className="win-rate">
                   승률:{(bestChampionData.shoes1_win * 100).toFixed(1)}%
                 </div>

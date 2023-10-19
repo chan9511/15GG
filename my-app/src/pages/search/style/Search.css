@@ -72,11 +72,34 @@ OPTION { font-size: 8pt; }
 	align-items: center;
 	vertical-align: middle;
 	font-family: 'omyu_pretty', sans-serif;
-	font-size: 15px;
+	font-size: 20px;
+	
+	
+	
 	
 }
 
+.main-name {
+	font-family: 'omyu_pretty', sans-serif;
+	font-size: 24px;
+	display: flex;
+}
 
+.main-subname {
+	font-family: 'omyu_pretty', sans-serif;
+	font-size: 24px;
+	display: flex;
+	margin-left: 12.5%;
+	font-weight: bold;
+}
+
+.main-subname2 {
+	font-family: 'omyu_pretty', sans-serif;
+	font-size: 24px;
+	display: flex;
+	margin-left: 45%;
+	font-weight: bold;
+}
 
 @font-face {
 	font-family: 'omyu_pretty';
