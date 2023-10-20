@@ -70,11 +70,14 @@ const Login = () => {
     <div class="hihi">
       <form class="px-4 py-3">
         <div class="mb-3">
-          <label for="exampleDropdownFormEmail1" class="form-label">
-            <div style={{ fontFamily: "omyu_pretty, sans-serif", fontSize:"18px" }}>아이디</div>
-          </label>
+          <div
+            style={{ fontFamily: "omyu_pretty, sans-serif", fontSize: "18px" }}
+          >
+            아이디
+          </div>
+
           <input
-            style={{ fontFamily: "omyu_pretty, sans-serif", fontSize:"18px" }}
+            style={{ fontFamily: "omyu_pretty, sans-serif", fontSize: "18px" }}
             type="ID"
             class="form-control"
             id="exampleDropdownFormEmail1"
@@ -85,10 +88,17 @@ const Login = () => {
         </div>
         <div class="mb-3">
           <label for="exampleDropdownFormPassword1" class="form-label">
-            <div style={{ fontFamily: "omyu_pretty, sans-serif", fontSize:"18px" }}>비밀번호</div>
+            <div
+              style={{
+                fontFamily: "omyu_pretty, sans-serif",
+                fontSize: "18px",
+              }}
+            >
+              비밀번호
+            </div>
           </label>
           <input
-            style={{ fontFamily: "omyu_pretty, sans-serif" , fontSize:"18px"}}
+            style={{ fontFamily: "omyu_pretty, sans-serif", fontSize: "18px" }}
             type="password"
             class="form-control"
             id="exampleDropdownFormPassword1"
@@ -102,25 +112,41 @@ const Login = () => {
           <button
             type="submit"
             class="btn btn-primary"
-            style={{ fontFamily: "omyu_pretty, sans-serif", fontSize:"18px",backgroundColor: "#970000", color: "white", border: 0 }}
+            style={{
+              fontFamily: "omyu_pretty, sans-serif",
+              fontSize: "18px",
+              backgroundColor: "#970000",
+              color: "white",
+              border: 0,
+            }}
             onClick={(e) => SignInHandler(e)}
           >
             로그인하기
           </button>
           <br></br>
-          <div style={{ fontFamily: "omyu_pretty, sans-serif",
-        fontSize: "18px" }}>
+          <div
+            style={{ fontFamily: "omyu_pretty, sans-serif", fontSize: "20px" }}
+          >
             홈페이지 이용이 처음이신가요?
           </div>
           <br></br>
-          
+
           <Link to="/login/SignUp">
             <button
               type="submit"
               class="btn btn-primary"
-              style={{ backgroundColor: "#970000", color: "white", border: 0 }}
+              style={{ backgroundColor: "#970000",
+              color: "white",
+              border: 0 }}
             >
-              <div style={{ fontFamily: "omyu_pretty, sans-serif", fontSize:"18px" }}>지금 회원가입하기</div>
+              <div
+                style={{
+                  fontFamily: "omyu_pretty, sans-serif",
+                  fontSize: "18px",
+                }}
+              >
+                지금 회원가입하기
+              </div>
             </button>
           </Link>
         </div>

@@ -5,12 +5,21 @@
   font-style: normal;
 }
 .nav.nav-tabs {
-    background-color: #380101;
+    background-color: #c9c62e;
+    
   }
   
+.nav-item {
+  transition: background-color 0.3s ease;
+}  
+
+.nav-item:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
   
 .nav-link {
-    color: #ffffff;
+    color: #550606;
     font-size: 21px; 
     /* 여기에 네비게이션 링크에 대한 스타일을 추가합니다. */
     /* 예를 들어, 텍스트 크기, 텍스트 스타일 등을 정의할 수 있습니다. */

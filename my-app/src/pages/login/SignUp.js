@@ -1,59 +1,60 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import '../login/style/SignUp.css';
-import {signUpApi} from "../../api";
+import "../login/style/SignUp.css";
+import { signUpApi } from "../../api";
 
+const SignUp = () => {
+  const [userId, setUserId] = useState("");
+  const [userPassword, setUserPassword] = useState("");
+  const [userPasswordCheck, setUserPasswordCheck] = useState("");
+  const navigate = useNavigate();
 
+  const SignUpHandler = async (e) => {
+    e.preventDefault();
 
-  const SignUp = () => {
-    const [userId, setUserId] = useState("");
-    const [userPassword, setUserPassword] = useState("");
-    const [userPasswordCheck, setUserPasswordCheck] = useState("");
-    const navigate = useNavigate();
-    
-    const SignUpHandler = async (e) => {
-      e.preventDefault();
-    
-      if (userId.length === 0 || userPassword.length === 0) {
-        alert("이메일과 비밀번호를 입력하세요");
-        return;
-      }
-    
-      const data = {
-        userId,
-        userPassword,
-        userPasswordCheck,
-      };
-    
-      const signUpResponse = await signUpApi(data);
-    
-      if (!signUpResponse) {
-        console.log(signUpResponse)
-        setUserId("");
-        setUserPassword("");
-        setUserPasswordCheck("");
-        alert("회원가입 실패"); return;
-      }
-      if (!signUpResponse.result) {
-        console.log(signUpResponse)
-        alert(signUpResponse.message);
-        setUserId("");
-        setUserPassword("");
-        setUserPasswordCheck("");
-        return;
-      }
-      alert("회원가입 성공");
-      console.log(signUpResponse)
-      navigate(`/login/Login`);
-      
+    if (userId.length === 0 || userPassword.length === 0) {
+      alert("이메일과 비밀번호를 입력하세요");
+      return;
     }
+
+    const data = {
+      userId,
+      userPassword,
+      userPasswordCheck,
+    };
+
+    const signUpResponse = await signUpApi(data);
+
+    if (!signUpResponse) {
+      console.log(signUpResponse);
+      setUserId("");
+      setUserPassword("");
+      setUserPasswordCheck("");
+      alert("회원가입 실패");
+      return;
+    }
+    if (!signUpResponse.result) {
+      console.log(signUpResponse);
+      alert(signUpResponse.message);
+      setUserId("");
+      setUserPassword("");
+      setUserPasswordCheck("");
+      return;
+    }
+    alert("회원가입 성공");
+    console.log(signUpResponse);
+    navigate(`/login/Login`);
+  };
   return (
     <div className="gdgd">
-      <form class="form-control px-4 py-3">
+      <form class="px-4 py-3">
         <div class="mb-3">
-          <label for="exampleDropdownFormEmail1" class="form-label">
-          <div style={{ fontFamily: "omyu_pretty, sans-serif", fontSize:"18px" }}>아이디</div>
-          </label>
+          <div
+            style={{ fontFamily: "omyu_pretty, sans-serif", fontSize: "20px" }}
+          >
+            아이디
+          </div>
+
           <input
             type="ID"
             class="form-control"
@@ -64,7 +65,14 @@ import {signUpApi} from "../../api";
         </div>
         <div class="mb-3">
           <label for="exampleDropdownFormPassword1" class="form-label">
-          <div style={{ fontFamily: "omyu_pretty, sans-serif", fontSize:"18px" }}>비밀번호</div>
+            <div
+              style={{
+                fontFamily: "omyu_pretty, sans-serif",
+                fontSize: "20px",
+              }}
+            >
+              비밀번호
+            </div>
           </label>
           <input
             type="password"
@@ -76,38 +84,48 @@ import {signUpApi} from "../../api";
         </div>
         <div class="mb-3">
           <label for="exampleDropdownFormPassword2" class="form-label">
-          <div style={{ fontFamily: "omyu_pretty, sans-serif", fontSize:"18px" }}>비밀번호 확인</div>
+            <div
+              style={{
+                fontFamily: "omyu_pretty, sans-serif",
+                fontSize: "20px",
+              }}
+            >
+              비밀번호 확인
+            </div>
           </label>
           <input
-             type="password"
-             class="form-control"
-             id="exampleDropdownFormPassword2"
-             onChange={(e) => setUserPasswordCheck(e.target.value)}
-             value={userPasswordCheck}  
+            type="password"
+            class="form-control"
+            id="exampleDropdownFormPassword2"
+            onChange={(e) => setUserPasswordCheck(e.target.value)}
+            value={userPasswordCheck}
           />
         </div>
-        {/* <div class="mb-3">
-          <div class="form-check">
-            <input
-              type="checkbox"
-              class="form-check-input"
-              id="dropdownCheck"
-            />
-            <label class="form-check-label" for="dropdownCheck">
-              이용약관 및 개인정보 수집 및 이용 에 동의합니다.
-            </label>
-          </div>
-        </div> */}
         
-          <button
-            type="submit"
-            class="btn btn-primary"
-            style={{ backgroundColor: "#970000", color: "white", border: 0,fontFamily: "omyu_pretty, sans-serif", fontSize:"18px" }}
-            onClick={(e) => SignUpHandler(e)}
+
+        <button
+          type="submit"
+          class="btn btn-primary"
+          style={{
+            backgroundColor: "#970000",
+            color: "white",
+            border: 0,
+            fontFamily: "omyu_pretty, sans-serif",
+            fontSize: "18px",
+            marginLeft:"33%"
+          }}
+          onClick={(e) => SignUpHandler(e)}
+        >
+          <div
+            style={{
+              fontFamily: "omyu_pretty, sans-serif",
+              fontSize: "18px",
+              
+            }}
           >
             회원가입
-          </button>
-          
+          </div>
+        </button>
       </form>
     </div>
   );
