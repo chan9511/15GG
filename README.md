@@ -1,12 +1,12 @@
-# 플레이데이터 8월 23일~ 10월 24일 팀프로젝트
+# React - Project - 15GG
 
-Front 개발 담당. + 게임데이터를 이용한 전적 검색 사이트
+Front 개발 + 게임데이터를 이용한 전적 검색 사이트
 
-## Available Scripts
+## 프로젝트 소개
 
-In the project directory, you can run:
+타 사이트들의 단점을 보완하여 빠르고 쉽게 볼 수 있는 전적검색 사이트입니다.
 
-### `npm start`
+### 개발 기간
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
