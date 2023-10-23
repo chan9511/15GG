@@ -1,4 +1,4 @@
-# 8월 23일~ 10월 24일 프로젝트
+# 플레이데이터 8월 23일~ 10월 24일 프로젝트
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
