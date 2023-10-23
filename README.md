@@ -1,6 +1,6 @@
-# 플레이데이터 8월 23일~ 10월 24일 프로젝트
+# 플레이데이터 8월 23일~ 10월 24일 팀프로젝트
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Front 개발 담당. + 게임데이터를 이용한 전적 검색 사이트
 
 ## Available Scripts
 
