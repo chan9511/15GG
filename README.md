@@ -9,17 +9,6 @@ Front 개발 + 게임데이터를 이용한 전적 검색 사이트
 ### 개발 기간
 
 
-### `npm test`
-
-
-### `npm run build`
-
-
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
 
 
 ## Learn More
