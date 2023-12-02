@@ -1,14 +1,14 @@
 # 15GG - Frontend
 
-### 1. 기술
+### 기술
  
- ![js](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white) ![react](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![css](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
+![js](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white) ![react](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![css](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
  ![bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white) ![html](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white) ![git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)
  ![github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white) ![amazone](https://img.shields.io/badge/Amazon_AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
-
+ 
 ## 프로젝트 소개
 
- 대부분의 게이머들은 전적을 검색한다. 월간 최대 트래픽 3700만 규모인 전적검색 사이트도 있는 만큼,타 사이트들의 단점을 보완하여 클릭수를 줄여 빠르고 원하는 데이터를 쉽게 접할 수 있는 전적검색 사이트입니다.
+ 대부분의 게이머들은 전적을 검색한다. 월간 최대 트래픽 3700만 규모인 전적검색 사이트도 있는 만큼, 타 사이트들의 단점을 보완하여 클릭수를 줄여 빠르고 원하는 데이터를 쉽게 접할 수 있는 전적검색 사이트입니다.
 
 ### 개발 기간
 
